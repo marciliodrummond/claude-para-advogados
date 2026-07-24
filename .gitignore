@@ -1,0 +1,8 @@
+# trabalho interno — não publicar
+research/
+content/
+build/
+.venv/
+assets/
+PLANO-MESTRE.md
+__pycache__/
