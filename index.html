@@ -172,8 +172,8 @@ table.t td b{color:var(--gold-3)}
 
 /* checklist */
 .check{list-style:none;margin:2mm 0}
-.check li{display:flex;gap:3mm;margin-bottom:2mm;break-inside:avoid;font-size:9.4pt}
-.check li::before{content:"";flex-shrink:0;width:4.2mm;height:4.2mm;border:1.5px solid var(--gold);border-radius:1mm;margin-top:.6mm}
+.check li{position:relative;padding-left:7mm;margin-bottom:2mm;break-inside:avoid;font-size:9.4pt}
+.check li::before{content:"";position:absolute;left:0;top:.6mm;width:4.2mm;height:4.2mm;border:1.5px solid var(--gold);border-radius:1mm}
 .check.do li::before{background:var(--gold);box-shadow:inset 0 0 0 1.2mm var(--paper)}
 
 /* nível / roadmap */
@@ -263,7 +263,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
 <section class="sheet dark cover">
   <div class="frame"></div>
   <div>
-    <span class="badge-ed"><svg class="ic"><use href="#i-scale"/></svg> Edição Julho 2026 · Manual Oficial</span>
+    <span class="badge-ed"><svg class="ic"><use href="#i-scale"/></svg> Manual Oficial</span>
   </div>
   <div>
     <p class="kicker" style="margin-bottom:6mm">O ecossistema Claude aplicado à advocacia brasileira</p>
@@ -302,7 +302,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
       carreira, gerou mais de <strong style="color:var(--gold-2)">R$ 1,5 bilhão</strong> em valor para clientes.</p>
       <p style="color:var(--cream-dim);font-size:9.8pt">Depois do <em class="g">Manual ChatGPT para Advogados</em> — que se tornou
       referência no mercado —, este guia eleva o padrão: mais visual, mais atual, mais profundo. Feito para o ecossistema
-      que, em 2026, lidera o trabalho de elite com IA: o <strong style="color:var(--cream)">Claude, da Anthropic</strong>.</p>
+      que lidera o trabalho de elite com IA: o <strong style="color:var(--cream)">Claude, da Anthropic</strong>.</p>
 
       <div class="card dark-c mt4">
         <h4>Trajetória</h4>
@@ -375,11 +375,12 @@ table.t.tight-t th{padding:2mm 2.5mm}
     <tr><td><b>3</b></td><td><b>Prática por área</b> — 5 casos completos ponta a ponta</td><td>Aplicar em Trabalhista, Cível, Penal, Consumidor e Família</td></tr>
     <tr><td><b>4</b></td><td><b>Sênior</b> — sistemas, Skills, Cowork e automações</td><td>Sair do chat e construir o escritório aumentado</td></tr>
     <tr><td><b>5</b></td><td><b>Roadmap</b> — os 5 níveis + plano de 30 dias</td><td>Saber exatamente onde você está e o que vem depois</td></tr>
+    <tr><td><b>6</b></td><td><b>Escritório Super Inteligente · Fundação I</b> — diagnóstico, clientes e gestão</td><td>Transformar a ferramenta em um escritório que roda sem você</td></tr>
   </table>
 
   <div class="callout co-law mt4"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
     <div><strong>Compromisso deste manual:</strong> tudo aqui foi verificado contra a documentação oficial da Anthropic
-    em julho de 2026. Onde algo não pôde ser confirmado, dizemos isso explicitamente. IA muda rápido — confira sempre as fontes oficiais no Apêndice E.</div></div>
+    pela equipe deste manual. Onde algo não pôde ser confirmado, dizemos isso explicitamente. IA muda rápido — acompanhe as novidades em <a href="https://www.anthropic.com/news">anthropic.com/news</a> e nas fontes oficiais do Apêndice E.</div></div>
 
   <div class="folio">Claude para Advogados · do zero ao sênior</div>
 </section>
@@ -391,7 +392,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
   <p class="d-sub">Três decisões definem se a IA será um ativo ou um passivo no seu escritório: entender a ferramenta,
   configurar o ambiente certo e blindar o sigilo dos seus clientes. Resolva isso na primeira hora.</p>
   <div class="d-list">
-    <div class="d-item"><span class="dn">01</span><span>Por que Claude — o ecossistema e os modelos de 2026</span></div>
+    <div class="d-item"><span class="dn">01</span><span>Por que Claude — o ecossistema e os modelos atuais</span></div>
     <div class="d-item"><span class="dn">02</span><span>Setup em 15 minutos — conta, plano e primeiras configurações</span></div>
     <div class="d-item"><span class="dn">03</span><span>Sigilo, LGPD e ética — as regras inegociáveis</span></div>
   </div>
@@ -402,7 +403,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
 <section class="sheet pad">
   <p class="kicker">Capítulo 01 · Parte 0 — Antes de começar</p>
   <h2 class="h-chapter">Por que <em>Claude</em></h2>
-  <p class="lead">Em 2026, perguntar "qual IA usar" já não é a questão certa. A questão é: <strong>qual ecossistema
+  <p class="lead">Perguntar "qual IA usar" já não é a questão certa. A questão é: <strong>qual ecossistema
   sustenta o trabalho jurídico pesado</strong> — processos de mil páginas, redação com padrão de banca, sigilo profissional
   e verificação rigorosa. É nesse terreno que o Claude, da Anthropic, se distanciou.</p>
 
@@ -432,7 +433,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
   raciocina com cuidado e não vaza o sigilo do cliente."</div>
 
   <h3 class="sec"><span class="n">1.2</span>Comparação honesta (sem torcida)</h3>
-  <p style="font-size:9.4pt">Todas as grandes IAs de 2026 redigem textos razoáveis. Onde o Claude se diferencia para o
+  <p style="font-size:9.4pt">Todas as grandes IAs atuais redigem textos razoáveis. Onde o Claude se diferencia para o
   jurídico: <strong>documentos longos</strong> (contexto real e atenção sustentada), <strong>qualidade de redação</strong>
   em português formal, <strong>instruções seguidas à risca</strong> (formatos, restrições, "não invente jurisprudência")
   e <strong>transparência sobre limites</strong> — ele admite o que não sabe com mais frequência. Onde os concorrentes
@@ -444,7 +445,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
 
 <!-- ================= CAP 1 · PÁGINA 2 ================= -->
 <section class="sheet pad">
-  <h3 class="sec" style="margin-top:0"><span class="n">1.3</span>Os modelos em julho de 2026</h3>
+  <h3 class="sec" style="margin-top:0"><span class="n">1.3</span>Os modelos atuais</h3>
   <p style="font-size:9.4pt">Você não precisa decorar nomes — precisa saber <strong>qual modelo para qual tarefa</strong>.
   Esta é a linha atual, confirmada na documentação oficial:</p>
 
@@ -535,7 +536,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
 
 <!-- ================= CAP 2 · PÁGINA 2 ================= -->
 <section class="sheet pad">
-  <h3 class="sec" style="margin-top:0"><span class="n">2.3</span>Planos e preços oficiais (julho/2026)</h3>
+  <h3 class="sec" style="margin-top:0"><span class="n">2.3</span>Planos e preços oficiais</h3>
   <table class="t">
     <tr><th>Plano</th><th>Preço</th><th>Para quem faz sentido</th></tr>
     <tr><td><b>Free</b></td><td>US$ 0</td><td>Testar e aprender o método deste manual. Sem Claude Code nem Cowork.</td></tr>
@@ -729,7 +730,7 @@ Documento: <b>[cole aqui]</b></pre></div>
   tudo verossímil, tudo possivelmente inventado. É o que chamamos de <strong>alucinação</strong>.</p>
 
   <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
-    <div><strong>"Me mostre os links" não basta em 2026.</strong> Um link também é só texto — o modelo
+    <div><strong>"Me mostre os links" não basta mais.</strong> Um link também é só texto — o modelo
     pode fabricar um endereço que imita com perfeição o padrão do site do STJ ou do seu TJ, apontando
     para um julgado que não existe. A única verificação que vale é <strong>abrir a fonte oficial</strong>
     (site do tribunal, Diário de Justiça, base oficial de jurisprudência) e conferir com os próprios
@@ -885,7 +886,7 @@ fatos; liste o que preciso levantar antes de decidir.</pre></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-brain"/></svg></span>
       <h4>Delegue ao modelo quando…</h4>
       <p class="small">a tarefa for única e fechada — uma análise, um resumo, uma revisão de cláusula.
-      Os modelos de 2026, com raciocínio estendido, planejam bem sozinhos; microgerenciar cada passo
+      Os modelos atuais, com raciocínio estendido, planejam bem sozinhos; microgerenciar cada passo
       só desperdiça sua janela de uso.</p></div>
   </div>
 
@@ -2427,7 +2428,7 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
   <p style="font-size:9.4pt">Cowork é o agente do Claude para trabalho de escritório: você descreve o resultado
   ("organize esta pasta", "monte o relatório da carteira") e ele executa em <strong>múltiplas etapas</strong> —
   criando documentos, planilhas e arquivos organizados. Está nos planos pagos (Pro em diante), chegou à web e ao
-  mobile em beta em 07/07/2026, roda nos servidores da Anthropic mesmo com o seu laptop fechado — e
+  mobile também em versão beta, roda nos servidores da Anthropic mesmo com o seu laptop fechado — e
   <strong>consome mais uso</strong> que o chat comum. Tudo passa por três modos de permissão:</p>
 
   <div class="grid3">
@@ -2735,6 +2736,558 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
   <div class="folio">Cap. 23 · Plano de 30 dias</div>
 </section>
 
+<section class="sheet dark divider">
+  <div class="part-n">06</div>
+  <h2>Escritório <em>Super Inteligente</em></h2>
+  <p class="d-sub"><strong style="color:var(--gold-2)">Nível Fundação I.</strong> A linha Escritório Super Inteligente
+  desenvolve escritórios de advocacia com IA em níveis. Esta parte entrega a fundação: diagnóstico, clientes,
+  gestão e os casos avançados que transformam ferramenta em negócio.</p>
+  <div class="d-list">
+    <div class="d-item"><span class="dn">24</span><span>Diagnóstico — do operador ao maestro</span></div>
+    <div class="d-item"><span class="dn">25</span><span>Clientes — comunicação que fideliza e capta</span></div>
+    <div class="d-item"><span class="dn">26</span><span>Gestão — o escritório que roda sem você</span></div>
+    <div class="d-item"><span class="dn">27</span><span>Casos avançados + checklist Fundação I</span></div>
+  </div>
+  <div class="folio">Parte 6 · Escritório Super Inteligente</div>
+</section>
+<!-- ================= CAP 24 · PÁGINA 1 ================= -->
+<section class="sheet pad">
+  <p class="kicker">Capítulo 24 · Parte 6 — Escritório Super Inteligente</p>
+  <h2 class="h-chapter">Diagnóstico: do operador ao <em>maestro</em></h2>
+  <p class="lead">Você chegou até aqui sabendo operar o Claude no nível sênior — método, verificação, contexto.
+  Mas escritório não é só técnica: é atendimento, captação, gestão e tempo. Esta parte abre a linha
+  <strong>Escritório Super Inteligente</strong>, no <strong>Nível Fundação I</strong>: a camada que qualquer
+  escritório — solo ou com equipe pequena — implementa com as ferramentas que você já conhece, sem custo
+  adicional e sem programar. Os níveis seguintes da linha são formações avançadas da Super Inteligênc[IA] —
+  horizonte para quando a fundação estiver rodando. E toda fundação começa pelo diagnóstico:
+  <strong>para onde o seu tempo está indo</strong>.</p>
+
+  <h3 class="sec"><span class="n">24.1</span>Operador ou maestro: a diferença não é talento</h3>
+  <p>Há dois jeitos de advogar com IA na mão. Não separam os dois talento nem verba — é postura diante do trabalho.</p>
+  <div class="grid2">
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-user"/></svg></span>
+      <h4>Advogado Operador</h4>
+      <ul class="tight">
+        <li>Faz tudo sozinho, da petição ao WhatsApp do cliente.</li>
+        <li>Ferramentas soltas: um software aqui, uma planilha acolá.</li>
+        <li>Tenta aprender cada técnica na mão — precificação, funil, gestão.</li>
+        <li>Acumula cursos e certificados; implementa quase nada.</li>
+      </ul></div>
+    <div class="card gold"><span class="ico"><svg class="ic"><use href="#i-brain"/></svg></span>
+      <h4>Advogado Maestro</h4>
+      <ul class="tight">
+        <li>Orquestra sistemas que trabalham por ele.</li>
+        <li>Extrai da IA a estratégia — e entrega a execução a processos.</li>
+        <li>Integra as ferramentas num fluxo só, com padrão da banca.</li>
+        <li>Para de acumular conhecimento e organiza sistemas práticos.</li>
+      </ul></div>
+  </div>
+  <p>A virada de operador para maestro se apoia em três pilares — todos já começaram neste manual:</p>
+  <div class="grid3">
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-cmd"/></svg></span>
+      <h4>Técnica</h4><p class="small">A IA já sabe fazer; o trabalho é saber pedir (Caps. 4 e 5).</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-layers"/></svg></span>
+      <h4>Ferramenta</h4><p class="small">Sistemas integrados com padrão, não apps soltos (Caps. 12, 19 e 20).</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-rocket"/></svg></span>
+      <h4>Comportamento</h4><p class="small">Implementar de verdade, uma rotina por vez (Cap. 23).</p></div>
+  </div>
+
+  <div class="folio">Cap. 24 · Diagnóstico</div>
+</section>
+
+<!-- ================= CAP 24 · PÁGINA 2 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">24.2</span>A Regra das 20 Horas Invisíveis</h3>
+  <p>Uma estimativa recorrente entre advogados solo: cerca de <strong>20 horas por semana</strong> vão para
+  tarefas que a IA resolve em minutos — formatação de peças, pesquisa preliminar, e-mails de atualização,
+  cálculos, controle de prazos, documentos repetitivos. Trate o número como hipótese, não como verdade
+  absoluta: o passo 1 existe justamente para medir o seu escritório.</p>
+
+  <div class="flow">
+    <div class="step"><span class="sn">1</span><div class="sb">
+      <h4>Mapear</h4>
+      <p>Anote tudo o que você fez na semana, sem filtro e sem vergonha. A lista honesta é a matéria-prima do diagnóstico.</p></div></div>
+    <div class="step"><span class="sn">2</span><div class="sb">
+      <h4>Classificar</h4>
+      <p>Marque cada item: <b>operacional</b> (repetitivo, com padrão) ou <b>estratégico</b> (julgamento, relacionamento, tribunal).</p></div></div>
+    <div class="step"><span class="sn">3</span><div class="sb">
+      <h4>Priorizar</h4>
+      <p>O que a IA resolve primeiro: repetitivo + frequente + com regra clara. O que exige julgamento fica com você — sempre.</p></div></div>
+    <div class="step"><span class="sn">4</span><div class="sb">
+      <h4>Automatizar</h4>
+      <p>As 5 tarefas mais repetitivas viram prompt da biblioteca, instrução de Project ou Skill (Caps. 12 e 19).</p></div></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><span class="sv">≈20 h</span><span class="sl">por semana em tarefas delegáveis — a hipótese a medir</span></div>
+    <div class="stat"><span class="sv">≈3 dias</span><span class="sl">devolvidos à sua semana se você recuperar metade</span></div>
+    <div class="stat"><span class="sv">5</span><span class="sl">tarefas para automatizar primeiro — nem mais, nem menos</span></div>
+  </div>
+
+  <div class="quote">O estoque do advogado é tempo. Tudo o que a Fundação I faz é comprá-lo de volta.
+  <span class="qa">— a regra de bolso desta Parte</span></div>
+
+  <div class="folio">Cap. 24 · Diagnóstico</div>
+</section>
+
+<!-- ================= CAP 24 · PÁGINA 3 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">24.3</span>O prompt do diagnóstico</h3>
+  <p>O mapa sai de um prompt só. Rode no início da Fundação I — e repita a cada trimestre, porque a rotina muda.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Diagnóstico do escritório</span><span>copie e adapte [colchetes]</span></div>
+<pre>Atue como consultor de produtividade para escritórios de
+advocacia. Com a minha rotina abaixo:
+1. Identifique as 5 tarefas que mais consomem tempo e
+   podem ser delegadas para a IA
+2. Classifique cada uma: <b>[AUTOMATIZAR AGORA]</b> /
+   [PARCIALMENTE] / [REQUER HUMANO]
+3. Estime as horas/semana recuperadas nas "AGORA"
+4. Sugira a ferramenta de IA certa para cada uma
+5. Monte um plano de implementação de 5 dias
+Rotina: área [PREENCHA]; processos ativos [N]; equipe [solo /
+X advogados / com estagiários]; tarefas que mais consomem
+tempo [DESCREVA]; softwares que já uso [PREENCHA].
+Formate em tabelas, priorizando por horas recuperadas.</pre></div>
+
+  <h3 class="sec"><span class="n">24.4</span>As 5 camadas de automação do escritório</h3>
+  <p>Cada tarefa que o diagnóstico mandar automatizar entra em uma destas superfícies — você já conhece todas:</p>
+  <table class="t">
+    <tr><th>Camada</th><th>O que acontece nela</th><th>Onde está no manual</th></tr>
+    <tr><td><b>1 · Prompt avulso</b></td><td>Cada pedido nasce do zero, no chat</td><td>Caps. 4 e 5</td></tr>
+    <tr><td><b>2 · Project</b></td><td>Instruções fixas e documentos permanentes por caso</td><td>Cap. 12</td></tr>
+    <tr><td><b>3 · Skills</b></td><td>O procedimento repetitivo vira pacote reutilizável</td><td>Cap. 19</td></tr>
+    <tr><td><b>4 · Chrome + Cowork</b></td><td>O Claude age em telas, sites e sistemas por você</td><td>Cap. 20</td></tr>
+    <tr><td><b>5 · Rotinas + Dispatch</b></td><td>Tarefas programadas rodam sozinhas; você despacha do celular</td><td>Cap. 20</td></tr>
+  </table>
+  <p class="small">Não confunda com os 5 níveis do Cap. 22: lá está a sua maturidade como advogado; aqui, as
+  superfícies onde o trabalho do escritório roda. Camada não é patente — nenhum escritório precisa da camada 5
+  para colher. A maioria vive na camada 1 e já ganha muito ao subir para a 2.</p>
+
+  <div class="folio">Cap. 24 · Diagnóstico</div>
+</section>
+
+<!-- ================= CAP 25 · PÁGINA 1 ================= -->
+<section class="sheet pad">
+  <p class="kicker">Capítulo 25 · Parte 6 — Escritório Super Inteligente</p>
+  <h2 class="h-chapter">Clientes: comunicação que <em>fideliza e capta</em></h2>
+  <p class="lead">Cliente sem notícia liga cobrando; lead sem resposta contrata o concorrente. Este capítulo
+  monta a comunicação do ciclo de vida inteiro — do e-mail de boas-vindas ao pedido de indicação no
+  encerramento, da cadência que recupera leads à presença digital que atrai novos. Tudo com prompts prontos
+  e dentro dos limites éticos da advocacia.</p>
+
+  <h3 class="sec"><span class="n">25.1</span>A biblioteca de e-mails do ciclo de vida</h3>
+  <p>Cinco momentos cobrem quase toda a comunicação do escritório. Escreva uma vez, aprove, e nunca mais
+  redija do zero:</p>
+  <table class="t">
+    <tr><th>Momento</th><th>O que o e-mail precisa fazer</th></tr>
+    <tr><td><b>Boas-vindas</b></td><td>Transformar a contratação em começo organizado: próximos passos, documentos</td></tr>
+    <tr><td><b>Atualização processual</b></td><td>Informar a movimentação antes de o cliente perguntar</td></tr>
+    <tr><td><b>Solicitação de documentos</b></td><td>Cobrar o que falta, com urgência calibrada — sem soar bronca</td></tr>
+    <tr><td><b>Encerramento</b></td><td>Entregar o resultado e medir a satisfação</td></tr>
+    <tr><td><b>Follow-up de lead</b></td><td>Reativar, em 4 toques, quem perguntou e sumiu</td></tr>
+  </table>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Ciclo de vida do cliente</span><span>copie e adapte [colchetes]</span></div>
+<pre>Gere 5 modelos de e-mail para o escritório [NOME], área
+[PREENCHA]:
+1. BOAS-VINDAS: pós-contratação — próximos passos e
+   documentos necessários
+2. ATUALIZAÇÃO PROCESSUAL: informar uma movimentação
+3. SOLICITAÇÃO DE DOCUMENTOS: urgência calibrada
+4. ENCERRAMENTO: resultado final + pesquisa de satisfação
+5. FOLLOW-UP DE LEAD: 4 toques (dias 2, 5, 10 e 20)
+Para cada um: assunto (2 opções, máx. 50 caracteres) | corpo
+(máx. 150 palavras) | campos [VARIÁVEIS] | <b>tom profissional
+e humano</b>.</pre></div>
+
+  <div class="folio">Cap. 25 · Clientes</div>
+</section>
+
+<!-- ================= CAP 25 · PÁGINA 2 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">25.2</span>WhatsApp com o cliente: atualização sem pânico</h3>
+  <p>A pior mensagem é a que o cliente precisa decifrar — ou a que o deixa em pânico sem motivo. A boa
+  atualização processual é curta, traduz o juridiquês e termina dizendo o que acontece agora.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Atualização por WhatsApp</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie uma mensagem de atualização processual para WhatsApp:
+- Processo: [número]   - Movimentação: [DESCREVA]
+- Próximo passo: [o que acontece agora]
+- Prazo relevante: [se houver]
+- Perfil do cliente: [leigo / empresário / advogado]
+REGRAS: máx. 4 parágrafos curtos; explique termos jurídicos
+entre parênteses se o cliente for leigo; feche com <b>próximo
+passo concreto e prazo</b>; <b>sem pânico e sem falsa
+esperança</b>.</pre></div>
+
+  <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
+    <div><strong>O limite ético não muda de canal.</strong> E-mail, WhatsApp, landing page e rede social seguem o
+    Código de Ética e Disciplina da OAB e as regras de publicidade da advocacia: <strong>nunca prometer
+    resultado</strong> — "vamos ganhar" vira "vamos trabalhar pelo melhor desfecho possível". E sigilo vale no
+    marketing também: nada de expor caso ou cliente em conteúdo.</div></div>
+
+  <div class="callout co-ok"><span class="ci"><svg class="ic"><use href="#i-check"/></svg></span>
+    <div><strong>Três hábitos que evitam quase todo problema:</strong> mensagem curta (máx. 4 parágrafos no
+    WhatsApp, 150 palavras no e-mail); termo técnico explicado entre parênteses para o cliente leigo; toda
+    mensagem fecha com próximo passo e prazo. E lembre do Cap. 3: guarde os modelos com [campos] e preencha os
+    dados do caso só na hora de enviar — não no prompt. Os modelos aprovados moram no Project "Atendimento"
+    do escritório (Caps. 12 e 26).</div></div>
+
+  <div class="folio">Cap. 25 · Clientes</div>
+</section>
+
+<!-- ================= CAP 25 · PÁGINA 3 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">25.3</span>Follow-up de leads: a cadência 2/5/10/20</h3>
+  <p>O lead que perguntou e sumiu não é caso perdido: é caso sem cadência. Quatro toques bastam — o dia 2
+  relembra a conversa com uma dica útil; o dia 5 mostra o custo de não agir; o dia 10 traz prova social;
+  o dia 20 pergunta, sem drama, se a pessoa desistiu. Depois do quarto toque, arquive sem culpa.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Follow-up de leads</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie 4 mensagens de follow-up para WhatsApp, nos dias 2, 5,
+10 e 20, para um lead que perguntou sobre [ex.: ação
+trabalhista, divórcio], recebeu resposta e não agendou.
+Nome: [PREENCHA].
+- Dia 2: relembrar a conversa + dica jurídica útil
+- Dia 5: urgência suave — o risco de não agir
+- Dia 10: prova social — caso similar bem resolvido
+- Dia 20: última tentativa — desistiu ou precisa de outra
+  coisa?
+Máx. 3 linhas por mensagem, tom empático, <b>gancho
+específico em cada uma — nada genérico</b>.</pre></div>
+
+  <h3 class="sec"><span class="n">25.4</span>Encerramento que gera indicação</h3>
+  <p>O fim do caso é o momento comercial mais desperdiçado do escritório: o cliente satisfeito é quem mais
+  indica — mas só indica se você pedir. O e-mail de encerramento entrega o resultado, mede a satisfação e
+  abre essa porta com elegância.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Encerramento + indicação</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie um e-mail de encerramento de caso para [CLIENTE].
+Resultado: [ex.: procedente; acordo homologado].
+1. Celebração do resultado (1 parágrafo)
+2. Resumo objetivo do que foi conquistado
+3. Próximos passos práticos (cumprimento, prazos, documentos)
+4. Pesquisa de satisfação (3 perguntas, nota de 1 a 5)
+5. <b>Pedido sutil de indicação</b>: "se conhecer alguém em
+   situação parecida, será uma honra ajudar"
+6. Assinatura profissional
+Tom: caloroso, mas profissional.</pre></div>
+
+  <div class="folio">Cap. 25 · Clientes</div>
+</section>
+
+<!-- ================= CAP 25 · PÁGINA 4 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">25.5</span>Presença digital: landing page e 7 dias de conteúdo</h3>
+  <p>Sem equipe de marketing, o fluxo é este: o Claude escreve o briefing completo da página e uma semana de
+  conteúdo; você revisa, ajusta com a sua voz e publica.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Briefing de landing page</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie o briefing de uma landing page para o escritório
+[NOME]: objetivo [captar leads], área [PREENCHA], público
+[DESCREVA], diferencial [PREENCHA].
+GERE: 3 headlines (máx. 10 palavras) com subheadline; 3
+dores do público; solução em 3 bullets; sugestão de prova
+social; formulário (nome, WhatsApp, problema, descrição);
+3 textos de botão; FAQ com 5 perguntas.
+<i>Depois, cole o resultado em um construtor de sites por IA
+(ex.: Lovable) com o prefixo: "Crie uma landing page
+responsiva com:"</i></pre></div>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Conteúdo · 7 dias</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie um plano de 7 dias de Instagram para advogado(a) de
+[ÁREA], público [DESCREVA]. Para cada dia:
+1. FORMATO: carrossel, Reels (roteiro de 30–60s) ou post
+2. GANCHO: primeira frase que para o scroll (máx. 10
+   palavras)
+3. CONTEÚDO COMPLETO: slides, roteiro ou legenda
+4. CTA claro + 5 hashtags
+REGRAS: <b>nunca prometa resultado jurídico</b>; alterne os
+formatos; tom acessível, com autoridade.</pre></div>
+
+  <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
+    <div><strong>Nada entra no ar sem a sua revisão.</strong> Headline que promete resultado ("ganhe sua ação")
+    viola as regras de publicidade da advocacia — a regra ética do bloco 25.2 vale aqui também, palavra por
+    palavra.</div></div>
+
+  <div class="folio">Cap. 25 · Clientes</div>
+</section>
+
+<!-- ================= CAP 26 · PÁGINA 1 ================= -->
+<section class="sheet pad">
+  <p class="kicker">Capítulo 26 · Parte 6 — Escritório Super Inteligente</p>
+  <h2 class="h-chapter">Gestão: o escritório que <em>roda sem você</em></h2>
+  <p class="lead">Escritório que depende da memória do dono não escala: prazo mora na cabeça de alguém, rotina
+  se refaz a cada contratação, honorário sai no achismo. Este capítulo instala a camada gerencial da
+  Fundação I — uma reunião semanal que nenhum caso escapa, procedimentos escritos que qualquer pessoa executa,
+  contratação com prova prática e precificação calculada. Tudo com o Claude que você já sabe operar.</p>
+
+  <h3 class="sec"><span class="n">26.1</span>RCC: a Reunião de Controle de Casos</h3>
+  <p>A RCC é uma reunião fixa e curta — 30 a 45 minutos, toda semana, mesmo dia e horário — em que
+  <strong>todos os casos ativos passam pela mesma três perguntas</strong>: o que andou, o que está travado,
+  qual o próximo passo e seu prazo. Nenhum caso fica mais de uma semana sem revisão. O Claude entra nos dois
+  pontos em que a reunião costuma morrer: a preparação da pauta e o registro do que ficou decidido.</p>
+
+  <div class="flow">
+    <div class="step"><span class="sn">1</span><div class="sb"><h4>Antes — a pauta se monta sozinha</h4>
+      <p>Para cada caso, peça ao Claude um relatório executivo de cinco linhas: situação atual, último andamento,
+      risco e próximo passo. Você chega à reunião com a pauta pronta, não com a memória.</p></div></div>
+    <div class="step"><span class="sn">2</span><div class="sb"><h4>Durante — três perguntas por caso</h4>
+      <p>Andou? Travou? Próximo passo com responsável e prazo. Anote as decisões em tópicos brutos,
+      sem se preocupar com forma — a forma é o passo seguinte.</p></div></div>
+    <div class="step"><span class="sn">3</span><div class="sb"><h4>Depois — a ata em dois minutos</h4>
+      <p>Jogue as anotações brutas no prompt da página seguinte. Saem as deliberações e a tabela de pendências
+      com responsável, ação e prazo — o documento que impede o "achei que fosse com você".</p></div></div>
+  </div>
+
+  <div class="callout co-ok"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span>
+    <div><strong>Escritório solo também faz RCC.</strong> A reunião é com você mesmo: sexta-feira, 30 minutos,
+    todos os casos na mesa, ata gerada e arquivada. O hábito que hoje organiza cinco processos é o mesmo que
+    amanhã organiza a equipe — quando ela chegar, o ritual já existe.</div></div>
+
+  <div class="folio">Cap. 26 · Gestão</div>
+</section>
+
+<!-- ================= CAP 26 · PÁGINA 2 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">26.2</span>O prompt da ata da RCC</h3>
+  <p>Alimente com as anotações brutas da reunião. O que estiver ambíguo volta marcado para você confirmar —
+  a IA organiza, mas não adivinha o que foi decidido.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Ata da RCC</span><span>copie e adapte [colchetes]</span></div>
+<pre>Transforme estas anotações brutas da nossa reunião semanal de
+controle de casos em uma ata profissional.
+
+ANOTAÇÕES: [COLE OS TÓPICOS DA REUNIÃO]
+
+GERE:
+1. CABEÇALHO (escritório, participantes, duração)
+2. PAUTA: casos revisados, na ordem discutida
+3. DELIBERAÇÕES: uma linha por decisão tomada
+4. PENDÊNCIAS em tabela: Responsável | Ação | Prazo | Status
+5. PONTOS DE ATENÇÃO: prazos fatais da semana e casos parados
+
+REGRAS: marque <b>[CONFIRMAR]</b> em qualquer informação ambígua;
+máximo 2 páginas; linguagem direta, sem juridiquês.</pre></div>
+
+  <h3 class="sec"><span class="n">26.3</span>POP: o procedimento que dispensa você</h3>
+  <p>POP é o Procedimento Operacional Padrão: a rotina escrita de um jeito que <strong>qualquer pessoa execute
+  sem treinamento prévio</strong> — do protocolo ao controle de prazos. Escritório sem POP treina cada
+  contratado do zero e perde o procedimento quando alguém sai. Comece pelas três rotinas mais críticas.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · POP</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie um POP (Procedimento Operacional Padrão) para:
+
+ATIVIDADE: [ex.: protocolar petição, controlar prazos, atender
+cliente novo]   RESPONSÁVEL: [cargo]
+FREQUÊNCIA: [diária / semanal / por demanda]
+
+GERE:
+1. OBJETIVO (2 linhas) e GATILHO (quando o procedimento começa)
+2. PASSO A PASSO: máx. 10 passos, uma ação específica por passo
+3. FERRAMENTAS utilizadas e CHECKLIST de verificação
+4. EXCEÇÕES e como tratá-las; TEMPO ESTIMADO e INDICADOR
+
+Linguagem simples: quem nunca fez a tarefa deve conseguir
+executá-la só com este documento.</pre></div>
+
+  <div class="folio">Cap. 26 · Gestão</div>
+</section>
+
+<!-- ================= CAP 26 · PÁGINA 3 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">26.4</span>Contratar com prova prática, não com simpatia</h3>
+  <p>Currículo mede passado; entrevista mede conversa. O que mede trabalho é <strong>prova prática</strong>:
+  um caso real da sua área para o candidato resolver em duas horas. O Claude monta o processo seletivo inteiro —
+  da descrição da vaga ao scorecard com pesos — e você julga desempenho, não retórica.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Processo seletivo</span><span>copie e adapte [colchetes]</span></div>
+<pre>Crie o roteiro completo de processo seletivo para:
+VAGA: [ex.: advogado(a) trabalhista pleno, estagiário(a)]
+ESCRITÓRIO: [porte e cidade]
+
+GERE:
+1. DESCRIÇÃO DA VAGA para LinkedIn e Instagram
+2. TRIAGEM: 5 critérios eliminatórios para filtrar currículos
+3. PROVA PRÁTICA: caso real da área, para resolver em 2 horas
+4. ENTREVISTA: 10 perguntas comportamentais + 5 técnicas,
+   com o que avaliar em cada resposta
+5. CASE FINAL: dinâmica de 30 min simulando o dia a dia
+6. SCORECARD: tabela com critérios e pesos
+7. CRONOGRAMA em dias úteis, do anúncio à decisão</pre></div>
+
+  <h3 class="sec"><span class="n">26.5</span>A Calculadora de Honorários</h3>
+  <p>Honorário não é chute nem vergonha: é conta. A base é o seu <strong>custo-hora real</strong> — quanto o
+  escritório gasta para existir por hora produtiva — e o <strong>piso</strong>, abaixo do qual você paga para
+  trabalhar. A tabela de honorários da OAB entra como referência de mercado, com os valores que você mesmo
+  cola da seccional.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Calculadora de honorários</span><span>copie e adapte [colchetes]</span></div>
+<pre>Atue como consultor financeiro de escritórios de advocacia.
+SERVIÇO: tipo [ex.: ação trabalhista, inventário]; complexidade
+[baixa/média/alta]; horas estimadas [X]; risco [baixo/médio/alto].
+ESCRITÓRIO: estado [UF]; custo fixo mensal R$ [aluguel + salários
++ software + outros]; horas produtivas/mês [X, ou use 160].
+
+CALCULE:
+1. CUSTO-HORA REAL: custo fixo ÷ horas produtivas
+2. PISO: custo-hora × horas estimadas × margem de 2,5
+3. REFERÊNCIA: colo abaixo a tabela OAB da minha seccional —
+   <b>não estime valores por conta própria</b>. TABELA: [COLE DA SUA OAB]
+4. FAIXA RECOMENDADA: do piso ao valor de mercado, justificada
+5. PROPOSTA: texto de 3 parágrafos pronto para o cliente</pre></div>
+
+  <div class="folio">Cap. 26 · Gestão</div>
+</section>
+
+<!-- ================= CAP 26 · PÁGINA 4 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">26.5</span>Quatro modalidades de cobrança (continuação)</h3>
+  <p>O prompt acima já devolve a tabela comparativa calculada para o seu caso. O critério de escolha é este:</p>
+  <table class="t">
+    <tr><th>Modalidade</th><th>Quando usar</th><th>Risco do escritório</th></tr>
+    <tr><td>Fixo</td><td>Escopo fechado: inventário, contrato, parecer</td><td>Estimar mal as horas</td></tr>
+    <tr><td>Por hora</td><td>Escopo aberto, consultoria contínua</td><td>Resistência do cliente ao relógio</td></tr>
+    <tr><td>Êxito</td><td>Autor sem recursos, contingência alta</td><td>Total — zero se não ganhar</td></tr>
+    <tr><td>Híbrido</td><td>Fixo reduzido + percentual no êxito</td><td>Equilibrado — o mais comum</td></tr>
+  </table>
+
+  <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
+    <div><strong>Tabela OAB é referência, não oráculo.</strong> A tabela da sua seccional funciona como limite
+    mínimo de honorários (art. 30 do EAOAB) e é atualizada periodicamente: consulte o site da OAB do seu estado
+    e cole os valores vigentes no prompt. Nunca aceite valores que a IA "lembrar" — e o contrato de honorários
+    final continua sendo documento seu, revisado e assinado por você.</div></div>
+
+  <h3 class="sec"><span class="n">26.6</span>Os 6 Projects do escritório</h3>
+  <p>Tudo o que este capítulo produz precisa de endereço fixo. O mapa recomendado (a mecânica de criar Projects
+  e gravar instruções persistentes está no Cap. 12):</p>
+  <div class="grid3">
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-scale"/></svg></span>
+      <h4>1 · Trabalhista</h4><p>Teses, tabelas, cálculos e modelos de peça da área.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span>
+      <h4>2 · Cível e Contratos</h4><p>Revisão cláusula a cláusula, pareceres, modelos.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-chat"/></svg></span>
+      <h4>3 · Atendimento</h4><p>E-mails, WhatsApp e follow-up, com as regras de tom da banca.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-rocket"/></svg></span>
+      <h4>4 · Marketing</h4><p>Conteúdo, legendas e roteiros — dentro dos limites éticos da OAB.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-layers"/></svg></span>
+      <h4>5 · Gestão</h4><p>POPs, atas da RCC, processos seletivos e financeiro.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-user"/></svg></span>
+      <h4>6 · Cliente VIP</h4><p>Um Project por caso estratégico, com todo o contexto do cliente.</p></div>
+  </div>
+
+  <div class="folio">Cap. 26 · Gestão</div>
+</section>
+
+<!-- ================= CAP 27 · PÁGINA 1 ================= -->
+<section class="sheet pad">
+  <p class="kicker">Capítulo 27 · Parte 6 — Escritório Super Inteligente</p>
+  <h2 class="h-chapter">Casos avançados e a <em>prova da Fundação I</em></h2>
+  <p class="lead">Os dois prompts deste capítulo são os de maior valor por hora investida em toda a Fundação I:
+  transformar sentença em decisão estratégica e audiência em roteiro. Depois deles, o checklist que prova,
+  item a item, que o seu escritório concluiu o primeiro nível da linha Escritório Super Inteligente.</p>
+
+  <h3 class="sec"><span class="n">27.1</span>Análise de sentença com recomendação de recurso</h3>
+  <p>Recebeu a sentença e o relógio começou a correr. Antes de redigir qualquer razão, responda três coisas:
+  <strong>vale recorrer, quanto custa e qual o veredito</strong>. Este prompt devolve o relatório recursal
+  completo — ponto a ponto, custo-benefício e recomendação final — para decidir com o cliente em cima de
+  números, não de instinto.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Análise recursal</span><span>copie e adapte [colchetes]</span></div>
+<pre>Atue como advogado recursal experiente. Analise a sentença abaixo.
+
+SENTENÇA: [COLE A ÍNTEGRA]
+CONTEXTO: representamos o [autor/réu]; área [cível/trabalhista/
+previdenciário/tributário]; valor da causa R$ [X]; prazo do
+recurso vence em [data].
+
+RELATÓRIO RECURSAL:
+1. SÍNTESE: resultado + tabela de pontos deferidos × indeferidos
+2. PONTO A PONTO (tabela): fundamento da sentença | erro | tese
+   recursal | dispositivo legal | chance de reforma (ALTA/MÉDIA/BAIXA)
+3. RECURSO RECOMENDADO: tipo, prazo fatal, pontos prioritários
+   e efeito suspensivo (cabível? fundamento?)
+4. CUSTO-BENEFÍCIO: custo do recurso × valor em disputa ×
+   chance de reforma × tempo estimado de julgamento
+5. VEREDITO: <b>RECORRER | NEGOCIAR | CUMPRIR</b>, justificado</pre></div>
+
+  <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
+    <div><strong>Prazo fatal é fatal.</strong> A data que você informa no prompt é a que a IA usa — e ela não
+    conta prazo processual. Confira a intimação e o vencimento no sistema do tribunal antes de qualquer
+    decisão. E o veredito é insumo para a sua análise: a palavra final sobre recorrer é sua e do cliente.</div></div>
+
+  <div class="folio">Cap. 27 · Casos avançados</div>
+</section>
+
+<!-- ================= CAP 27 · PÁGINA 2 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">27.2</span>Planejamento completo de audiência</h3>
+  <p>Audiência boa se ganha na véspera. Este prompt monta o plano inteiro — roteiro com tempos, perguntas por
+  testemunha ordenadas do seguro ao arriscado, contra-perguntas, objeções prováveis com fundamento — em formato
+  de consulta rápida, para levar impresso e usar em tempo real. O item mais valioso é o campo "ponto mais fraco":
+  quanto mais honesto você for ali, melhor a preparação.</p>
+
+  <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Plano de audiência</span><span>copie e adapte [colchetes]</span></div>
+<pre>Você é um advogado experiente. Monte o plano completo da minha
+audiência, para eu consultar em tempo real durante a sessão.
+
+DADOS: tipo [instrução/conciliação/una]; vara [X]; área [X];
+representamos o [autor/réu]; teses das partes [resuma];
+testemunhas nossas e da parte contrária [nome — o que dirá];
+provas produzidas [liste]; nosso ponto mais fraco [seja honesto].
+
+PLANO:
+1. ROTEIRO (tabela: etapa | tempo estimado | o que fazer)
+2. PERGUNTAS por testemunha: pergunta | objetivo | resposta
+   ideal — mínimo 5, do mais seguro ao mais arriscado
+3. CONTRA-PERGUNTAS: contradições e fragilidades do depoimento
+4. OBJEÇÕES PROVÁVEIS: qual será | como rebater | fundamento
+5. ARMADILHAS A EVITAR + ARGUMENTOS-CHAVE por ordem de força
+6. CHECKLIST PRÉ-AUDIÊNCIA: procuração, documentos, testemunhas</pre></div>
+
+  <div class="card gold"><span class="ico"><svg class="ic"><use href="#i-search"/></svg></span>
+    <h4>Caso de nicho · Auditor Municipal</h4>
+    <p>Escritórios que assessoram municípios têm um diferencial raro: apontar os problemas antes da
+    fiscalização. Com o Claude operando o navegador, a rotina varre as publicações do Tribunal de Contas do
+    estado sobre o município e devolve uma tabela de achados — tema, problema, evidência, risco e ação
+    corretiva — com a fonte exata de cada item. A versão simples roda em uma hora de configuração; a rotina
+    semanal automatizada de monitoramento já é nível avançado — horizonte dos próximos níveis da linha,
+    não da Fundação I.</p></div>
+
+  <div class="folio">Cap. 27 · Casos avançados</div>
+</section>
+
+<!-- ================= CAP 27 · PÁGINA 3 ================= -->
+<section class="sheet pad">
+  <h3 class="sec" style="margin-top:0"><span class="n">27.3</span>Checklist Fundação I — imprima e risque</h3>
+  <p>A Fundação I não se conclui por leitura, se conclui por evidência. Imprima esta página e risque cada item
+  só quando ele existir de verdade — documento salvo, rotina rodando, número calculado.</p>
+
+  <ul class="check">
+    <li>Mapeei minhas horas invisíveis e classifiquei cada tarefa: operacional ou estratégica.</li>
+    <li>Rodei o diagnóstico completo do escritório e automatizei as 5 tarefas mais repetitivas.</li>
+    <li>Criei a biblioteca de e-mails do ciclo de vida do cliente (boas-vindas a encerramento).</li>
+    <li>Padronizei a atualização processual por WhatsApp — sem pânico, sem falsa esperança.</li>
+    <li>Configurei a cadência de follow-up de leads nos dias 2, 5, 10 e 20.</li>
+    <li>Instituí a RCC semanal: pauta pronta, três perguntas por caso, ata com tabela de pendências.</li>
+    <li>Documentei o POP das 3 rotinas mais críticas do escritório.</li>
+    <li>Tenho um roteiro de processo seletivo com prova prática e scorecard de pesos.</li>
+    <li>Calculei meu custo-hora real e meu piso de honorários — nunca mais precifiquei no chute.</li>
+    <li>Organizei os Projects do escritório por área, com instruções persistentes em cada um.</li>
+    <li>Rodei uma análise de sentença real com veredito RECORRER / NEGOCIAR / CUMPRIR.</li>
+    <li>Planejei uma audiência completa: roteiro, perguntas por testemunha e objeções prováveis.</li>
+  </ul>
+
+  <div class="callout co-ok"><span class="ci"><svg class="ic"><use href="#i-rocket"/></svg></span>
+    <div><strong>Doze itens riscados = Fundação I concluída.</strong> A partir daqui, o escritório tem base para
+    crescer: os níveis seguintes da linha <strong>Escritório Super Inteligente</strong> são formações avançadas
+    da Super Inteligênc[IA] — para quando a fundação estiver rodando e o escritório pedir escala. O caminho
+    está apontado no Fechamento deste manual. Nenhum nível avançado se sustenta sem o que você acabou de construir.</div></div>
+
+  <div class="folio">Cap. 27 · Casos avançados</div>
+</section>
+
 <!-- ============================================================
      APÊNDICES — "Claude para Advogados: do zero ao sênior"
      Folio: Apêndices
@@ -2768,7 +3321,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
     <tr><td><b>Anonimização</b></td><td>Substituição de nomes e dados que identificam cliente ou terceiros antes de qualquer prompt.</td></tr>
   </table>
 
-  <p class="small mt4">Definições calibradas para uso jurídico. As especificações técnicas citadas (limites, planos, modelos) valem para julho/2026 e estão detalhadas nos capítulos 2, 4, 6, 19 e 20.</p>
+  <p class="small mt4">Definições calibradas para uso jurídico. As especificações técnicas citadas (limites, planos, modelos) refletem o momento da escrita deste manual e estão detalhadas nos capítulos 2, 4, 6, 19 e 20.</p>
 
   <div class="folio">Apêndices · A — Glossário</div>
 </section>
@@ -2777,7 +3330,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 <section class="sheet pad">
   <p class="kicker">Apêndice B · Biblioteca de prompts</p>
   <h2 class="h-chapter">Índice da biblioteca <em>de prompts</em> — parte 1</h2>
-  <p class="lead">Todos os 64 prompts do manual, na ordem em que aparecem. Os textos completos ficam nos capítulos — aqui você só localiza o que precisa.</p>
+  <p class="lead">Todos os 77 prompts do manual, na ordem em que aparecem. Os textos completos ficam nos capítulos — aqui você só localiza o que precisa.</p>
 
   <table class="t tight-t">
     <tr><th style="width:34%">Prompt</th><th style="width:18%">Onde está</th><th>Para que serve</th></tr>
@@ -2846,7 +3399,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 
 <!-- ========== PÁGINA 4 · APÊNDICE B — ÍNDICE DE PROMPTS (3/3) ========== -->
 <section class="sheet pad">
-  <h3 class="sec" style="margin-top:0"><span class="n">B</span>Índice da biblioteca de prompts — parte 3 (caps. 15 a 20)</h3>
+  <h3 class="sec" style="margin-top:0"><span class="n">B</span>Índice da biblioteca de prompts — parte 3 (caps. 15 a 27)</h3>
 
   <table class="t tight-t">
     <tr><th style="width:34%">Prompt</th><th style="width:18%">Onde está</th><th>Para que serve</th></tr>
@@ -2867,6 +3420,19 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
     <tr><td>Exemplo de SKILL.md</td><td>Cap. 19 · 19.3</td><td>Esqueleto de uma Skill do escritório</td></tr>
     <tr><td>Criar skill</td><td>Cap. 19 · 19.4</td><td>Pedir ao próprio Claude que monte a Skill</td></tr>
     <tr><td>Resumo semanal</td><td>Cap. 20 · 20.4</td><td>Tarefa programada de resumo semanal no Cowork</td></tr>
+    <tr><td>Diagnóstico do escritório</td><td>Cap. 24 · 24.3</td><td>Mapear gargalos e prioridades do escritório</td></tr>
+    <tr><td>Ciclo de vida do cliente</td><td>Cap. 25 · 25.1</td><td>E-mails para cada momento da jornada</td></tr>
+    <tr><td>Atualização por WhatsApp</td><td>Cap. 25 · 25.2</td><td>Manter o cliente informado, com ética</td></tr>
+    <tr><td>Follow-up de leads</td><td>Cap. 25 · 25.3</td><td>Cadência 2/5/10/20 sem ser invasivo</td></tr>
+    <tr><td>Encerramento + indicação</td><td>Cap. 25 · 25.4</td><td>Fechar bem o caso e pedir indicação</td></tr>
+    <tr><td>Briefing de landing page</td><td>Cap. 25 · 25.5</td><td>Especificar a página de captação</td></tr>
+    <tr><td>Conteúdo · 7 dias</td><td>Cap. 25 · 25.5</td><td>Semana de posts que atraem clientes</td></tr>
+    <tr><td>Ata da RCC</td><td>Cap. 26 · 26.2</td><td>Reunião de controle de casos com ata</td></tr>
+    <tr><td>POP</td><td>Cap. 26 · 26.3</td><td>Procedimento operacional padrão do escritório</td></tr>
+    <tr><td>Processo seletivo</td><td>Cap. 26 · 26.4</td><td>Contratar com prova prática assistida</td></tr>
+    <tr><td>Calculadora de honorários</td><td>Cap. 26 · 26.5</td><td>Precificar com custo-hora real e piso</td></tr>
+    <tr><td>Análise recursal</td><td>Cap. 27 · 27.1</td><td>Decidir recurso com custo-benefício</td></tr>
+    <tr><td>Plano de audiência</td><td>Cap. 27 · 27.2</td><td>Roteiro completo de preparação</td></tr>
   </table>
 
   <p class="small mt4">Todos os prompts são originais deste manual e usam <b>[colchetes]</b> para o que você deve adaptar. Antes de usar qualquer um com dados de caso, releia o Apêndice C.</p>
@@ -2958,10 +3524,11 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 <section class="sheet pad">
   <p class="kicker">Apêndice E · Referências</p>
   <h2 class="h-chapter">Fontes oficiais <em>verificadas</em></h2>
-  <p class="lead">Todos os fatos técnicos deste manual (modelos, planos, limites, privacidade) foram conferidos nestas fontes em 24/07/2026. São elas — e não este livro — a autoridade final.</p>
+  <p class="lead">Todos os fatos técnicos deste manual (modelos, planos, limites, privacidade) foram conferidos nestas fontes oficiais. São elas — e não este livro — a autoridade final.</p>
 
   <table class="t">
     <tr><th style="width:34%">Fonte</th><th>O que consultar lá</th></tr>
+    <tr><td><a href="https://www.anthropic.com/news">anthropic.com/news</a></td><td><b>O canal permanente de novidades do Claude</b> — novos modelos, recursos e mudanças de planos, sempre no dia.</td></tr>
     <tr><td><a href="https://claude.com/pricing">claude.com/pricing</a></td><td>Planos, preços, limites de uso, usage credits e preços de API.</td></tr>
     <tr><td><a href="https://docs.claude.com/en/docs/about-claude/models/overview">docs.claude.com — Models overview</a></td><td>Modelos ativos e legados, contexto, cutoffs e preços por token.</td></tr>
     <tr><td><a href="https://docs.claude.com/en/docs/claude-code/overview">docs.claude.com — Claude Code overview</a></td><td>Superfícies do Claude Code, Skills, hooks, MCP e rotinas.</td></tr>
@@ -2974,7 +3541,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
   </table>
 
   <div class="callout co-warn mt4">
-    <div><b>A IA muda rápido demais para qualquer livro.</b> Modelos, preços e recursos citados neste manual podem estar diferentes quando você lê. Trate os capítulos técnicos como fotografia de julho/2026 e confirme nas fontes acima antes de tomar decisões de contratação ou compliance.</div>
+    <div><b>A IA muda rápido demais para qualquer livro.</b> Modelos, preços e recursos citados neste manual podem estar diferentes quando você lê. Trate os capítulos técnicos como um retrato do momento da escrita e confirme nas fontes acima antes de tomar decisões de contratação ou compliance.</div>
   </div>
 
   <div class="callout co-ok mt4">
@@ -3012,6 +3579,18 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
       aumentado à orquestração de agentes — para quem quer acelerar com acompanhamento direto.</p></div>
   </div>
 
+  <div class="card dark-c mt4">
+    <span class="ico"><svg class="ic"><use href="#i-link"/></svg></span>
+    <h4>Portas de entrada — continue com a gente</h4>
+    <ul class="tight" style="font-size:9.2pt;color:var(--cream-dim);margin-bottom:0">
+      <li><a href="https://site.superinteligencia.org/">site.superinteligencia.org</a> — o site oficial da Super Inteligênc[IA]</li>
+      <li><a href="https://superinteligenciajuridica.com/">superinteligenciajuridica.com</a> — a formação completa para advogados</li>
+      <li><a href="https://superinteligenciajuridica.com/mba-super-inteligencia-ia/">MBA Super Inteligência em IA</a> — a pós-graduação da nova advocacia</li>
+      <li><a href="https://www.marciliodrummond.com/">marciliodrummond.com</a> — a página pessoal do autor</li>
+      <li><a href="https://portfoliotech.superinteligencia.org/">portfoliotech.superinteligencia.org</a> — o portfólio de tecnologia</li>
+    </ul>
+  </div>
+
   <div class="quote mt6" style="max-width:150mm">"Este manual te deu o mapa. A jornada — com método, ética e constância —
   é sua. Comece hoje pelo Capítulo 23."
   <span class="qa" style="color:var(--gold-2)">— Marcílio Drummond</span></div>
@@ -3029,7 +3608,8 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
     "A inteligência artificial não substitui o advogado.<br>Substitui o advogado que não a utiliza."</p>
     <div class="gold-rule" style="margin:8mm auto"></div>
     <p style="font-size:8pt;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-dim)">Claude para Advogados · do zero ao sênior</p>
-    <p style="font-size:8pt;letter-spacing:.14em;color:var(--gold-2);margin-top:2mm">Edição Julho 2026 · Super Inteligênc[IA]</p>
+    <p style="font-size:8pt;letter-spacing:.14em;color:var(--gold-2);margin-top:2mm">Super Inteligênc[IA]</p>
+    <p style="font-size:8pt;letter-spacing:.08em;margin-top:2mm"><a href="https://site.superinteligencia.org/">site.superinteligencia.org</a></p>
   </div>
   <div></div>
 </section>

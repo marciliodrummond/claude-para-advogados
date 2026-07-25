@@ -1,7 +1,7 @@
 # Claude para Advogados — do zero ao sênior
 
 Manual completo e visual do ecossistema Claude (Anthropic) aplicado à advocacia brasileira.
-Edição julho/2026 · 80 páginas · Marcílio Guedes Drummond — Super Inteligênc[IA]
+Manual oficial · 95 páginas · Marcílio Guedes Drummond — Super Inteligênc[IA]
 
 ## Arquivos
 
@@ -19,4 +19,4 @@ Edição julho/2026 · 80 páginas · Marcílio Guedes Drummond — Super Inteli
 - **Apêndices:** glossário, índice dos 64 prompts, checklist de segurança para imprimir, modelo de política de uso de IA do escritório e fontes oficiais verificadas.
 
 Todos os fatos técnicos (modelos, planos, limites, privacidade) foram conferidos na documentação
-oficial da Anthropic em 24/07/2026. IA muda rápido — as fontes do Apêndice E são a autoridade final.
+oficial da Anthropic . IA muda rápido — as fontes do Apêndice E são a autoridade final.
