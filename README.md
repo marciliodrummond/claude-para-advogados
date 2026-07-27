@@ -5,7 +5,7 @@ Manual oficial · Marcílio Guedes Drummond — Super Inteligênc[IA]
 
 ## Arquivos
 
-- **`Claude-para-Advogados-do-Zero-ao-Senior.pdf`** — o manual final, pronto para ler, compartilhar e imprimir (A4). Sumário clicável, painel de marcadores por capítulo e todos os links navegáveis.
+- **`Claude-para-Advogados-do-Zero-ao-Senior.pdf`** — o manual final, pronto para ler, compartilhar e imprimir (A4). Sumário clicável, painel de marcadores por capítulo, todos os links navegáveis e **estrutura de acessibilidade** (leitor de tela navega por títulos, tabelas e listas).
 - **`index.html`** — a versão web do manual (single-file, sem dependências além do Google Fonts).
 
 ## Conteúdo
@@ -16,8 +16,12 @@ Manual oficial · Marcílio Guedes Drummond — Super Inteligênc[IA]
 - **Parte 3 — Prática por área:** casos completos em Trabalhista, Cível & Contratos, Penal, Consumidor e Família.
 - **Parte 4 — Sênior:** sistemas, Skills, Cowork, conectores/MCP, automação e limites do que não se delega.
 - **Parte 5 — Roadmap:** os 5 níveis do advogado com Claude + plano de 30 dias.
-- **Parte 6 — Escritório Super Inteligente · Fundação I:** diagnóstico, comunicação com clientes, gestão e casos avançados.
+- **Parte 6 — Escritório Super Inteligente · Fundação I:** diagnóstico, clientes, gestão, automação (Cowork, tarefas programadas, conectores) e casos avançados.
 - **Apêndices:** glossário, índice dos 77 prompts, checklist de segurança para imprimir, modelo de política de uso de IA do escritório e fontes oficiais verificadas.
+
+Traz ainda a comparação honesta com ChatGPT e Gemini, o marco regulatório brasileiro (Recomendação
+CFOAB n. 001/2024 e Resolução CNJ n. 615/2025, que revogou a 332/2020) e casos reais de advogados
+sancionados por jurisprudência inventada por IA.
 
 Todos os fatos técnicos (modelos, planos, limites de contexto, privacidade) foram conferidos na
 documentação oficial da Anthropic. Onde duas fontes oficiais divergem, o manual mostra a divergência

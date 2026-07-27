@@ -272,6 +272,52 @@ table.t.tight-t th{padding:2mm 2.5mm}
 .tag.g{background:var(--gold);color:#fff}
 .hr-gold{height:1px;background:linear-gradient(90deg,var(--gold-2),transparent);margin:5mm 0;border:none}
 
+/* ---------- DIAGRAMA DE INTERFACE ----------
+   Não é captura de tela: é esquema. Mostra ONDE fica cada coisa sem fingir
+   ser fotografia de uma tela que muda toda semana. */
+.ui{border:1px solid var(--line);border-radius:2.5mm;overflow:hidden;background:#fcf9f2;
+  break-inside:avoid;margin:3mm 0}
+.ui-bar{display:flex;align-items:center;gap:1.6mm;padding:1.9mm 3.2mm;background:var(--paper-2);
+  border-bottom:1px solid var(--line)}
+.ui-dot{width:1.7mm;height:1.7mm;border-radius:50%;background:#cfc3a6}
+.ui-ttl{margin-left:2.4mm;font-size:6.9pt;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bronze);font-weight:700}
+.ui-body{display:grid;grid-template-columns:32mm 1fr;min-height:38mm}
+.ui-body.solo{grid-template-columns:1fr}
+.ui-side{border-right:1px solid var(--line);padding:2.6mm;display:flex;flex-direction:column;gap:1.8mm;
+  background:rgba(233,223,200,.35)}
+.ui-main{padding:3mm;display:flex;flex-direction:column;gap:2.2mm}
+.ui-el{border:1px dashed #c9bda0;border-radius:1.8mm;padding:2.2mm 2.8mm;font-size:8.1pt;color:#5d5342;
+  display:flex;align-items:center;gap:2mm;background:rgba(255,255,255,.55)}
+.ui-el.fill{flex:1;align-items:flex-start}
+.ui-el.solid{border-style:solid;border-color:var(--gold-2);background:rgba(217,171,60,.10)}
+.ui-pin{flex-shrink:0;width:4.6mm;height:4.6mm;border-radius:50%;background:var(--gold-3);color:#fff;
+  font-family:var(--serif);font-size:7.6pt;font-weight:700;display:flex;align-items:center;
+  justify-content:center;line-height:1}
+.ui-cap{font-size:7.6pt;color:var(--bronze);padding:2mm 3.2mm;border-top:1px solid var(--line);
+  background:var(--paper-2);font-style:italic}
+.ui-legend{display:grid;grid-template-columns:1fr 1fr;gap:1.4mm 5mm;margin:2.5mm 0 0}
+.ui-legend div{display:flex;gap:2mm;font-size:8.1pt;line-height:1.45;align-items:baseline}
+.ui-legend b{color:var(--gold-3);font-family:var(--serif);flex-shrink:0}
+
+/* ---------- PROMPT + RESPOSTA ----------
+   O manual ensinava a perguntar e nunca mostrava o que volta. Este par
+   fecha o ciclo: o leitor calibra o que é uma resposta boa. */
+.io{margin:3mm 0;break-inside:avoid}
+.io .prompt{margin:0 0 0}
+.answer{background:#fbf8f0;border:1px solid var(--line);border-top:none;
+  border-left:3px solid var(--gold-2);border-radius:0 0 2.5mm 2.5mm;padding:3mm 4.2mm;font-size:8.8pt;
+  line-height:1.55;break-inside:avoid}
+.answer .a-head{display:flex;align-items:center;gap:2mm;font-size:6.9pt;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold-3);font-weight:700;margin-bottom:2mm}
+.answer .a-head .ic{width:3.4mm;height:3.4mm}
+.answer p{margin-bottom:1.8mm}
+.answer p:last-child{margin-bottom:0}
+.answer ul{margin:0 0 1.8mm 4mm}
+.answer li{margin-bottom:1mm}
+.answer .a-note{display:block;margin-top:2.2mm;padding-top:2mm;border-top:1px dashed var(--line);
+  font-size:7.9pt;color:var(--bronze);font-style:italic}
+
 /* ---------- SUMÁRIO ---------- */
 .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 10mm;margin-top:6mm}
 .toc-part{display:flex;align-items:baseline;gap:1.5mm;text-decoration:none;color:var(--gold-3);
@@ -362,7 +408,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
 
   <footer>
     <div class="cv-specs">
-      <div class="cv-spec"><b>97</b><span>páginas</span></div>
+      <div class="cv-spec"><b>102</b><span>páginas</span></div>
       <div class="cv-spec"><b>77</b><span>prompts prontos</span></div>
       <div class="cv-spec"><b>5</b><span>áreas do Direito</span></div>
       <div class="cv-spec"><b>28</b><span>capítulos</span></div>
@@ -488,44 +534,44 @@ table.t.tight-t th{padding:2mm 2.5mm}
   <div class="toc-grid">
     <div><a class="toc-part" href="#parte-0"><span class="toc-t">Parte 00 · Antes de começar</span><span class="toc-dots"></span><span class="toc-p">05</span></a>
 <a class="toc-row" href="#cap-01"><span class="toc-n">01</span><span class="toc-t">Por que Claude</span><span class="toc-dots"></span><span class="toc-p">06</span></a>
-<a class="toc-row" href="#cap-02"><span class="toc-n">02</span><span class="toc-t">Setup em 15 minutos</span><span class="toc-dots"></span><span class="toc-p">08</span></a>
-<a class="toc-row" href="#cap-03"><span class="toc-n">03</span><span class="toc-t">Sigilo, LGPD e ética: as regras inegociáveis</span><span class="toc-dots"></span><span class="toc-p">10</span></a>
-<a class="toc-part" href="#parte-1"><span class="toc-t">Parte 01 · Fundamentos</span><span class="toc-dots"></span><span class="toc-p">13</span></a>
-<a class="toc-row" href="#cap-04"><span class="toc-n">04</span><span class="toc-t">Como o Claude pensa</span><span class="toc-dots"></span><span class="toc-p">14</span></a>
-<a class="toc-row" href="#cap-05"><span class="toc-n">05</span><span class="toc-t">Anatomia do prompt jurídico</span><span class="toc-dots"></span><span class="toc-p">16</span></a>
-<a class="toc-row" href="#cap-06"><span class="toc-n">06</span><span class="toc-t">Chat, Artefato ou Projeto</span><span class="toc-dots"></span><span class="toc-p">19</span></a>
-<a class="toc-row" href="#cap-07"><span class="toc-n">07</span><span class="toc-t">Os 20 prompts essenciais do dia a dia</span><span class="toc-dots"></span><span class="toc-p">21</span></a>
-<a class="toc-part" href="#parte-2"><span class="toc-t">Parte 02 · O método</span><span class="toc-dots"></span><span class="toc-p">26</span></a>
-<a class="toc-row" href="#cap-08"><span class="toc-n">08</span><span class="toc-t">Pesquisa jurídica com verificação obrigatória</span><span class="toc-dots"></span><span class="toc-p">27</span></a>
-<a class="toc-row" href="#cap-09"><span class="toc-n">09</span><span class="toc-t">Processos inteiros e documentos longos</span><span class="toc-dots"></span><span class="toc-p">30</span></a>
-<a class="toc-row" href="#cap-10"><span class="toc-n">10</span><span class="toc-t">Redação assistida em três movimentos</span><span class="toc-dots"></span><span class="toc-p">33</span></a>
-<a class="toc-row" href="#cap-11"><span class="toc-n">11</span><span class="toc-t">Análise visual: o Claude lê seus scans</span><span class="toc-dots"></span><span class="toc-p">36</span></a>
-<a class="toc-row" href="#cap-12"><span class="toc-n">12</span><span class="toc-t">Memória, Projects e economia de uso</span><span class="toc-dots"></span><span class="toc-p">38</span></a>
-<a class="toc-part" href="#parte-3"><span class="toc-t">Parte 03 · Prática por área</span><span class="toc-dots"></span><span class="toc-p">40</span></a>
-<a class="toc-row" href="#cap-13"><span class="toc-n">13</span><span class="toc-t">Trabalhista: horas extras e assédio moral</span><span class="toc-dots"></span><span class="toc-p">41</span></a>
-<a class="toc-row" href="#cap-14"><span class="toc-n">14</span><span class="toc-t">Cível &amp; Contratos: locação sob risco</span><span class="toc-dots"></span><span class="toc-p">44</span></a>
-<a class="toc-row" href="#cap-15"><span class="toc-n">15</span><span class="toc-t">Penal: defesa com ética inegociável</span><span class="toc-dots"></span><span class="toc-p">47</span></a>
-<a class="toc-row" href="#cap-16"><span class="toc-n">16</span><span class="toc-t">Consumidor: cobrança indevida ponta a ponta</span><span class="toc-dots"></span><span class="toc-p">50</span></a></div>
-    <div><a class="toc-row" href="#cap-17"><span class="toc-n">17</span><span class="toc-t">Família: divórcio com partilha e alimentos</span><span class="toc-dots"></span><span class="toc-p">53</span></a>
-<a class="toc-part" href="#parte-4"><span class="toc-t">Parte 04 · Sênior</span><span class="toc-dots"></span><span class="toc-p">56</span></a>
-<a class="toc-row" href="#cap-18"><span class="toc-n">18</span><span class="toc-t">Do prompt ao sistema</span><span class="toc-dots"></span><span class="toc-p">57</span></a>
-<a class="toc-row" href="#cap-19"><span class="toc-n">19</span><span class="toc-t">Skills: instruções reutilizáveis do seu…</span><span class="toc-dots"></span><span class="toc-p">59</span></a>
-<a class="toc-row" href="#cap-20"><span class="toc-n">20</span><span class="toc-t">Além do chat: Cowork, conectores e automação</span><span class="toc-dots"></span><span class="toc-p">62</span></a>
-<a class="toc-row" href="#cap-21"><span class="toc-n">21</span><span class="toc-t">Limites: o que não delegar (e por quê)</span><span class="toc-dots"></span><span class="toc-p">65</span></a>
-<a class="toc-part" href="#parte-5"><span class="toc-t">Parte 05 · Roadmap zero → sênior</span><span class="toc-dots"></span><span class="toc-p">67</span></a>
-<a class="toc-row" href="#cap-22"><span class="toc-n">22</span><span class="toc-t">Os 5 níveis do advogado com Claude</span><span class="toc-dots"></span><span class="toc-p">68</span></a>
-<a class="toc-row" href="#cap-23"><span class="toc-n">23</span><span class="toc-t">Plano de 30 dias</span><span class="toc-dots"></span><span class="toc-p">70</span></a>
-<a class="toc-part" href="#parte-6"><span class="toc-t">Parte 06 · Escritório Super Inteligente</span><span class="toc-dots"></span><span class="toc-p">71</span></a>
-<a class="toc-row" href="#cap-24"><span class="toc-n">24</span><span class="toc-t">Diagnóstico: do operador ao maestro</span><span class="toc-dots"></span><span class="toc-p">72</span></a>
-<a class="toc-row" href="#cap-25"><span class="toc-n">25</span><span class="toc-t">Clientes: comunicação que fideliza e capta</span><span class="toc-dots"></span><span class="toc-p">75</span></a>
-<a class="toc-row" href="#cap-26"><span class="toc-n">26</span><span class="toc-t">Gestão: o escritório que roda sem você</span><span class="toc-dots"></span><span class="toc-p">79</span></a>
-<a class="toc-row" href="#cap-27"><span class="toc-n">27</span><span class="toc-t">Automação: o escritório que trabalha sozinho</span><span class="toc-dots"></span><span class="toc-p">83</span></a>
-<a class="toc-row" href="#cap-28"><span class="toc-n">28</span><span class="toc-t">Casos avançados e a prova da Fundação I</span><span class="toc-dots"></span><span class="toc-p">85</span></a>
-<a class="toc-row" href="#apendice-a"><span class="toc-n">A</span><span class="toc-t">Glossário do manual</span><span class="toc-dots"></span><span class="toc-p">88</span></a>
-<a class="toc-row" href="#apendice-b"><span class="toc-n">B</span><span class="toc-t">Índice da biblioteca de prompts — parte 1</span><span class="toc-dots"></span><span class="toc-p">89</span></a>
-<a class="toc-row" href="#apendice-c"><span class="toc-n">C</span><span class="toc-t">Checklist de segurança antes de qualquer…</span><span class="toc-dots"></span><span class="toc-p">92</span></a>
-<a class="toc-row" href="#apendice-d"><span class="toc-n">D</span><span class="toc-t">Política de uso de IA do escritório</span><span class="toc-dots"></span><span class="toc-p">93</span></a>
-<a class="toc-row" href="#apendice-e"><span class="toc-n">E</span><span class="toc-t">Fontes oficiais verificadas</span><span class="toc-dots"></span><span class="toc-p">95</span></a></div>
+<a class="toc-row" href="#cap-02"><span class="toc-n">02</span><span class="toc-t">Setup em 15 minutos</span><span class="toc-dots"></span><span class="toc-p">10</span></a>
+<a class="toc-row" href="#cap-03"><span class="toc-n">03</span><span class="toc-t">Sigilo, LGPD e ética: as regras inegociáveis</span><span class="toc-dots"></span><span class="toc-p">13</span></a>
+<a class="toc-part" href="#parte-1"><span class="toc-t">Parte 01 · Fundamentos</span><span class="toc-dots"></span><span class="toc-p">17</span></a>
+<a class="toc-row" href="#cap-04"><span class="toc-n">04</span><span class="toc-t">Como o Claude pensa</span><span class="toc-dots"></span><span class="toc-p">18</span></a>
+<a class="toc-row" href="#cap-05"><span class="toc-n">05</span><span class="toc-t">Anatomia do prompt jurídico</span><span class="toc-dots"></span><span class="toc-p">20</span></a>
+<a class="toc-row" href="#cap-06"><span class="toc-n">06</span><span class="toc-t">Chat, Artefato ou Projeto</span><span class="toc-dots"></span><span class="toc-p">23</span></a>
+<a class="toc-row" href="#cap-07"><span class="toc-n">07</span><span class="toc-t">Os 20 prompts essenciais do dia a dia</span><span class="toc-dots"></span><span class="toc-p">25</span></a>
+<a class="toc-part" href="#parte-2"><span class="toc-t">Parte 02 · O método</span><span class="toc-dots"></span><span class="toc-p">30</span></a>
+<a class="toc-row" href="#cap-08"><span class="toc-n">08</span><span class="toc-t">Pesquisa jurídica com verificação obrigatória</span><span class="toc-dots"></span><span class="toc-p">31</span></a>
+<a class="toc-row" href="#cap-09"><span class="toc-n">09</span><span class="toc-t">Processos inteiros e documentos longos</span><span class="toc-dots"></span><span class="toc-p">34</span></a>
+<a class="toc-row" href="#cap-10"><span class="toc-n">10</span><span class="toc-t">Redação assistida em três movimentos</span><span class="toc-dots"></span><span class="toc-p">37</span></a>
+<a class="toc-row" href="#cap-11"><span class="toc-n">11</span><span class="toc-t">Análise visual: o Claude lê seus scans</span><span class="toc-dots"></span><span class="toc-p">40</span></a>
+<a class="toc-row" href="#cap-12"><span class="toc-n">12</span><span class="toc-t">Memória, Projects e economia de uso</span><span class="toc-dots"></span><span class="toc-p">42</span></a>
+<a class="toc-part" href="#parte-3"><span class="toc-t">Parte 03 · Prática por área</span><span class="toc-dots"></span><span class="toc-p">44</span></a>
+<a class="toc-row" href="#cap-13"><span class="toc-n">13</span><span class="toc-t">Trabalhista: horas extras e assédio moral</span><span class="toc-dots"></span><span class="toc-p">45</span></a>
+<a class="toc-row" href="#cap-14"><span class="toc-n">14</span><span class="toc-t">Cível &amp; Contratos: locação sob risco</span><span class="toc-dots"></span><span class="toc-p">48</span></a>
+<a class="toc-row" href="#cap-15"><span class="toc-n">15</span><span class="toc-t">Penal: defesa com ética inegociável</span><span class="toc-dots"></span><span class="toc-p">51</span></a>
+<a class="toc-row" href="#cap-16"><span class="toc-n">16</span><span class="toc-t">Consumidor: cobrança indevida ponta a ponta</span><span class="toc-dots"></span><span class="toc-p">54</span></a></div>
+    <div><a class="toc-row" href="#cap-17"><span class="toc-n">17</span><span class="toc-t">Família: divórcio com partilha e alimentos</span><span class="toc-dots"></span><span class="toc-p">57</span></a>
+<a class="toc-part" href="#parte-4"><span class="toc-t">Parte 04 · Sênior</span><span class="toc-dots"></span><span class="toc-p">60</span></a>
+<a class="toc-row" href="#cap-18"><span class="toc-n">18</span><span class="toc-t">Do prompt ao sistema</span><span class="toc-dots"></span><span class="toc-p">61</span></a>
+<a class="toc-row" href="#cap-19"><span class="toc-n">19</span><span class="toc-t">Skills: instruções reutilizáveis do seu…</span><span class="toc-dots"></span><span class="toc-p">63</span></a>
+<a class="toc-row" href="#cap-20"><span class="toc-n">20</span><span class="toc-t">Além do chat: Cowork, conectores e automação</span><span class="toc-dots"></span><span class="toc-p">66</span></a>
+<a class="toc-row" href="#cap-21"><span class="toc-n">21</span><span class="toc-t">Limites: o que não delegar (e por quê)</span><span class="toc-dots"></span><span class="toc-p">69</span></a>
+<a class="toc-part" href="#parte-5"><span class="toc-t">Parte 05 · Roadmap zero → sênior</span><span class="toc-dots"></span><span class="toc-p">71</span></a>
+<a class="toc-row" href="#cap-22"><span class="toc-n">22</span><span class="toc-t">Os 5 níveis do advogado com Claude</span><span class="toc-dots"></span><span class="toc-p">72</span></a>
+<a class="toc-row" href="#cap-23"><span class="toc-n">23</span><span class="toc-t">Plano de 30 dias</span><span class="toc-dots"></span><span class="toc-p">74</span></a>
+<a class="toc-part" href="#parte-6"><span class="toc-t">Parte 06 · Escritório Super Inteligente</span><span class="toc-dots"></span><span class="toc-p">75</span></a>
+<a class="toc-row" href="#cap-24"><span class="toc-n">24</span><span class="toc-t">Diagnóstico: do operador ao maestro</span><span class="toc-dots"></span><span class="toc-p">76</span></a>
+<a class="toc-row" href="#cap-25"><span class="toc-n">25</span><span class="toc-t">Clientes: comunicação que fideliza e capta</span><span class="toc-dots"></span><span class="toc-p">79</span></a>
+<a class="toc-row" href="#cap-26"><span class="toc-n">26</span><span class="toc-t">Gestão: o escritório que roda sem você</span><span class="toc-dots"></span><span class="toc-p">83</span></a>
+<a class="toc-row" href="#cap-27"><span class="toc-n">27</span><span class="toc-t">Automação: o escritório que trabalha sozinho</span><span class="toc-dots"></span><span class="toc-p">87</span></a>
+<a class="toc-row" href="#cap-28"><span class="toc-n">28</span><span class="toc-t">Casos avançados e a prova da Fundação I</span><span class="toc-dots"></span><span class="toc-p">90</span></a>
+<a class="toc-row" href="#apendice-a"><span class="toc-n">A</span><span class="toc-t">Glossário do manual</span><span class="toc-dots"></span><span class="toc-p">93</span></a>
+<a class="toc-row" href="#apendice-b"><span class="toc-n">B</span><span class="toc-t">Índice da biblioteca de prompts — parte 1</span><span class="toc-dots"></span><span class="toc-p">94</span></a>
+<a class="toc-row" href="#apendice-c"><span class="toc-n">C</span><span class="toc-t">Checklist de segurança antes de qualquer…</span><span class="toc-dots"></span><span class="toc-p">97</span></a>
+<a class="toc-row" href="#apendice-d"><span class="toc-n">D</span><span class="toc-t">Política de uso de IA do escritório</span><span class="toc-dots"></span><span class="toc-p">98</span></a>
+<a class="toc-row" href="#apendice-e"><span class="toc-n">E</span><span class="toc-t">Fontes oficiais verificadas</span><span class="toc-dots"></span><span class="toc-p">100</span></a></div>
   </div>
   <div class="folio">Claude para Advogados · do Zero ao Escritório Super Inteligente</div>
 </section>
@@ -582,7 +628,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
   em português formal, <strong>instruções seguidas à risca</strong> (formatos, restrições, "não invente jurisprudência")
   e <strong>transparência sobre limites</strong> — ele admite o que não sabe com mais frequência. Onde os concorrentes
   levam vantagem: integração nativa com o ecossistema Google (Gemini) e ubiquidade/base instalada (ChatGPT).
-  Este manual é sobre Claude — mas o método que você vai aprender serve para qualquer modelo sério.</p>
+  O confronto com números oficiais dos três fabricantes está em §1.5 — inclusive onde eles empatam.</p>
 
   <div class="folio">Cap. 01 · Por que Claude</div>
 </section>
@@ -630,6 +676,121 @@ table.t.tight-t th{padding:2mm 2.5mm}
   <div class="folio">Cap. 01 · Por que Claude</div>
 </section>
 
+<!-- ================= CAP 1 · PÁGINA 3 ================= -->
+<section class="sheet pad" id="pagina-08">
+  <h3 class="sec" style="margin-top:0"><span class="n">1.5</span>Você já usa ChatGPT. Trocar ou somar?</h3>
+  <p style="font-size:9.4pt">Essa é a pergunta que você trouxe de casa, e fingir que ela não existe seria propaganda.
+  O ChatGPT é a IA que a advocacia brasileira já tem aberta: a própria OpenAI declara <strong>mais de 900 milhões de
+  usuários semanais</strong> e <strong>1 milhão de clientes empresariais</strong>. Nenhuma tabela desfaz isso — e nem
+  deveria. O que vem abaixo não é ranking: é o confronto dos poucos dados que os três fabricantes <em class="g">publicam
+  oficialmente</em> e que mudam o resultado de um trabalho jurídico.</p>
+
+  <table class="t">
+    <tr><th style="width:19%">O que decide no Direito</th><th style="width:27%">Claude</th><th style="width:27%">ChatGPT</th><th style="width:27%">Gemini</th></tr>
+    <tr>
+      <td><b>Autos inteiros de uma vez</b><br><span class="small">janela de contexto no chat</span></td>
+      <td><b>1M de tokens</b> com Opus 5 ou Sonnet 5, em <b>todos os planos pagos</b>.</td>
+      <td><b>272 mil</b> (GPT-5.6 Sol) — o único número que a OpenAI publica, na página do plano Business. Para Plus e Enterprise não há número divulgado.</td>
+      <td><b>1M</b> no AI Pro e no AI Ultra; 128 mil no AI Plus; 32 mil sem assinatura.</td>
+    </tr>
+    <tr>
+      <td><b>Os modelos de hoje</b></td>
+      <td>Opus 5 (recomendado, padrão do Max), Fable 5 (o mais capaz), Sonnet 5, Haiku 4.5.</td>
+      <td>Família GPT-5.6: Sol, Terra e Luna. No chat só o Sol é selecionável — e ele <b>não existe no Free nem no Go</b>; o Plus não alcança o nível "Extra High".</td>
+      <td>Gemini 3 Pro, 3 Flash e 3 Flash-Lite — os mesmos três em AI Plus, AI Pro e AI Ultra. O que muda é a cota.</td>
+    </tr>
+    <tr>
+      <td><b>Plano individual: treina com o que você escreve?</b></td>
+      <td>Free, Pro e Max dependem da sua escolha de privacidade — a página de preços rotula a linha como <i>opt-out</i>.</td>
+      <td><b>Sim, salvo opt-out.</b> Texto oficial: nos serviços para indivíduos, "podemos usar seu conteúdo para treinar nossos modelos".</td>
+      <td><b>Sim, com a Atividade ligada</b> — e o Google avisa que "um subconjunto das conversas é revisado por revisores humanos".</td>
+    </tr>
+    <tr>
+      <td><b>Plano corporativo: treina?</b></td>
+      <td><b>Não por padrão</b> — Team, Enterprise e API.</td>
+      <td><b>Não por padrão</b> — Business, Enterprise e API.</td>
+      <td><b>Não sem permissão</b> — o Workspace "não usa dados do cliente para treinar modelos" sem instrução prévia.</td>
+    </tr>
+    <tr>
+      <td><b>Porta de entrada paga</b></td>
+      <td>Pro: US$&nbsp;20/mês (US$&nbsp;17 no anual).</td>
+      <td>Plus: US$&nbsp;20/mês — sem opção de plano anual.</td>
+      <td>Google AI Pro: R$&nbsp;96,99/mês, cobrado em real. O AI Plus custa R$&nbsp;24,99, mas com 128 mil de contexto.</td>
+    </tr>
+  </table>
+
+  <p class="small"><b>Fontes oficiais desta comparação.</b>
+  <a href="https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans">Anthropic — contexto</a> ·
+  <a href="https://platform.claude.com/docs/en/about-claude/models/overview">modelos</a> ·
+  <a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training">treino (comercial)</a> ·
+  <a href="https://help.openai.com/en/articles/12003714-chatgpt-business-models-limits">OpenAI — contexto no Business</a> ·
+  <a href="https://help.openai.com/en/articles/20001354-gpt-56-in-chatgpt">GPT-5.6 no ChatGPT</a> ·
+  <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance">uso de dados para treino</a> ·
+  <a href="https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus">Plus</a> ·
+  <a href="https://openai.com/index/accelerating-the-next-phase-ai/">usuários semanais</a> ·
+  <a href="https://support.google.com/gemini/answer/16275805">Google — limites por plano</a> ·
+  <a href="https://gemini.google/subscriptions/">assinaturas</a> ·
+  <a href="https://support.google.com/gemini/answer/13594961">privacidade do app</a> ·
+  <a href="https://knowledge.workspace.google.com/admin/gemini/generative-ai-in-google-workspace-privacy-hub">Workspace</a>.</p>
+
+  <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
+    <div><strong>O que a tabela não mede — e pesa mais que tudo nela.</strong> As três coisas que mais decidem uma peça
+    — <b>comportamento diante da incerteza</b> (dizer "não sei" em vez de inventar acórdão), <b>fôlego de redação em
+    português formal</b> e <b>obediência literal a restrições</b> ("não cite julgado que você não leu") — não têm métrica
+    pública confiável. Quem afirma que uma ganha das outras nesses pontos está vendendo, não medindo. Meça você:
+    pegue <b>um caso seu já decidido</b>, mande o mesmo prompt aos três e confira quem inventou citação, quem manteve o
+    padrão até a última linha e quem obedeceu ao formato pedido. Vinte minutos resolvem o que nenhum <i>benchmark</i> resolve.</div></div>
+
+  <div class="folio">Cap. 01 · Por que Claude</div>
+</section>
+
+<!-- ================= CAP 1 · PÁGINA 4 ================= -->
+<section class="sheet pad" id="pagina-09">
+  <h3 class="sec" style="margin-top:0"><span class="n">1.6</span>Onde cada um leva vantagem — e o que usar para quê</h3>
+
+  <div class="grid2">
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-rocket"/></svg></span>
+      <h4>O que o ChatGPT faz melhor (ou igual)</h4>
+      <p class="small"><b>Base instalada.</b> Sua equipe já sabe usar. Treinamento interno é custo — e esse já foi pago
+      por outra pessoa.<br><b>Amplitude na mesma assinatura.</b> Geração de imagem, voz, Sora, GPTs personalizados e
+      pesquisa profunda constam da lista oficial de recursos dos planos pagos: resolve material de evento, marketing e
+      comunicação sem contratar mais nada.<br><b>Empate no que interessa ao sigilo.</b> Em Business, Enterprise e API a
+      OpenAI também não treina por padrão. Aqui ninguém tem vantagem — e é honesto dizer.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-link"/></svg></span>
+      <h4>O que o Gemini faz melhor (ou igual)</h4>
+      <p class="small"><b>Se o escritório roda no Google Workspace.</b> O Gemini trabalha dentro do Gmail e do Docs, no
+      mesmo login que a sua TI já administra — sem exportar documento sigiloso para outra aba.<br><b>Contexto grande já no
+      plano do meio.</b> 1M de tokens no AI Pro: empata com o Claude na leitura de autos longos, com preço em real e
+      armazenamento no pacote.<br><b>Um fornecedor a menos.</b> Cobrança, contrato e administração de usuários no mesmo
+      lugar do e-mail e do drive do escritório.</p></div>
+  </div>
+
+  <table class="t">
+    <tr><th style="width:33%">A tarefa</th><th style="width:23%">Por onde começar</th><th>Por quê</th></tr>
+    <tr><td>Ler 800 páginas de autos e montar a cronologia</td><td><b>Claude</b> ou <b>Gemini AI Pro</b></td>
+        <td>São os dois com 1M de contexto documentado no chat. No ChatGPT, o maior número publicado é 272 mil.</td></tr>
+    <tr><td>Redigir e revisar peça longa em português formal</td><td><b>Teste — não confie na marca</b></td>
+        <td>Não há métrica pública. Rode o mesmo caso nos três (§1.5) e decida pelo seu padrão de banca, não pelo meu.</td></tr>
+    <tr><td>Trabalhar dentro do Gmail, do Docs e do Drive do escritório</td><td><b>Gemini</b></td>
+        <td>Integração nativa na assinatura que o escritório já tem — menos cópia e colagem de conteúdo sigiloso.</td></tr>
+    <tr><td>Imagem, vídeo, apresentação, material de marketing</td><td><b>ChatGPT</b></td>
+        <td>Geração de imagem, voz e Sora já estão nos planos pagos, sem ferramenta extra.</td></tr>
+    <tr><td>Triagem e classificação em volume</td><td>O modelo mais barato que você já paga</td>
+        <td>Tarefa simples não justifica modelo caro. No Claude, Haiku 4.5.</td></tr>
+    <tr><td><b>Qualquer coisa com dado de cliente</b></td><td><b>Plano corporativo — de qualquer um dos três</b></td>
+        <td>Claude Team/Enterprise/API, ChatGPT Business/Enterprise/API ou Google Workspace. Nunca o plano individual.</td></tr>
+  </table>
+
+  <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
+    <div><strong>A resposta honesta costuma ser "os dois".</strong> Para a maior parte dos escritórios não existe decisão
+    de trocar: existe decisão de <b>onde colocar cada tarefa</b>. Duas assinaturas individuais somam US$&nbsp;40 por mês —
+    menos do que uma hora do seu trabalho, e menos do que o custo de uma peça devolvida. E a escolha que de fato protege o
+    cliente não é a marca no alto da tela: é <b>o plano</b>. Individual treina, ou pode treinar, com o que você escreve;
+    corporativo, não. O Cap. 3 fecha essa porta antes do primeiro caso real.</div></div>
+
+  <div class="folio">Cap. 01 · Por que Claude</div>
+</section>
+
 <!-- ================= CAP 2 · PÁGINA 1 ================= -->
 <section class="sheet pad" id="cap-02">
   <p class="kicker">Capítulo 02 · Parte 0 — Antes de começar</p>
@@ -658,60 +819,73 @@ table.t.tight-t th{padding:2mm 2.5mm}
   </div>
 
   <h3 class="sec"><span class="n">2.2</span>O tour da interface: só o que importa</h3>
-  <div class="grid2">
-    <div class="card"><span class="ico"><svg class="ic"><use href="#i-chat"/></svg></span>
-      <h4>Caixa de mensagem</h4>
-      <p class="small">Onde tudo acontece. <strong>Enter</strong> envia, <strong>Shift+Enter</strong> quebra linha.
-      Cada conversa é um fio separado — um assunto por conversa, sempre.</p></div>
-    <div class="card"><span class="ico"><svg class="ic"><use href="#i-brain"/></svg></span>
-      <h4>Seletor de modelo</h4>
-      <p class="small">No topo da conversa. Fique no <strong>Sonnet 5</strong> (padrão do Free e do Pro) e troque
-      para <strong>Opus 5</strong> quando a peça for decisiva (Cap. 1).</p></div>
-    <div class="card"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span>
-      <h4>Anexos e busca web</h4>
-      <p class="small">O clipe anexa PDFs, imagens e planilhas — o Claude lê o conteúdo. A <strong>busca web</strong>
-      traz temas atuais, mas cada fonte precisa ser conferida (Cap. 3).</p></div>
-    <div class="card"><span class="ico"><svg class="ic"><use href="#i-layers"/></svg></span>
-      <h4>Projects</h4>
-      <p class="small">Pastas persistentes com <strong>documentos e instruções próprias</strong> — um Project por
-      caso ou por área da banca. Disponíveis a partir do Pro.</p></div>
+  <p style="font-size:9.4pt">Cinco pontos da tela você precisa reconhecer. O resto se descobre usando.</p>
+
+  <div class="ui">
+    <div class="ui-bar"><span class="ui-dot"></span><span class="ui-dot"></span><span class="ui-dot"></span>
+      <span class="ui-ttl">claude.ai · esquema da tela</span></div>
+    <div class="ui-body">
+      <div class="ui-side">
+        <div class="ui-el solid"><span class="ui-pin">4</span>Projects</div>
+        <div class="ui-el">Conversas recentes</div>
+        <div class="ui-el fill">Histórico</div>
+        <div class="ui-el solid"><span class="ui-pin">5</span>Settings</div>
+      </div>
+      <div class="ui-main">
+        <div class="ui-el solid"><span class="ui-pin">1</span>Seletor de modelo</div>
+        <div class="ui-el fill">Área da conversa — suas mensagens e as respostas do Claude</div>
+        <div class="ui-el solid"><span class="ui-pin">2</span>Caixa de mensagem
+          <span class="ui-pin">3</span>Clipe de anexo e busca web</div>
+      </div>
+    </div>
+    <div class="ui-cap">Esquema, não captura de tela: a posição dos elementos muda a cada atualização — a função de cada um, não.</div>
   </div>
 
-  <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
-    <div><strong>Pare aqui antes do primeiro caso real.</strong> Nos planos Free, Pro e Max, suas conversas
-    <strong>podem ser usadas para treinar os modelos</strong> conforme a sua configuração de privacidade.
-    Não presuma qual é a sua: vá em <strong>Settings → Privacy</strong> e confira agora. O mapa completo por
-    plano, e por que dados de cliente pedem mais que isso, é o assunto do Cap. 3.</div></div>
+  <div class="ui-legend">
+    <div><b>1</b><span><strong>Seletor de modelo.</strong> Fique no Sonnet 5 (padrão do Free e do Pro); troque para Opus 5 quando a peça for decisiva (Cap. 1).</span></div>
+    <div><b>2</b><span><strong>Caixa de mensagem.</strong> Enter envia, Shift+Enter quebra linha. Um assunto por conversa, sempre.</span></div>
+    <div><b>3</b><span><strong>Anexo e busca web.</strong> O clipe lê PDFs, imagens e planilhas. A busca traz o atual — e cada fonte precisa ser conferida (Cap. 8).</span></div>
+    <div><b>4</b><span><strong>Projects.</strong> Pastas persistentes com documentos e instruções próprias, um por caso ou área. A partir do Pro.</span></div>
+    <div><b>5</b><span><strong>Settings → Privacy.</strong> O primeiro lugar a visitar. É onde você decide o que acontece com o que digita.</span></div>
+  </div>
 
   <div class="folio">Cap. 02 · Setup em 15 minutos</div>
 </section>
 
 <!-- ================= CAP 2 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-09">
+<section class="sheet pad" id="pagina-11">
+  <div class="callout co-warn" style="margin:0 0 2mm"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
+    <div><strong>Pare aqui antes do primeiro caso real.</strong> Nos planos Free, Pro e Max, suas conversas
+    <strong>podem ser usadas para treinar os modelos</strong> conforme a sua configuração. Não presuma a sua:
+    abra <strong>Settings → Privacy</strong> e confira. O mapa por plano está no Cap. 3.</div></div>
+
   <h3 class="sec" style="margin-top:0"><span class="n">2.3</span>Planos e preços oficiais</h3>
   <table class="t">
     <tr><th>Plano</th><th>Preço</th><th>Para quem faz sentido</th></tr>
-    <tr><td><b>Free</b></td><td>US$ 0</td><td>Testar e aprender o método deste manual. Sem Claude Code nem Cowork.</td></tr>
-    <tr><td><b>Pro</b></td><td>US$ 20/mês (US$ 17 no anual)</td><td>Uso individual sério: Code, Cowork, Research e Projects, dentro dos limites do plano.</td></tr>
+    <tr><td><b>Free</b></td><td>US$ 0</td><td>Testar e aprender o método. Sem Claude Code nem Cowork.</td></tr>
+    <tr><td><b>Pro</b></td><td>US$ 20/mês (US$ 17 no anual)</td><td>Uso individual sério: Code, Cowork, Research e Projects, nos limites do plano.</td></tr>
     <tr><td><b>Max 5x</b></td><td>US$ 100/mês</td><td>Uso individual intenso: 5x o uso do Pro, prioridade em horário de pico.</td></tr>
     <tr><td><b>Max 20x</b></td><td>US$ 200/mês</td><td>Operação pesada de uma pessoa só: 20x o uso do Pro.</td></tr>
     <tr><td><b>Team</b></td><td>US$ 25–125/assento/mês (US$ 20–100 no anual)</td><td>2 a 150 usuários, cobrança centralizada, SSO — <b>não treina com seus dados</b>.</td></tr>
     <tr><td><b>Enterprise</b></td><td>US$ 20/assento + uso</td><td>Retenção customizável, logs de auditoria e segurança avançada.</td></tr>
   </table>
-  <p class="small"><strong>Recomendação por perfil:</strong> autônomo, comece no <strong>Pro</strong> para aprender —
-  mas, para dados reais de clientes, o caminho correto é o <strong>Team</strong> (a partir de 2 assentos), que não
-  treina por padrão (Cap. 3). Pequeno escritório: <strong>Team Standard</strong>. Médio e grande: <strong>Team
-  Premium</strong> (5x o uso por assento) ou <strong>Enterprise</strong>, quando houver exigência de compliance e auditoria.</p>
+  <p class="small"><strong>Por perfil:</strong> comece no <strong>Pro</strong>; para dado real de cliente, <strong>Team</strong>
+  (2+ assentos), que não treina por padrão. <strong>Enterprise</strong> se houver exigência de compliance.</p>
 
   <h3 class="sec"><span class="n">2.4</span>Como funcionam os limites de uso</h3>
   <ul class="tight">
     <li><strong>Janela móvel de 5 horas:</strong> o contador começa na primeira mensagem e reinicia 5h depois.</li>
     <li><strong>Tetos semanais:</strong> planos pagos somam um limite semanal por cima da janela.</li>
     <li><strong>Pool único:</strong> chat, celular e Claude Code consomem a mesma cota — não são limites separados.</li>
-    <li><strong>Estourou?</strong> Aguarde o reset, suba de plano ou ative <strong>usage credits</strong>, cobrados a taxas de API. Tudo visível em Settings → Usage.</li>
+    <li><strong>Estourou?</strong> Aguarde o reset, suba de plano ou ative <strong>usage credits</strong> (taxas de API). Veja em Settings → Usage.</li>
   </ul>
 
-  <h3 class="sec"><span class="n">2.5</span>Configurações iniciais e o primeiro prompt</h3>
+  <div class="folio">Cap. 02 · Setup em 15 minutos</div>
+</section>
+
+<!-- ================= CAP 2 · PÁGINA 3 ================= -->
+<section class="sheet pad" id="pagina-12">
+  <h3 class="sec" style="margin-top:0"><span class="n">2.5</span>Configurações iniciais e o primeiro prompt</h3>
   <ol class="tight">
     <li><strong>Settings → Privacy:</strong> treino desligado (aviso da página anterior).</li>
     <li><strong>Preferências:</strong> defina português do Brasil e peça tom formal nas respostas.</li>
@@ -724,8 +898,7 @@ com tom formal adequado a peças jurídicas.
 Antes de começarmos: em 5 linhas, o que você pode fazer por um
 advogado da área <b>[sua área]</b> — e quais são seus 3 maiores limites
 para esse trabalho.</pre></div>
-  <p class="small">A resposta a esse prompt já ensina duas coisas: o Claude declara os próprios limites e você
-  calibra o que esperar. Guarde a conversa — ela é o marco zero do método.</p>
+  <p class="small">A resposta já ensina duas coisas: o Claude declara os próprios limites e você calibra o que esperar.</p>
 
   <div class="folio">Cap. 02 · Setup em 15 minutos</div>
 </section>
@@ -779,7 +952,7 @@ para esse trabalho.</pre></div>
 </section>
 
 <!-- ================= CAP 3 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-11">
+<section class="sheet pad" id="pagina-14">
   <h3 class="sec" style="margin-top:0"><span class="n">3.3</span>As 10 regras inegociáveis</h3>
   <ul class="check">
     <li>Nunca cole nome completo, CPF, CNPJ, endereço, telefone ou conta bancária de cliente sem anonimizar.</li>
@@ -824,7 +997,7 @@ Documento: <b>[cole aqui]</b></pre></div>
 </section>
 
 <!-- ================= CAP 3 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-12">
+<section class="sheet pad" id="pagina-15">
   <h3 class="sec" style="margin-top:0"><span class="n">3.5</span>A IA erra com confiança — e quem assina é você</h3>
   <p style="font-size:9.4pt">Modelos de linguagem podem <strong>inventar jurisprudência com número, relator e
   ementa verossímeis</strong>. Isso já custou caro na prática: nos Estados Unidos, juízes aplicaram sanções
@@ -860,6 +1033,59 @@ Documento: <b>[cole aqui]</b></pre></div>
 3. Se eu pedir precedente, devolva primeiro o <b>termo de busca</b> que devo usar
    na base oficial — nunca um número de processo.
 4. Feche toda peça com um bloco <b>"Pendências de verificação"</b>.</pre></div>
+
+  <div class="folio">Cap. 03 · Sigilo, LGPD e ética</div>
+</section>
+
+<!-- ================= CAP 3 · PÁGINA 4 ================= -->
+<section class="sheet pad" id="pagina-16">
+  <h3 class="sec" style="margin-top:0"><span class="n">3.7</span>O que a regra brasileira já exige de você</h3>
+  <p style="font-size:9.4pt">Não existe lei de IA no Brasil, e isso confunde. Ausência de lei nova não é
+  ausência de regra: valem deveres antigos aplicados à ferramenta nova. São três camadas — e só a primeira
+  fala com você.</p>
+
+  <h4>1 · O que já é exigível — a Recomendação da OAB</h4>
+  <p style="font-size:9.4pt">A <a href="https://s.oab.org.br/arquivos/2024/11/7160d4fe-9449-4aed-80bc-a2d7ac1f5d2f.pdf"><strong>Recomendação
+  n. 001/2024</strong></a>, aprovada por unanimidade pelo Conselho Pleno do Conselho Federal em
+  <strong>11/11/2024</strong>, é o único ato do CFOAB sobre IA; o provimento segue em elaboração. É
+  <em>recomendação</em>, mas não inventa dever: remete ao Estatuto, ao Código de Ética, à LGPD e ao
+  <strong>art. 77 do CPC</strong>, que já vinculam.</p>
+  <table class="t tight-t">
+    <tr><th>Item</th><th>O dever</th><th>O que isso significa na sua rotina</th></tr>
+    <tr><td><b>3.7</b></td><td>Revisão integral antes de protocolar</td><td>Ler 100% da saída da IA e não confiar apenas nela para montar argumento ou peça.</td></tr>
+    <tr><td><b>3.2</b></td><td>Veracidade do que vai a juízo</td><td>Doutrina e jurisprudência levantadas com IA passam pelo art. 77 do CPC: abra cada citação na base oficial.</td></tr>
+    <tr><td><b>2.1 · 2.2</b></td><td>Sigilo e escolha do fornecedor</td><td>Atenção ao dado que torna o cliente identificável — e diligência para contratar quem não treine com o que você digita.</td></tr>
+    <tr><td><b>3.6</b></td><td>Supervisão de sócio e gestor</td><td>Política escrita de IA e cibersegurança, treinamento e monitoramento: o erro do associado ou do estagiário é seu também.</td></tr>
+    <tr><td><b>4.1 a 4.3</b></td><td>Comunicação e consentimento do cliente</td><td>Documento escrito e claro, com finalidade, limitações, riscos e revisão humana — assinado pelo cliente e arquivado até o fim do serviço.</td></tr>
+  </table>
+  <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
+    <div><strong>O ponto que pega mais escritório despreparado:</strong> a formalização vale para
+    <strong>qualquer fase</strong> — peça, pesquisa, análise de documento. Se o cliente não consentir, você
+    faz sem IA.</div></div>
+
+  <h4>2 · O que regula o Judiciário, não você — Resolução CNJ nº 615/2025</h4>
+  <p style="font-size:9.4pt">A <a href="https://atos.cnj.jus.br/atos/detalhar/6001">Resolução nº 615, de
+  11/03/2025</a>, <strong>revogou a antiga Resolução CNJ nº 332/2020</strong> — quem ainda cita a 332 como
+  vigente está desatualizado. Ela rege a IA <em>do tribunal</em>: você entra como "usuário externo", e o dever
+  de informar o uso de IA é <strong>do tribunal para você</strong>, não o contrário.</p>
+  <ul class="tight" style="font-size:9.4pt">
+    <li><b>Ninguém é obrigado a declarar ao juiz que usou IA.</b> Não há norma nacional nesse sentido; um ou outro tribunal <i>recomenda</i> a declaração voluntária, em âmbito regional.</li>
+    <li><b>O padrão de cuidado subiu.</b> O CNJ vedou a si próprio usar IA generativa externa em documento sigiloso ou sob segredo de justiça sem anonimização. Se vale para o magistrado, não vale menos para você.</li>
+  </ul>
+
+  <h4>3 · O que ainda não é lei</h4>
+  <p style="font-size:9.4pt">O <a href="https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2487262">PL
+  2338/2023</a> foi aprovado no Senado em 10/12/2024 e aguarda parecer do relator na Comissão Especial da
+  Câmara. Não há marco legal da IA em vigor, e a <strong>ANPD não editou norma específica sobre IA</strong> — vale a LGPD
+  como ela já é. Mas a Autoridade pôs IA entre seus temas prioritários de fiscalização: ela chega antes da lei.</p>
+
+  <h4>A política de IA da banca: o mínimo que precisa estar no papel</h4>
+  <ul class="check">
+    <li>Quais ferramentas e planos são autorizados — e o que nunca é colado neles: dado identificável de cliente e documento sob segredo de justiça.</li>
+    <li>Quem revisa o quê antes de protocolar — revisão integral como padrão, não exceção.</li>
+    <li>Como o cliente é informado e onde o consentimento assinado fica arquivado.</li>
+    <li>Treinamento da equipe e a quem se reporta suspeita de erro ou de vazamento.</li>
+  </ul>
 
   <div class="folio">Cap. 03 · Sigilo, LGPD e ética</div>
 </section>
@@ -915,7 +1141,7 @@ Documento: <b>[cole aqui]</b></pre></div>
 </section>
 
 <!-- ================= CAP 4 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-15">
+<section class="sheet pad" id="pagina-19">
   <div class="stats">
     <div class="stat"><span class="sv">1 milhão</span><span class="sl">tokens de contexto com Opus 5 ou Sonnet 5, em qualquer plano pago</span></div>
     <div class="stat"><span class="sv">5 h</span><span class="sl">janela móvel de uso, que recomeça a cada ciclo</span></div>
@@ -991,7 +1217,7 @@ Documento: <b>[cole aqui]</b></pre></div>
 </section>
 
 <!-- ================= CAP 5 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-17">
+<section class="sheet pad compact" id="pagina-21">
   <h3 class="sec" style="margin-top:0"><span class="n">5.2</span>Antes e depois</h3>
   <p style="font-size:9.4pt">Mesmo caso, mesmo modelo, mesma pessoa. A única variável é a estrutura do
   pedido:</p>
@@ -1007,10 +1233,11 @@ Documento: <b>[cole aqui]</b></pre></div>
       Fundamentos: Código Civil e CDC; não cite jurisprudência que eu não tenha fornecido. Pedidos:
       teses de defesa, os 3 maiores riscos e a estratégia, em tópicos. Requerimentos: sinalize lacunas
       de prova e não presuma fatos."</p>
-      <p class="small">Seis partes em um parágrafo. Mesmo compacto, já muda o patamar da resposta.</p></div>
+      <p class="small">Seis partes em um parágrafo. Outro patamar.</p></div>
   </div>
 
-  <h3 class="sec"><span class="n">5.3</span>A petição-prompt completa, peça por peça</h3>
+  <h3 class="sec"><span class="n">5.3</span>A petição-prompt completa — e o que volta</h3>
+  <div class="io">
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Análise de caso cível</span><span>copie e adapte [colchetes]</span></div>
 <pre><b>ENDEREÇAMENTO</b> — Atue como advogado cível sênior em responsabilidade
 civil e contratos, habituado à prática no TJ de [UF].
@@ -1025,12 +1252,21 @@ onde ela seria necessária.
 maiores riscos; 3) estratégia recomendada. Tópicos curtos, tom de parecer.
 <b>REQUERIMENTOS FINAIS</b> — Marque estimativas e lacunas. Não presuma
 fatos; liste o que preciso levantar antes de decidir.</pre></div>
+    <div class="answer">
+      <div class="a-head"><svg class="ic"><use href="#i-brain"/></svg>O que o Claude devolve</div>
+      <p><b>1 · Teses.</b> <i>A favor:</i> exceção de contrato não cumprido — a autora suspendeu as entregas antes da rescisão; ausência de nexo com o lucro cessante alegado; limitação de responsabilidade pactuada entre empresas. <i>Contra:</i> rescisão sem notificação formal; e-mail do preposto reconhecendo o atraso.</p>
+      <p><b>2 · Riscos.</b> (a) o e-mail que reconhece o atraso é a prova mais perigosa dos autos; (b) a limitação de responsabilidade cai se o juízo enxergar desequilíbrio entre as partes; (c) a perícia contábil pode fixar o lucro cessante acima da <i>estimativa</i> da defesa.</p>
+      <p><b>3 · Estratégia.</b> Contestar centrado no inadimplemento prévio; perícia requerida já na contestação; acordo sinalizado antes do saneamento.</p>
+      <p><b>Lacunas.</b> Faltam o contrato assinado, o histórico de e-mails e a data da suspensão — sem eles, 2(c) e 3 são hipótese, não conclusão.</p>
+      <span class="a-note">Nota: resposta encurtada para caber na página — a real desenvolve cada tese em parágrafo próprio. Repare no formato: as seções saem na ordem pedida, as lacunas vêm separadas do que está provado e <b>não há uma citação de jurisprudência sequer</b> — porque o prompt proibiu.</span>
+    </div>
+  </div>
 
   <div class="folio">Cap. 05 · Anatomia do prompt</div>
 </section>
 
 <!-- ================= CAP 5 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-18">
+<section class="sheet pad" id="pagina-22">
   <h3 class="sec" style="margin-top:0"><span class="n">5.4</span>Iteração: a conversa em 3 passos</h3>
   <div class="flow">
     <div class="step"><span class="sn">1</span><div class="sb"><h4>Peça análise antes da peça</h4>
@@ -1089,7 +1325,7 @@ fatos; liste o que preciso levantar antes de decidir.</pre></div>
   <div class="folio">Cap. 06 · Chat, Artefato ou Projeto</div>
 </section>
 
-<section class="sheet pad" id="pagina-20">
+<section class="sheet pad" id="pagina-24">
   <h3 class="sec" style="margin-top:0"><span class="n">6.2</span> Artifacts: a mesa de redação</h3>
   <p>Quando o Claude gera um texto com cara de documento — petição, contrato, parecer — ele pode abri-lo em um <b>Artifact</b>: um painel ao lado da conversa, só com o documento. Você segue pedindo ajustes no chat ("reformule o terceiro pedido", "encurte a fundamentação") e o texto é atualizado no painel. A conversa vira a oficina; o Artifact é a peça.</p>
   <div class="grid2">
@@ -1157,7 +1393,7 @@ Texto: [cole a decisão]</pre></div>
   <div class="folio">Cap. 07 · 20 prompts essenciais</div>
 </section>
 
-<section class="sheet pad" id="pagina-22">
+<section class="sheet pad" id="pagina-26">
   <h3 class="sec" style="margin-top:0"><span class="n">7.2</span> Pesquisa e estudo</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Explicar um instituto</span><span>copie e adapte [colchetes]</span></div>
@@ -1194,7 +1430,7 @@ e sugira um exercício de aplicação ao fim de cada semana.</pre></div>
   <div class="folio">Cap. 07 · 20 prompts essenciais</div>
 </section>
 
-<section class="sheet pad" id="pagina-23">
+<section class="sheet pad" id="pagina-27">
   <h3 class="sec" style="margin-top:0"><span class="n">7.3</span> Redação e revisão</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Esqueleto da peça antes da peça</span><span>copie e adapte [colchetes]</span></div>
@@ -1229,7 +1465,7 @@ Decisão: [cole o texto]</pre></div>
   <div class="folio">Cap. 07 · 20 prompts essenciais</div>
 </section>
 
-<section class="sheet pad" id="pagina-24">
+<section class="sheet pad" id="pagina-28">
   <h3 class="sec" style="margin-top:0"><span class="n">7.4</span> Gestão e relacionamento com cliente</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Andamento em linguagem simples</span><span>copie e adapte [colchetes]</span></div>
@@ -1264,7 +1500,7 @@ caso se não receber a tempo. Tom parceiro, nunca ríspido.</pre></div>
   <div class="folio">Cap. 07 · 20 prompts essenciais</div>
 </section>
 
-<section class="sheet pad" id="pagina-25">
+<section class="sheet pad" id="pagina-29">
   <h3 class="sec" style="margin-top:0"><span class="n">7.5</span> Estratégia e negociação</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Avaliação de cenários</span><span>copie e adapte [colchetes]</span></div>
@@ -1348,18 +1584,23 @@ e consequências do não aceite. Tom conciliador, sem admissão de culpa.</pre><
   </div>
 
   <div class="callout co-err"><span class="ci"><svg class="ic"><use href="#i-x"/></svg></span>
-    <div><strong>Erro que custa caro:</strong> protocolar peça com jurisprudência gerada por IA sem conferir. Tribunais
-    no Brasil e no exterior já reagiram a casos assim — com multas e encaminhamentos disciplinares. "Foi a IA" não é
-    defesa: <strong>quem assina a peça responde por ela</strong>. A camada 3 não é opcional.</div></div>
+    <div><strong>Erro que custa caro — e já custou, com nome e número:</strong> o
+    <a href="https://www.tst.jus.br/-/empresa-e-advogado-sao-condenados-por-possivel-uso-de-ia-com-citacoes-falsas-de-jurisprudencia">TST</a>
+    (6ª Turma, <span style="white-space:nowrap">RR-0000284-92.2024.5.06.0351</span>, rel. Min. Fabrício Gonçalves) multou <b>a empresa e o advogado</b> em 1% do
+    valor da causa por jurisprudência inexistente em contrarrazões; o
+    <a href="https://www.tjpr.jus.br/noticias/-/asset_publisher/9jZB/content/tjpr-multa-advogado-por-litig%C3%A2ncia-de-m%C3%A1-f%C3%A9-pelo-uso-de-ia-sem-zelo-e-cautela-/18319">TJPR</a>
+    (9ª Câmara Cível, autos <span style="white-space:nowrap">0025387-22.2025.8.16.0001</span>, rel. Des. Luis Sérgio Swiech) reconheceu litigância de má-fé e
+    oficiou a OAB/PR; o <a href="https://www.tjsc.jus.br/web/imprensa/-/tjsc-multa-autor-de-recurso-por-jurisprudencia-falsa-gerada-por-ia">TJSC</a>
+    (6ª Câmara Civil) aplicou 10% do valor da causa e oficiou a OAB/SC. "Foi a IA" não é defesa:
+    <strong>quem assina a peça responde por ela</strong>. A camada 3 não é opcional.</div></div>
 
   <div class="folio">Cap. 08 · Pesquisa com verificação</div>
 </section>
 
 <!-- ================= CAP 8 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-28">
+<section class="sheet pad compact" id="pagina-32">
   <h3 class="sec" style="margin-top:0"><span class="n">8.3</span>A hierarquia de segurança das fontes</h3>
-  <p style="font-size:9.4pt">Nem toda citação pesa igual. Quanto mais estruturada a fonte, mais seguro é o material que
-  o Claude entrega — e mais fácil a sua conferência.</p>
+  <p style="font-size:9.4pt">Nem toda citação pesa igual: quanto mais estruturada a fonte, mais fácil a sua conferência.</p>
   <table class="t">
     <tr><th>Fonte</th><th>Segurança</th><th>Onde conferir</th></tr>
     <tr><td>Lei seca (CF, CPC, CLT, CDC) e súmulas</td><td><b>Mais segura</b> — texto estável, fácil de confrontar</td><td><a href="https://www.planalto.gov.br">planalto.gov.br</a>; sites do <a href="https://www.stf.jus.br">STF</a>, <a href="https://www.stj.jus.br">STJ</a> e <a href="https://www.tst.jus.br">TST</a></td></tr>
@@ -1381,8 +1622,9 @@ e consequências do não aceite. Tom conciliador, sem admissão de culpa.</pre><
       Use para o panorama de um tema novo antes de afinar a tese.</p></div>
   </div>
   <p class="small">Mesmo com busca web ligada, <strong>a verificação continua obrigatória</strong>: a ferramenta reduz a
-  alucinação, não a elimina. Fonte anexada não é fonte conferida — abra a página e leia o trecho.</p>
+  alucinação, não a elimina. Fonte anexada não é fonte conferida.</p>
 
+  <div class="io">
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 1 · Pesquisa com restrições</span><span>copie e adapte [colchetes]</span></div>
   <pre>Você é assistente de pesquisa jurídica de um advogado brasileiro.
 Tema: [descreva a questão, ex.: validade de cláusula de não
@@ -1393,12 +1635,19 @@ concorrência após o fim do contrato de trabalho].
 3. Cite súmula ou tema repetitivo só se tiver certeza de que existe.
 Entregue: mapa de teses pró e contra + lista do que <b>devo verificar
 nas fontes oficiais</b>.</pre></div>
+    <div class="answer">
+      <div class="a-head"><svg class="ic"><use href="#i-brain"/></svg>O que o Claude devolve</div>
+      <p><b>Tese majoritária.</b> A cláusula pós-contratual é aceita quando tem prazo, território e atividade delimitados e prevê <b>compensação financeira</b> ao ex-empregado; sem compensação, tende à nulidade. <i>Majoritária — há divergência sobre o valor devido.</i></p>
+      <p><b>Onde eu não tenho segurança.</b> Não afirmo que exista súmula do TST sobre o tema. Tenho a impressão de que há acórdãos de Turmas discutindo o prazo de dois anos, mas <b>não tenho segurança sobre esses julgados: confira na jurisprudência do TST, na fonte oficial</b>. Não citei número de processo, como você pediu.</p>
+      <span class="a-note">Nota: resposta encurtada para caber na página. O que importa é o segundo parágrafo — a resposta honesta <b>recusa</b> o julgado que não sustenta em vez de fechar a lacuna com um número plausível.</span>
+    </div>
+  </div>
 
   <div class="folio">Cap. 08 · Pesquisa com verificação</div>
 </section>
 
 <!-- ================= CAP 8 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-29">
+<section class="sheet pad" id="pagina-33">
   <h3 class="sec" style="margin-top:0"><span class="n">8.5</span>O fluxo da pesquisa segura em 5 passos</h3>
   <div class="flow">
     <div class="step"><span class="sn">1</span><div class="sb"><h4>Defina a pergunta</h4><p>Tema, tribunal e recorte temporal claros — pergunta vaga gera resposta vaga.</p></div></div>
@@ -1482,7 +1731,7 @@ oficial" — nunca complete com um julgado provável.</pre></div>
 </section>
 
 <!-- ================= CAP 9 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-31">
+<section class="sheet pad" id="pagina-35">
   <h3 class="sec" style="margin-top:0"><span class="n">9.3</span>Quatro leituras que valem o processo inteiro</h3>
   <p style="font-size:9.4pt">Com os autos anexados (em um Project, de preferência), estas são as extrações que
   transformam papelada em estratégia. Cada uma com seu prompt — adapte os colchetes.</p>
@@ -1512,7 +1761,7 @@ poderia cobrir cada um.</pre></div>
 </section>
 
 <!-- ================= CAP 9 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-32">
+<section class="sheet pad" id="pagina-36">
   <div class="prompt" style="margin-top:0"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 3 · Tabela de prazos com alertas</span><span>confira sempre antes de agir</span></div>
   <pre>Leia os documentos anexados e extraia TODOS os prazos em tabela:
 ato | prazo legal ou fixado | marco inicial | data limite estimada |
@@ -1580,7 +1829,7 @@ defensável. Só escreva a minuta quando eu disser "pode redigir".</pre></div>
   <div class="folio">Cap. 10 · Redação assistida</div>
 </section>
 
-<section class="sheet pad" id="pagina-34">
+<section class="sheet pad" id="pagina-38">
   <h3 class="sec" style="margin-top:0"><span class="n">10.2</span>Stress test: a técnica do advogado do diabo</h3>
   <p>Minuta pronta não é peça pronta. O segundo movimento troca o papel do Claude: ele deixa de ser coautor e vira <b>o advogado da parte contrária</b>, pago para destruir o texto. Chamamos isso aqui de <b>advogado do diabo</b> — a revisão deixa de ser passiva ("está bom?") e vira ataque ativo. O objetivo não é agradar você: é encontrar o furo antes que o outro lado encontre.</p>
 
@@ -1611,7 +1860,7 @@ Depois discutimos o que corrigir e o que defender como está.</pre></div>
   <div class="folio">Cap. 10 · Redação assistida</div>
 </section>
 
-<section class="sheet pad" id="pagina-35">
+<section class="sheet pad" id="pagina-39">
   <h3 class="sec" style="margin-top:0"><span class="n">10.3</span>Calibragem de voz: ensine o seu estilo</h3>
   <p>O Claude escreve bem, mas escreve "como o Claude". Para a peça sair com a sua cara, cole 2–3 peças redigidas por você — removendo nomes e dados sensíveis de clientes antes — e peça a análise dos padrões, não do conteúdo. A ficha de estilo resultante vira peça fixa das suas próximas conversas.</p>
 
@@ -1665,7 +1914,7 @@ possa colar no início de futuras conversas com a ordem:
   <div class="folio">Cap. 11 · Análise visual</div>
 </section>
 
-<section class="sheet pad" id="pagina-37">
+<section class="sheet pad" id="pagina-41">
   <h3 class="sec" style="margin-top:0"><span class="n">11.3</span>Dois prompts para começar</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt · Extração</span><span>copie e adapte [colchetes]</span></div>
@@ -1729,7 +1978,7 @@ processo.</pre></div>
   <div class="folio">Cap. 12 · Memória e economia</div>
 </section>
 
-<section class="sheet pad" id="pagina-39">
+<section class="sheet pad" id="pagina-43">
   <h3 class="sec" style="margin-top:0"><span class="n">12.3</span>A biblioteca de prompts do escritório</h3>
   <p>Prompt que funcionou não se perde na conversa: vai para um lugar só — um documento, uma planilha ou uma pasta compartilhada. A organização pode ser simples:</p>
   <ul class="tight">
@@ -1821,7 +2070,7 @@ processo.</pre></div>
 </section>
 
 <!-- ================= CAP 13 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-42">
+<section class="sheet pad" id="pagina-46">
   <h3 class="sec" style="margin-top:0"><span class="n">13.2</span>Os prompts do caso — triagem, teoria e cálculos</h3>
   <p style="font-size:9.4pt">Cinco prompts, um por etapa-chave. Todos partem do caso anonimizado e
   carregam cláusulas anti-invenção. Adapte os [colchetes] ao seu processo.</p>
@@ -1864,7 +2113,7 @@ de cálculo e com contador antes do protocolo"</i>.</pre></div>
 </section>
 
 <!-- ================= CAP 13 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-43">
+<section class="sheet pad" id="pagina-47">
   <h3 class="sec" style="margin-top:0"><span class="n">13.3</span>Os prompts do caso — redação e stress test</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 4 · Petição por blocos</span><span>copie e adapte [colchetes]</span></div>
@@ -1956,7 +2205,7 @@ Não invente jurisprudência: indique o tema que devo pesquisar.</pre></div>
 </section>
 
 <!-- ================= CAP 14 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-45">
+<section class="sheet pad" id="pagina-49">
   <h3 class="sec" style="margin-top:0"><span class="n">14.2</span>Os prompts do caso — risco, parecer e aditivo</h3>
   <p style="font-size:9.4pt">Um prompt por etapa, todos com o caso anonimizado e cláusulas
   anti-invenção. Adapte os [colchetes].</p>
@@ -1997,7 +2246,7 @@ Regras:
 </section>
 
 <!-- ================= CAP 14 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-46">
+<section class="sheet pad" id="pagina-50">
   <h3 class="sec" style="margin-top:0"><span class="n">14.3</span>Os prompts do caso — notificação e plano B</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 4 · Notificação extrajudicial</span><span>copie e adapte [colchetes]</span></div>
@@ -2090,7 +2339,7 @@ apenas com a marca [CONFIRMAR NA LEI]. Baseie-se só nestes fatos:
 </section>
 
 <!-- ================= CAP 15 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-48">
+<section class="sheet pad" id="pagina-52">
   <h3 class="sec" style="margin-top:0"><span class="n">15.2</span>Os prompts do caso — provas, teses e quesitos</h3>
   <p style="font-size:9.4pt">Um prompt por etapa, caso anonimizado, cláusulas anti-invenção em todos.
   Adapte os [colchetes].</p>
@@ -2128,7 +2377,7 @@ ASSISTENTE TÉCNICO] onde houver dúvida técnica.</pre></div>
 </section>
 
 <!-- ================= CAP 15 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-49">
+<section class="sheet pad" id="pagina-53">
   <h3 class="sec" style="margin-top:0"><span class="n">15.3</span>Os prompts do caso — memoriais e interrogatório</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 4 · Memoriais por blocos</span><span>copie e adapte [colchetes]</span></div>
@@ -2219,7 +2468,7 @@ convenientes.</b></pre></div>
 </section>
 
 <!-- ================= CAP 16 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-51">
+<section class="sheet pad" id="pagina-55">
   <h3 class="sec" style="margin-top:0"><span class="n">16.2</span>Prompts: triagem e enquadramento</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 1 · Triagem documental</span><span>copie e adapte [colchetes]</span></div>
@@ -2252,7 +2501,7 @@ Se algum dispositivo não se aplicar com segurança, diga isso expressamente.</p
 </section>
 
 <!-- ================= CAP 16 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-52">
+<section class="sheet pad" id="pagina-56">
   <h3 class="sec" style="margin-top:0"><span class="n">16.3</span>Prompts: cálculo e conciliação</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 3 · Cálculo orientativo</span><span>copie e adapte [colchetes]</span></div>
@@ -2331,7 +2580,7 @@ Ao final, liste as premissas usadas, uma a uma.</pre></div>
 </section>
 
 <!-- ================= CAP 17 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-54">
+<section class="sheet pad" id="pagina-58">
   <h3 class="sec" style="margin-top:0"><span class="n">17.2</span>Prompts: mapa patrimonial e cenários</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 1 · Mapa patrimonial</span><span>copie e adapte [colchetes]</span></div>
@@ -2365,7 +2614,7 @@ Não decida pelo cliente: apresente opções.</pre></div>
 </section>
 
 <!-- ================= CAP 17 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-55">
+<section class="sheet pad" id="pagina-59">
   <h3 class="sec" style="margin-top:0"><span class="n">17.3</span>Prompts: minuta e comunicação</h3>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Prompt 3 · Estrutura do acordo</span><span>copie e adapte [colchetes]</span></div>
@@ -2463,7 +2712,7 @@ Leia a peça a seguir como se fosse <b>decidir contra</b> ela. Aponte:
 </section>
 
 <!-- ================= CAP 18 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-58">
+<section class="sheet pad" id="pagina-62">
   <h3 class="sec" style="margin-top:0"><span class="n">18.3</span>Checklist de qualidade antes do protocolo</h3>
   <ul class="check">
     <li>Todo fato da peça conferido contra os autos (datas, valores, nomes)</li>
@@ -2546,7 +2795,7 @@ Leia a peça a seguir como se fosse <b>decidir contra</b> ela. Aponte:
 </section>
 
 <!-- ================= CAP 19 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-60">
+<section class="sheet pad" id="pagina-64">
   <h3 class="sec" style="margin-top:0"><span class="n">19.3</span>Anatomia mínima: o arquivo SKILL.md</h3>
   <p style="font-size:9.4pt">Uma Skill nasce de um arquivo de texto chamado <span class="mono-s">SKILL.md</span> com
   três partes: <strong>name</strong> (o identificador), <strong>description</strong> (quando o Claude deve usá-la —
@@ -2586,7 +2835,7 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
 </section>
 
 <!-- ================= CAP 19 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-61">
+<section class="sheet pad" id="pagina-65">
   <h3 class="sec" style="margin-top:0"><span class="n">19.5</span>Segurança: Skills de terceiros e dados de clientes</h3>
   <p style="font-size:9.4pt">Existem repositórios públicos de Skills prontas — úteis, mas você está instalando
   <strong>instruções escritas por um desconhecido</strong> dentro do seu ambiente de trabalho. Dois cuidados inegociáveis:</p>
@@ -2654,7 +2903,7 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
 </section>
 
 <!-- ================= CAP 20 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-63">
+<section class="sheet pad" id="pagina-67">
   <h3 class="sec" style="margin-top:0"><span class="n">20.2</span>Três casos jurídicos seguros para começar</h3>
   <div class="grid3">
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span>
@@ -2696,7 +2945,7 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
 </section>
 
 <!-- ================= CAP 20 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-64">
+<section class="sheet pad" id="pagina-68">
   <h3 class="sec" style="margin-top:0"><span class="n">20.4</span>Tarefas programadas: o resumo que se faz sozinho</h3>
   <p style="font-size:9.4pt">Com <span class="mono-s">/schedule</span>, qualquer tarefa do Cowork vira rotina —
   roda remota, mesmo com o computador desligado. O exemplo clássico da advocacia:</p>
@@ -2776,7 +3025,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 </section>
 
 <!-- ================= CAP 21 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-66">
+<section class="sheet pad" id="pagina-70">
   <h3 class="sec" style="margin-top:0"><span class="n">21.2</span>Com supervisão × nunca delegar</h3>
   <table class="t">
     <tr><th>Atividade</th><th>Delegável?</th><th>Condição</th></tr>
@@ -2850,7 +3099,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 </section>
 
 <!-- ================= CAP 22 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-69">
+<section class="sheet pad" id="pagina-73">
   <div class="lvl" style="margin-top:0"><span class="ln">4</span><div>
     <h4>Sistemas</h4>
     <p>Cria Skills próprias com os procedimentos repetitivos do escritório, encadeia etapas (pesquisa → minuta →
@@ -2923,10 +3172,8 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 
   <div class="callout co-ok"><span class="ci"><svg class="ic"><use href="#i-check"/></svg></span>
     <div><strong>Ao fim dos 30 dias:</strong> você não terá decorado truques — terá um método. Sigilo configurado,
-    pesquisa verificada, redação com revisão, contexto organizado e uma rotina que roda sem depender de entusiasmo.
-    É exatamente isso que este manual prometeu na abertura: não um atalho, mas um ofício. O fechamento, a seguir,
-    olha para o que vem depois — e para o que nunca muda: a assinatura, o julgamento e a responsabilidade continuam
-    sendo seus.</div></div>
+    pesquisa verificada, redação com revisão e uma rotina que roda sem depender de entusiasmo. Era o que este manual
+    prometeu na abertura: não um atalho, um ofício.</div></div>
 
   <div class="folio">Cap. 23 · Plano de 30 dias</div>
 </section>
@@ -2992,7 +3239,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 </section>
 
 <!-- ================= CAP 24 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-73">
+<section class="sheet pad" id="pagina-77">
   <h3 class="sec" style="margin-top:0"><span class="n">24.2</span>A Regra das 20 Horas Invisíveis</h3>
   <p>Uma estimativa recorrente entre advogados solo: cerca de <strong>20 horas por semana</strong> vão para
   tarefas que a IA resolve em minutos — formatação de peças, pesquisa preliminar, e-mails de atualização,
@@ -3027,7 +3274,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 </section>
 
 <!-- ================= CAP 24 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-74">
+<section class="sheet pad" id="pagina-78">
   <h3 class="sec" style="margin-top:0"><span class="n">24.3</span>O prompt do diagnóstico</h3>
   <p>O mapa sai de um prompt só. Rode no início da Fundação I — e repita a cada trimestre, porque a rotina muda.</p>
 
@@ -3101,7 +3348,7 @@ e humano</b>.</pre></div>
 </section>
 
 <!-- ================= CAP 25 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-76">
+<section class="sheet pad" id="pagina-80">
   <h3 class="sec" style="margin-top:0"><span class="n">25.2</span>WhatsApp com o cliente: atualização sem pânico</h3>
   <p>A pior mensagem é a que o cliente precisa decifrar — ou a que o deixa em pânico sem motivo. A boa
   atualização processual é curta, traduz o juridiquês e termina dizendo o que acontece agora.</p>
@@ -3134,7 +3381,7 @@ esperança</b>.</pre></div>
 </section>
 
 <!-- ================= CAP 25 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-77">
+<section class="sheet pad" id="pagina-81">
   <h3 class="sec" style="margin-top:0"><span class="n">25.3</span>Follow-up de leads: a cadência 2/5/10/20</h3>
   <p>O lead que perguntou e sumiu não é caso perdido: é caso sem cadência. Quatro toques bastam — o dia 2
   relembra a conversa com uma dica útil; o dia 5 mostra o custo de não agir; o dia 10 traz prova social;
@@ -3174,7 +3421,7 @@ Tom: caloroso, mas profissional.</pre></div>
 </section>
 
 <!-- ================= CAP 25 · PÁGINA 4 ================= -->
-<section class="sheet pad" id="pagina-78">
+<section class="sheet pad" id="pagina-82">
   <h3 class="sec" style="margin-top:0"><span class="n">25.5</span>Presença digital: landing page e 7 dias de conteúdo</h3>
   <p>Sem equipe de marketing, o fluxo é este: o Claude escreve o briefing completo da página e uma semana de
   conteúdo; você revisa, ajusta com a sua voz e publica.</p>
@@ -3246,7 +3493,7 @@ formatos; tom acessível, com autoridade.</pre></div>
 </section>
 
 <!-- ================= CAP 26 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-80">
+<section class="sheet pad" id="pagina-84">
   <h3 class="sec" style="margin-top:0"><span class="n">26.2</span>O prompt da ata da RCC</h3>
   <p>Alimente com as anotações brutas da reunião. O que estiver ambíguo volta marcado para você confirmar —
   a IA organiza, mas não adivinha o que foi decidido.</p>
@@ -3292,7 +3539,7 @@ executá-la só com este documento.</pre></div>
 </section>
 
 <!-- ================= CAP 26 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-81">
+<section class="sheet pad" id="pagina-85">
   <h3 class="sec" style="margin-top:0"><span class="n">26.4</span>Contratar com prova prática, não com simpatia</h3>
   <p>Currículo mede passado; entrevista mede conversa. O que mede trabalho é <strong>prova prática</strong>:
   um caso real da sua área para o candidato resolver em duas horas. O Claude monta o processo seletivo inteiro —
@@ -3338,7 +3585,7 @@ CALCULE:
 </section>
 
 <!-- ================= CAP 26 · PÁGINA 4 ================= -->
-<section class="sheet pad" id="pagina-82">
+<section class="sheet pad" id="pagina-86">
   <h3 class="sec" style="margin-top:0"><span class="n">26.6</span>Quatro modalidades de cobrança</h3>
   <p>O prompt acima já devolve a tabela comparativa calculada para o seu caso. O critério de escolha é este:</p>
   <table class="t">
@@ -3428,7 +3675,7 @@ CALCULE:
 </section>
 
 <!-- ================= CAP 27 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-84">
+<section class="sheet pad" id="pagina-88">
   <h3 class="sec" style="margin-top:0"><span class="n">27.4</span>O que automatizar primeiro</h3>
   <p style="font-size:9.4pt">A regra é a mesma do Cap. 24: automatize o <strong>repetitivo, frequente e com regra clara</strong>.
   O que exige julgamento fica com você. Esta é a ordem que costuma dar certo num escritório pequeno.</p>
@@ -3461,6 +3708,58 @@ CALCULE:
     <div><strong>O teste antes de ligar qualquer rotina:</strong> se ela rodar errada por trinta dias seguidos e ninguém
     perceber, o que acontece? Se a resposta envolver prazo perdido, cliente mal informado ou dado exposto, ela ainda não
     está pronta para rodar sozinha — roda com você olhando.</div></div>
+
+  <div class="folio">Cap. 27 · Automação</div>
+</section>
+
+<!-- ================= CAP 27 · PÁGINA 3 ================= -->
+<section class="sheet pad" id="pagina-89">
+  <h3 class="sec" style="margin-top:0"><span class="n">27.6</span>O processo eletrônico brasileiro: o que dá e o que não dá</h3>
+  <p style="font-size:9.4pt">É a primeira pergunta de todo advogado: <strong>o Claude entra no PJe?</strong> A
+  resposta honesta tem duas camadas.</p>
+
+  <div class="grid2">
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-check"/></svg></span>
+      <h4>O que funciona hoje, sem integração</h4>
+      <p class="small">Você exporta dos autos e anexa. O Claude lê o PDF — inclusive escaneado — e trabalha o
+      conteúdo. É o fluxo do Cap. 9, e resolve a maioria dos casos sem tocar em nenhuma credencial.</p></div>
+    <div class="card"><span class="ico"><svg class="ic"><use href="#i-warn"/></svg></span>
+      <h4>O que é tecnicamente possível</h4>
+      <p class="small">O Cowork opera o navegador — logo, <em>poderia</em> percorrer um sistema processual como você
+      percorre. Poder não é dever, e aqui a distância entre os dois é enorme.</p></div>
+  </div>
+
+  <div class="callout co-err"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
+    <div><strong>Por que não se automatiza o acesso ao sistema do tribunal.</strong> O certificado digital é
+    <strong>pessoal e intransferível</strong>: não é senha, é a sua identidade profissional assinando. Todo ato
+    praticado sob ele é seu, tenha você digitado ou não. Some-se os termos de uso de cada tribunal e o fato de que
+    erro de automação em sistema processual não gera relatório ruim — gera ato errado, com prazo correndo. Use a IA
+    <strong>antes</strong> do peticionamento; o clique que protocola continua sendo seu.</div></div>
+
+  <h3 class="sec"><span class="n">27.7</span>Comando escondido no documento: o risco que quase ninguém conhece</h3>
+  <p style="font-size:9.4pt">Em junho de 2026, o Comitê Nacional de Inteligência Artificial do Judiciário aprovou
+  uma <strong>Nota Técnica sobre <em>prompt injection</em></strong> — a inserção, dentro de documentos processuais,
+  de comandos ocultos destinados a manipular a IA que vai lê-los. Texto em fonte branca, instrução escondida em
+  metadado, trecho invisível na diagramação: para o olho humano o documento é normal, e carrega uma ordem para a
+  máquina. A Nota orienta os tribunais a se protegerem — mas o risco corre nos <strong>dois sentidos</strong>.</p>
+
+  <ul class="check">
+    <li><b>Inserir comando oculto em peça sua é conduta detectável</b> e agora está sob vigilância institucional
+    declarada. Não é esperteza tecnológica: é o tipo de conduta que termina em representação disciplinar.</li>
+    <li><b>O documento que você recebe pode trazer a armadilha.</b> Contestação da parte contrária, contrato enviado
+    por e-mail, laudo de terceiro — se você joga o arquivo no Claude sem abrir, uma instrução escondida pode
+    contaminar a análise que vai embasar a sua decisão no caso.</li>
+    <li><b>A defesa é a de sempre, e é barata:</b> abra e leia o documento antes de anexar; desconfie de resposta que
+    muda de assunto, ignora o que foi pedido ou afirma o que o texto não sustenta; confira o resultado contra o
+    documento original, nunca contra o resumo.</li>
+  </ul>
+
+  <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
+    <div><strong>O padrão de cuidado que o Judiciário fixou para si.</strong> A Resolução CNJ nº 615/2025 veda a
+    magistrados e servidores usar IA generativa externa para processar documento sigiloso ou sob segredo de justiça,
+    salvo quando anonimizado na origem. A regra é dirigida ao Judiciário, não a você — mas é o parâmetro de
+    diligência que o sistema de Justiça adotou. Um escritório que trabalhe com padrão mais frouxo que o do tribunal
+    terá dificuldade de explicar por quê.</div></div>
 
   <div class="folio">Cap. 27 · Automação</div>
 </section>
@@ -3506,7 +3805,7 @@ RELATÓRIO RECURSAL:
 </section>
 
 <!-- ================= CAP 27 · PÁGINA 2 ================= -->
-<section class="sheet pad" id="pagina-86">
+<section class="sheet pad" id="pagina-91">
   <h3 class="sec" style="margin-top:0"><span class="n">28.2</span>Planejamento completo de audiência</h3>
   <p>Audiência boa se ganha na véspera. Este prompt monta o plano inteiro — roteiro com tempos, perguntas por
   testemunha ordenadas do seguro ao arriscado, contra-perguntas, objeções prováveis com fundamento — em formato
@@ -3544,7 +3843,7 @@ PLANO:
 </section>
 
 <!-- ================= CAP 27 · PÁGINA 3 ================= -->
-<section class="sheet pad" id="pagina-87">
+<section class="sheet pad" id="pagina-92">
   <h3 class="sec" style="margin-top:0"><span class="n">28.3</span>Checklist Fundação I — imprima e risque</h3>
   <p>A Fundação I não se conclui por leitura, se conclui por evidência. Imprima esta página e risque cada item
   só quando ele existir de verdade — documento salvo, rotina rodando, número calculado.</p>
@@ -3649,7 +3948,7 @@ PLANO:
 </section>
 
 <!-- ========== PÁGINA 3 · APÊNDICE B — ÍNDICE DE PROMPTS (2/3) ========== -->
-<section class="sheet pad" id="pagina-90">
+<section class="sheet pad" id="pagina-95">
   <h3 class="sec" style="margin-top:0"><span class="n">B</span>Índice da biblioteca de prompts — parte 2 (caps. 8 a 14)</h3>
 
   <table class="t tight-t">
@@ -3683,7 +3982,7 @@ PLANO:
 </section>
 
 <!-- ========== PÁGINA 4 · APÊNDICE B — ÍNDICE DE PROMPTS (3/3) ========== -->
-<section class="sheet pad" id="pagina-91">
+<section class="sheet pad" id="pagina-96">
   <h3 class="sec" style="margin-top:0"><span class="n">B</span>Índice da biblioteca de prompts — parte 3 (caps. 15 a 27)</h3>
 
   <table class="t tight-t">
@@ -3778,7 +4077,7 @@ PLANO:
 </section>
 
 <!-- ========== PÁGINA 6 · APÊNDICE D — POLÍTICA DE USO DE IA (2/2) ========== -->
-<section class="sheet pad" id="pagina-94">
+<section class="sheet pad" id="pagina-99">
   <h3 class="sec" style="margin-top:0"><span class="n">D</span>Política interna de uso de inteligência artificial — continuação</h3>
 
   <h4>Cláusula 6ª — Revisão humana obrigatória</h4>
@@ -3837,7 +4136,7 @@ PLANO:
   <div class="folio">Apêndices · E — Fontes oficiais</div>
 </section>
 
-<section class="sheet dark pad" id="pagina-96">
+<section class="sheet dark pad" id="pagina-101">
   <p class="kicker">Fechamento</p>
   <h2 class="h-chapter" style="color:var(--cream)">O começo da sua <em>vantagem</em></h2>
   <div class="gold-rule" style="margin:4mm 0 6mm"></div>
@@ -3882,7 +4181,7 @@ PLANO:
 
   <div class="folio">Claude para Advogados · do Zero ao Escritório Super Inteligente</div>
 </section>
-<section class="sheet dark cover" id="pagina-97">
+<section class="sheet dark cover" id="pagina-102">
   <div class="frame"></div>
   <div></div>
   <div style="text-align:center">
