@@ -422,21 +422,23 @@ table.t.tight-t th{padding:2mm 2.5mm}
 .toc-dots{flex:1;border-bottom:1px dotted var(--line);margin:0 1.5mm 1.1mm;min-width:3mm}
 .toc-p{font-family:var(--serif);color:var(--gold-3);font-size:9pt;white-space:nowrap}
 
-/* ---------- TELA ESTREITA ----------
-   A folha tem 210mm fixos (~794px). Sem isto, quem abre no celular recebe
-   rolagem horizontal e nunca enxerga a página inteira. `zoom` reduz a folha
-   e o espaço que ela ocupa — diferente de `transform`, que encolheria o
-   desenho e deixaria o buraco do tamanho original.
-   Tudo aqui é `screen`: a impressão e o PDF seguem intocados em A4. */
-@media screen and (max-width:820px){ .sheet{zoom:.95} }
-@media screen and (max-width:760px){ .sheet{zoom:.86} }
-@media screen and (max-width:660px){ .sheet{zoom:.74} }
-@media screen and (max-width:560px){ .sheet{zoom:.62} }
-@media screen and (max-width:460px){ .sheet{zoom:.52} }
-@media screen and (max-width:380px){ .sheet{zoom:.44} }
+/* Tela: manter o estilo editorial sem miniaturizar a página no celular.
+   Impressão continua com as dimensões A4 declaradas acima. */
+@media screen{.sheet{height:auto;min-height:297mm}}
 @media screen and (max-width:820px){
   body{background:#221d17}
-  .sheet{margin-bottom:5mm;box-shadow:0 2px 14px rgba(0,0,0,.4)}
+  .sheet{width:100%;min-height:0;zoom:1;margin-bottom:16px;box-shadow:0 2px 14px rgba(0,0,0,.4);overflow:visible}
+  .sheet.pad,.sheet.cover,.sheet.divider{padding:28px 20px}
+  .sheet.cover,.sheet.divider{min-height:70svh;overflow:hidden}
+  .sheet *{min-width:0;overflow-wrap:anywhere}
+  .sheet p,.sheet li,.sheet .small{font-size:14px!important;line-height:1.65}
+  .sheet .h-chapter{font-size:clamp(26px,6vw,35px)}
+  .sheet .folio{position:static;margin-top:24px;gap:12px}
+  .grid2,.grid3,.grid32,.grid23,.ba,.toc-grid,.ui-legend{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ui-body,.shot-body{grid-template-columns:1fr}
+  table.t{table-layout:fixed}
+  table.t th,table.t td{width:auto!important;white-space:normal!important;overflow-wrap:anywhere}
 }
 
 /* ---------- IMPRESSÃO ---------- */
@@ -830,21 +832,18 @@ table.t.tight-t th{padding:2mm 2.5mm}
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span>
       <h4>Contexto gigante</h4>
       <p class="small">O Claude lê <strong>processos inteiros</strong> de uma vez. A janela depende do <strong>modelo</strong>,
-      não do plano: com Opus 5 ou Sonnet 5 são 1 milhão de tokens em todos os planos pagos, inclusive no chat; modelos
-      anteriores operam com 500 mil ou 200 mil. Centenas de páginas de autos na mesma conversa, sem "esquecer" o começo.</p></div>
+      não apenas do plano. Nomes, janelas de contexto e disponibilidade mudam; consulte o catálogo oficial e o seletor da sua conta antes de planejar. Divida autos extensos e confira se os documentos relevantes foram considerados.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-brain"/></svg></span>
       <h4>Raciocínio jurídico</h4>
-      <p class="small">Os modelos atuais raciocinam antes de responder (<em>adaptive thinking</em>; no Opus 5 já vem ligado
-      por padrão), o que muda o jogo em análise de caso, teses e revisão de peças — tarefas em que "primeira intuição" não basta.</p></div>
+      <p class="small">Alguns modelos oferecem modos de raciocínio configuráveis; recursos e comportamento variam por modelo e superfície. Consulte a documentação antes de aplicar ao fluxo.
+      Não substituem análise jurídica, pesquisa nem revisão profissional.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-shield"/></svg></span>
       <h4>Postura de segurança</h4>
       <p class="small">A Anthropic nasceu como empresa de segurança em IA. Planos comerciais (Team/Enterprise/API)
-      <strong>não treinam com seus dados</strong> por padrão e oferecem logs de auditoria e controles de compliance.
-      Retenção zero (ZDR) é acordo à parte — e não cobre o chat do Team nem o do Enterprise. Detalhe no Cap. 3.</p></div>
+      políticas de treinamento, retenção e controles variam por produto, contrato e configuração. Confira os termos aplicáveis à conta antes de inserir qualquer dado.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-layers"/></svg></span>
       <h4>Um ecossistema, não um chat</h4>
-      <p class="small">Claude.ai, Projects, Artefatos, Skills, Cowork, Claude Code, Conectores (MCP): o mesmo modelo
-      trabalha no chat, nos seus documentos, no seu computador e nas suas rotinas — sob a mesma assinatura.</p></div>
+      <p class="small">Claude.ai, Projects, Artefatos, Skills, Cowork, Claude Code e conectores têm condições e disponibilidades próprias; não presuma acesso comum ou incluído na mesma assinatura.</p></div>
   </div>
 
   <div class="quote">"O advogado não precisa da IA que responde mais rápido. Precisa da IA que lê o processo inteiro,
@@ -863,27 +862,18 @@ table.t.tight-t th{padding:2mm 2.5mm}
 
 <!-- ================= CAP 1 · PÁGINA 2 ================= -->
 <section class="sheet pad" id="pagina-09">
-  <h3 class="sec" style="margin-top:0"><span class="n">1.3</span>Os modelos atuais</h3>
+  <h3 class="sec" style="margin-top:0"><span class="n">1.3</span>Como escolher um modelo</h3>
   <p style="font-size:9.4pt">Você não precisa decorar nomes — precisa saber <strong>qual modelo para qual tarefa</strong>.
-  Esta é a linha atual, confirmada na documentação oficial:</p>
+  O catálogo e a disponibilidade mudam; confira a documentação e o seletor da sua conta no momento do uso:</p>
 
   <table class="t">
     <tr><th>Modelo</th><th>Posição</th><th>Uso ideal na advocacia</th><th>Contexto</th></tr>
-    <tr><td><b>Opus 5</b></td><td>Recomendado · padrão do Max</td><td>Trabalho pesado, contratos longos, casos complexos</td><td>1M tokens</td></tr>
-    <tr><td><b>Fable 5</b></td><td>O mais capaz (dobro do preço)</td><td>Peças de altíssimo risco — leia o aviso abaixo</td><td>1M na API</td></tr>
-    <tr><td><b>Sonnet 5</b></td><td>Padrão (Free e Pro)</td><td>90% das tarefas: minutas, resumos, pesquisa, e-mails</td><td>1M tokens</td></tr>
-    <tr><td><b>Haiku 4.5</b></td><td>Rápido e barato</td><td>Triagem, classificação, tarefas repetitivas em volume</td><td>200k tokens</td></tr>
+    <tr><td><b>Modelo disponível na sua conta</b></td><td>Consulte seletor/documentação</td><td>Compare uma tarefa fictícia e revise criticamente</td><td>Varia por modelo e superfície</td></tr>
   </table>
-  <p class="small">Regra prática: comece tudo no <strong>Sonnet 5</strong>; escale para <strong>Opus 5</strong> — o mais forte
-  do Pro — quando a peça for decisiva. Use Haiku para volume. O Opus 4.8 ainda aparece na lista, como legado. (Preços e
-  limites no Cap. 2.)</p>
+  <p class="small">Não escolha modelo por promessa de êxito jurídico. Compare disponibilidade, custo e desempenho na tarefa adequada, sem inserir dados reais em teste; revise qualquer saída.</p>
 
   <div class="callout co-err"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
-    <div><strong>Antes de escalar para o Fable 5, duas ressalvas.</strong> <b>Sigilo:</b> Fable 5 e Mythos 5 são
-    <i>Covered Models</i> — a Anthropic exige <strong>retenção de 30 dias</strong> e <strong>não permite retenção zero
-    (ZDR)</strong> neles. Se o seu escritório contratou ZDR, a peça mais sigilosa é justamente a que <strong>não</strong>
-    pode ir para o Fable 5. <b>Contexto:</b> a documentação da API dá 1M ao modelo, mas o artigo oficial do claude.ai não
-    o lista — no chat, o número não é confirmado (Cap. 9).</div></div>
+    <div><strong>Antes de escalar de modelo, confira custo e sigilo.</strong> O catálogo consultado em 12/11/2026 lista Opus 5.5, Sonnet 5.5, Haiku 5.5 e Fable 5.2; isso não garante inclusão em qualquer plano. Fable pode exigir créditos extras. Confira <a href="https://code.claude.com/docs/en/model-config">acesso e configuração</a> e <a href="https://privacy.claude.com/">termos de privacidade</a>, inclusive retenção específica e elegibilidade a ZDR. Contexto da API não prova contexto no chat (Cap. 9).</div></div>
 
   <h3 class="sec"><span class="n">1.4</span>O mapa do ecossistema</h3>
   <div class="grid2">
@@ -917,15 +907,15 @@ table.t.tight-t th{padding:2mm 2.5mm}
     <tr><th style="width:19%">O que decide no Direito</th><th style="width:27%">Claude</th><th style="width:27%">ChatGPT</th><th style="width:27%">Gemini</th></tr>
     <tr>
       <td><b>Autos inteiros de uma vez</b><br><span class="small">janela de contexto no chat</span></td>
-      <td><b>1M de tokens</b> com Opus 5 ou Sonnet 5, em <b>todos os planos pagos</b>.</td>
-      <td><b>272 mil</b> (GPT-5.6 Sol) — o único número que a OpenAI publica, na página do plano Business. Para Plus e Enterprise não há número divulgado.</td>
-      <td><b>1M</b> no AI Pro e no AI Ultra; 128 mil no AI Plus; 32 mil sem assinatura.</td>
+      <td>Confira contexto do modelo e limites de anexos na <a href="https://platform.claude.com/docs/en/models/overview">documentação</a> e na conta; API não prova capacidade no chat.</td>
+      <td>Confira contexto e limites na <a href="https://chatgpt.com/pricing/">página do produto</a> e na conta; não converta tokens em páginas garantidas.</td>
+      <td>Confira <a href="https://support.google.com/gemini/answer/16275805">limites do app</a>; limites da API não provam acesso na assinatura.</td>
     </tr>
     <tr>
       <td><b>Os modelos de hoje</b></td>
-      <td>Opus 5 (recomendado, padrão do Max), Fable 5 (o mais capaz), Sonnet 5, Haiku 4.5.</td>
-      <td>Família GPT-5.6: Sol, Terra e Luna. No chat só o Sol é selecionável — e ele <b>não existe no Free nem no Go</b>; o Plus não alcança o nível "Extra High".</td>
-      <td>Gemini 3 Pro, 3 Flash e 3 Flash-Lite — os mesmos três em AI Plus, AI Pro e AI Ultra. O que muda é a cota.</td>
+      <td>Catálogo consultado em 12/11/2026: Opus 5.5, Sonnet 5.5, Haiku 5.5 e Fable 5.2. O seletor da conta determina o acesso; não há inclusão universal.</td>
+      <td>Consulte os modelos no seletor da sua conta e as condições oficiais do produto; nomes e disponibilidade mudam.</td>
+      <td><a href="https://ai.google.dev/gemini-api/docs/models">Catálogo da API</a>: Gemini 4 Carbon, Argon e Hydrogen (12/11/2026). Acesso no app depende das condições próprias.</td>
     </tr>
     <tr>
       <td><b>Plano individual: treina com o que você escreve?</b></td>
@@ -941,9 +931,9 @@ table.t.tight-t th{padding:2mm 2.5mm}
     </tr>
     <tr>
       <td><b>Porta de entrada paga</b></td>
-      <td>Pro: US$&nbsp;20/mês (US$&nbsp;17 no anual).</td>
-      <td>Plus: US$&nbsp;20/mês — sem opção de plano anual.</td>
-      <td>Google AI Pro: R$&nbsp;96,99/mês, cobrado em real. O AI Plus custa R$&nbsp;24,99, mas com 128 mil de contexto.</td>
+      <td><a href="https://claude.com/pricing">Consulte preço e recursos</a>; API e créditos podem ter cobrança separada.</td>
+      <td><a href="https://chatgpt.com/pricing/">Consulte preço e recursos</a>; confirme moeda, impostos e periodicidade.</td>
+      <td><a href="https://gemini.google/subscriptions/">Consulte assinaturas</a>; confirme elegibilidade, limites e cobrança.</td>
     </tr>
   </table>
 
@@ -987,34 +977,31 @@ table.t.tight-t th{padding:2mm 2.5mm}
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-link"/></svg></span>
       <h4>O que o Gemini faz melhor (ou igual)</h4>
       <p class="small"><b>Se o escritório roda no Google Workspace.</b> O Gemini trabalha dentro do Gmail e do Docs, no
-      mesmo login que a sua TI já administra — sem exportar documento sigiloso para outra aba.<br><b>Contexto grande já no
-      plano do meio.</b> 1M de tokens no AI Pro: empata com o Claude na leitura de autos longos, com preço em real e
-      armazenamento no pacote.<br><b>Um fornecedor a menos.</b> Cobrança, contrato e administração de usuários no mesmo
+      mesmo ambiente que a sua TI administra, conforme licença e permissões — isso não significa processamento apenas local.<br><b>Autos longos.</b> Confira modelo, contexto e limites no produto contratado; teste a cobertura com documentos fictícios antes de usar autos.<br><b>Um fornecedor a menos.</b> Cobrança, contrato e administração de usuários no mesmo
       lugar do e-mail e do drive do escritório.</p></div>
   </div>
 
   <table class="t">
     <tr><th style="width:33%">A tarefa</th><th style="width:23%">Por onde começar</th><th>Por quê</th></tr>
     <tr><td>Ler 800 páginas de autos e montar a cronologia</td><td><b>Claude</b> ou <b>Gemini AI Pro</b></td>
-        <td>São os dois com 1M de contexto documentado no chat. No ChatGPT, o maior número publicado é 272 mil.</td></tr>
+        <td>Teste legibilidade, cobertura e referências por arquivo. Divida por atos se o volume exceder os limites disponíveis.</td></tr>
     <tr><td>Redigir e revisar peça longa em português formal</td><td><b>Teste — não confie na marca</b></td>
         <td>Não há métrica pública. Rode o mesmo caso nos três (§1.5) e decida pelo seu padrão de banca, não pelo meu.</td></tr>
     <tr><td>Trabalhar dentro do Gmail, do Docs e do Drive do escritório</td><td><b>Gemini</b></td>
         <td>Integração nativa na assinatura que o escritório já tem — menos cópia e colagem de conteúdo sigiloso.</td></tr>
     <tr><td>Imagem, vídeo, apresentação, material de marketing</td><td><b>ChatGPT</b></td>
-        <td>Geração de imagem, voz e Sora já estão nos planos pagos, sem ferramenta extra.</td></tr>
+        <td>Confira quais recursos de imagem, voz e vídeo estão disponíveis na conta e se exigem créditos adicionais.</td></tr>
     <tr><td>Triagem e classificação em volume</td><td>O modelo mais barato que você já paga</td>
-        <td>Tarefa simples não justifica modelo caro. No Claude, Haiku 4.5.</td></tr>
+        <td>Teste Haiku 5.5 se disponível; compare custo e qualidade com amostragem revisada.</td></tr>
     <tr><td><b>Qualquer coisa com dado de cliente</b></td><td><b>Plano corporativo — de qualquer um dos três</b></td>
         <td>Claude Team/Enterprise/API, ChatGPT Business/Enterprise/API ou Google Workspace. Nunca o plano individual.</td></tr>
   </table>
 
   <div class="callout co-law"><span class="ci"><svg class="ic"><use href="#i-scale"/></svg></span>
     <div><strong>A resposta honesta costuma ser "os dois".</strong> Para a maior parte dos escritórios não existe decisão
-    de trocar: existe decisão de <b>onde colocar cada tarefa</b>. Duas assinaturas individuais somam US$&nbsp;40 por mês —
-    menos do que uma hora do seu trabalho, e menos do que o custo de uma peça devolvida. E a escolha que de fato protege o
-    cliente não é a marca no alto da tela: é <b>o plano</b>. Individual treina, ou pode treinar, com o que você escreve;
-    corporativo, não. O Cap. 3 fecha essa porta antes do primeiro caso real.</div></div>
+    de trocar: existe decisão de <b>onde colocar cada tarefa</b>. Compare o custo total vigente, incluindo API e créditos,
+    antes de contratar mais de um serviço. Proteger o cliente depende de termos, retenção, permissões, finalidade e
+    controles da banca — não apenas da marca ou do nome do plano. Volte ao Cap. 3 antes de usar dados reais.</div></div>
 
   <div class="folio">Cap. 01 · Por que Claude</div>
 </section>
@@ -1071,7 +1058,7 @@ table.t.tight-t th{padding:2mm 2.5mm}
       </div>
       <div class="shot-main">
         <div class="shot-bar">
-          <span class="shot-model"><span class="shot-pin">1</span>Sonnet 5</span>
+          <span class="shot-model"><span class="shot-pin">1</span>Sonnet 5.5 · exemplo condicionado</span>
           <span class="shot-tools">Busca web · Anexos</span>
         </div>
         <div class="shot-you"><span class="who">Você</span>
@@ -1094,10 +1081,10 @@ table.t.tight-t th{padding:2mm 2.5mm}
   </div>
 
   <div class="ui-legend">
-    <div><b>1</b><span><strong>Seletor de modelo.</strong> Fique no Sonnet 5 (padrão do Free e do Pro); troque para Opus 5 quando a peça for decisiva (Cap. 1).</span></div>
+    <div><b>1</b><span><strong>Seletor de modelo.</strong> Confira o modelo disponível. Sonnet pode servir à rotina; teste Opus em tarefas complexas, sem presumir inclusão no plano ou qualidade jurídica garantida.</span></div>
     <div><b>2</b><span><strong>Caixa de mensagem.</strong> Enter envia, Shift+Enter quebra linha. Um assunto por conversa, sempre.</span></div>
     <div><b>3</b><span><strong>Anexo e busca web.</strong> O clipe lê PDFs, imagens e planilhas. A busca traz o atual — e cada fonte precisa ser conferida (Cap. 8).</span></div>
-    <div><b>4</b><span><strong>Projects.</strong> Pastas persistentes com documentos e instruções próprias, um por caso ou área. A partir do Pro.</span></div>
+    <div><b>4</b><span><strong>Projects.</strong> Espaços com documentos e instruções por caso ou área; confira disponibilidade e limites na conta.</span></div>
     <div><b>5</b><span><strong>Settings → Privacy.</strong> O primeiro lugar a visitar. É onde você decide o que acontece com o que digita.</span></div>
   </div>
 
@@ -1109,16 +1096,16 @@ table.t.tight-t th{padding:2mm 2.5mm}
     <div class="shot-body solo" style="min-height:auto">
       <div class="shot-main" style="min-height:auto">
         <div class="shot-bar" style="border-bottom:none;padding-bottom:0">
-          <span class="shot-model">Sonnet 5</span>
+          <span class="shot-model">Sonnet 5.5 · se disponível</span>
           <span class="shot-tools">o modelo em uso aparece aqui</span>
         </div>
         <div style="border:1px solid #ddd0b2;border-radius:2mm;background:#fff;overflow:hidden;max-width:96mm">
           <div class="s-i" style="color:#3a3227;padding:1.8mm 2.6mm;border-bottom:1px solid #f0e7d3;font-size:7.4pt">
-            <b style="color:var(--gold-3)">Opus 5</b> — o mais forte do Pro; peças decisivas</div>
+            <b style="color:var(--gold-3)">Opus 5.5</b> — teste para análise complexa, se disponível</div>
           <div class="s-i" style="color:#3a3227;padding:1.8mm 2.6mm;border-bottom:1px solid #f0e7d3;font-size:7.4pt;background:rgba(217,171,60,.10)">
-            <b style="color:var(--gold-3)">Sonnet 5</b> — padrão; 90% do dia a dia &nbsp;✓</div>
+            <b style="color:var(--gold-3)">Sonnet 5.5</b> — teste para rotina, se disponível</div>
           <div class="s-i" style="color:#3a3227;padding:1.8mm 2.6mm;font-size:7.4pt">
-            <b style="color:var(--gold-3)">Haiku 4.5</b> — rápido e barato; triagem em volume</div>
+            <b style="color:var(--gold-3)">Haiku 5.5</b> — teste para triagem, se disponível</div>
         </div>
       </div>
     </div>
@@ -1138,25 +1125,19 @@ table.t.tight-t th{padding:2mm 2.5mm}
   <h3 class="sec" style="margin-top:0"><span class="n">2.3</span>Planos e preços oficiais</h3>
   <table class="t">
     <tr><th>Plano</th><th>Preço</th><th>Para quem faz sentido</th></tr>
-    <tr><td><b>Free</b></td><td>US$ 0</td><td>Testar e aprender o método. Sem Claude Code nem Cowork.</td></tr>
-    <tr><td><b>Pro</b></td><td>US$ 20/mês (US$ 17 no anual)</td><td>Uso individual sério: Code, Cowork, Research e Projects, nos limites do plano.</td></tr>
-    <tr><td><b>Max 5x</b></td><td>US$ 100/mês</td><td>Uso individual intenso: 5x o uso do Pro, prioridade em horário de pico.</td></tr>
-    <tr><td><b>Max 20x</b></td><td>US$ 200/mês</td><td>Operação pesada de uma pessoa só: 20x o uso do Pro.</td></tr>
-    <tr><td><b>Team</b></td><td>US$ 25–125/assento/mês (US$ 20–100 no anual)</td><td>2 a 150 usuários, cobrança centralizada, SSO — <b>não treina com seus dados</b>.</td></tr>
-    <tr><td><b>Enterprise</b></td><td>US$ 20/assento + uso</td><td>Retenção customizável, logs de auditoria e segurança avançada.</td></tr>
+    <tr><td><b>Planos e produtos</b></td><td>Consulte a página oficial</td><td>Compare recursos, elegibilidade e cobrança antes de contratar.</td></tr>
   </table>
-  <p class="small"><strong>Por perfil:</strong> comece no <strong>Pro</strong>; para dado real de cliente, <strong>Team</strong>
-  (2+ assentos), que não treina por padrão. <strong>Enterprise</strong> se houver exigência de compliance.</p>
-  <p class="small">Os valores acima saíram da fonte oficial, mas preço e limite mudam sem aviso: antes de assinar,
+  <p class="small"><strong>Por perfil:</strong> teste com dados fictícios antes de contratar. Para dados reais, a banca deve aprovar termos, controles, retenção e permissões; uma assinatura comercial não autoriza por si só o uso de documentos sigilosos.</p>
+  <p class="small">Preços e limites não são fixados neste manual: antes de assinar,
   confira em <a href="https://claude.com/pricing">claude.com/pricing</a> — o endereço está também na página
   <i>Acesso rápido</i>, no início do manual.</p>
 
   <h3 class="sec"><span class="n">2.4</span>Como funcionam os limites de uso</h3>
   <ul class="tight">
-    <li><strong>Janela móvel de 5 horas:</strong> o contador começa na primeira mensagem e reinicia 5h depois.</li>
-    <li><strong>Tetos semanais:</strong> planos pagos somam um limite semanal por cima da janela.</li>
-    <li><strong>Pool único:</strong> chat, celular e Claude Code consomem a mesma cota — não são limites separados.</li>
-    <li><strong>Estourou?</strong> Aguarde o reset, suba de plano ou ative <strong>usage credits</strong> (taxas de API). Veja em Settings → Usage.</li>
+    <li><strong>Limites vigentes:</strong> consulte Settings → Usage para cota e horário de renovação da sua conta.</li>
+    <li><strong>Variação:</strong> modelo, anexos, superfície e contrato podem alterar o consumo e os tetos.</li>
+    <li><strong>Chat e Code:</strong> confira se compartilham franquia no seu modo de autenticação; assinatura não equivale a saldo de API.</li>
+    <li><strong>Estourou?</strong> Aguarde a renovação ou reduza a tarefa. Antes de habilitar créditos, confira cobrança e teto de gastos.</li>
   </ul>
 
   <div class="folio">Cap. 02 · Setup em 15 minutos</div>
@@ -1207,10 +1188,10 @@ para esse trabalho.</pre></div>
   <h3 class="sec"><span class="n">3.2</span>O que cada plano faz com seus dados</h3>
   <table class="t">
     <tr><th>Plano</th><th>Treina com seus dados?</th><th>Retenção e controles</th></tr>
-    <tr><td><b>Free / Pro / Max</b></td><td><b>Só se você permitir</b> — confira a sua configuração, não presuma</td><td>Treino negado: 30 dias. Permitido: até 5 anos. Modo Incognito: nunca treina.</td></tr>
+    <tr><td><b>Planos individuais</b></td><td>Confira escolha de privacidade e termos vigentes</td><td>Confira retenção, exclusão, modo privado e exceções no <a href="https://privacy.claude.com/">Privacy Center</a>; não presuma ausência de armazenamento.</td></tr>
     <tr><td><b>Team</b></td><td><b>Não</b>, por padrão</td><td>Controles de administrador, cobrança e acesso centralizados.</td></tr>
-    <tr><td><b>Enterprise</b></td><td><b>Não</b>, por padrão</td><td>Retenção customizável — o padrão é <b>indefinida</b> até o <i>owner</i> fixar um prazo (mínimo 30 dias). Logs de auditoria. ZDR só para o Claude Code, sob acordo.</td></tr>
-    <tr><td><b>API</b></td><td><b>Não</b></td><td>Retenção padrão de 30 dias; ZDR disponível via acordo.</td></tr>
+    <tr><td><b>Enterprise</b></td><td>Confira termos comerciais e exceções</td><td>Administrador deve confirmar retenção, auditoria, exclusão e eventual acordo de retenção zero por recurso e modelo.</td></tr>
+    <tr><td><b>API</b></td><td>Confira termos comerciais e exceções</td><td>Confira retenção específica do modelo e elegibilidade a retenção zero no contrato; API não significa processamento local.</td></tr>
   </table>
   <p class="small"><strong>Opt-in ou opt-out?</strong> As próprias fontes oficiais divergem no rótulo — a página de
   planos chama a linha de <i>opt-out</i>; o Privacy Center descreve o treino como permissão que você concede.
@@ -1219,13 +1200,7 @@ para esse trabalho.</pre></div>
   Team, Enterprise ou API</strong> — planos que não treinam por padrão.</p>
 
   <div class="callout co-err"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
-    <div><strong>A exceção que atravessa todos os planos.</strong> Clicar em avaliar (positivo ou negativo) sob uma
-    resposta pode liberar <strong>aquela conversa inteira</strong> para treino, com retenção de até 5 anos —
-    <strong>inclusive em Team e Enterprise</strong>. Conduta da banca: não avalie conversa com dado de cliente; e o
-    <i>owner</i> pode desligar o recurso para todo o escritório em Organization settings → Data and Privacy →
-    <strong>Rate chats</strong>. Há ainda o que não se desliga: conversa sinalizada por <strong>revisão de
-    segurança</strong> pode ser usada seja qual for a sua configuração, e o que é sinalizado fica retido por até
-    <strong>2 anos</strong> — os escores de classificação de segurança, por até 7.</div></div>
+    <div><strong>Feedback e segurança têm condições próprias.</strong> Não envie avaliação de conversa com dados de cliente sem autorização: o feedback pode permitir tratamento adicional. O administrador deve conferir controles e exceções de segurança no <a href="https://privacy.claude.com/">Privacy Center</a>. Desativar treino não equivale a retenção zero nem elimina obrigações de sigilo.</div></div>
 
   <div class="folio">Cap. 03 · Sigilo, LGPD e ética</div>
 </section>
@@ -1405,10 +1380,7 @@ Documento: <b>[cole aqui]</b></pre></div>
     olhos. Voltaremos ao método completo de verificação mais adiante neste manual.</div></div>
 
   <h3 class="sec"><span class="n">4.2</span>O calendário do modelo: o cutoff de conhecimento</h3>
-  <p style="font-size:9.4pt">Todo modelo foi treinado até uma data-limite, e ela <strong>varia por modelo</strong>:
-  o Opus 5 conhece o mundo até <strong>maio de 2026</strong>; Sonnet 5 e Fable 5, até <strong>janeiro de 2026</strong>.
-  Depois dessa data, para o Claude nada existe: a lei da semana passada, a súmula nova, a decisão de ontem.
-  A solução é a <strong>busca web</strong>, disponível já no plano Free — mas ligue com critério:</p>
+  <p style="font-size:9.4pt">A data-limite de treino <strong>varia por modelo e versão</strong>; confira o <a href="https://platform.claude.com/docs/en/models/overview">catálogo oficial</a>. Treino não é base jurídica atualizada nem garantia de conhecimento anterior à data. Use busca quando disponível ou forneça fontes oficiais conferidas; confira vigência e aplicabilidade antes de usar qualquer norma ou precedente.</p>
   <ul class="tight">
     <li><strong>Ligue</strong> para temas posteriores ao cutoff do seu modelo: legislação nova, notícias, índices e
     taxas que mudam todo mês, jurisprudência recente.</li>
@@ -1422,17 +1394,13 @@ Documento: <b>[cole aqui]</b></pre></div>
 <!-- ================= CAP 4 · PÁGINA 2 ================= -->
 <section class="sheet pad" id="pagina-22">
   <div class="stats">
-    <div class="stat"><span class="sv">1 milhão</span><span class="sl">tokens de contexto com Opus 5 ou Sonnet 5, em qualquer plano pago</span></div>
-    <div class="stat"><span class="sv">5 h</span><span class="sl">janela móvel de uso, que recomeça a cada ciclo</span></div>
-    <div class="stat"><span class="sv">mai/2026</span><span class="sl">fim do conhecimento do Opus 5 — varia por modelo</span></div>
+    <div class="stat"><span class="sv">Contexto</span><span class="sl">confira modelo, produto e limites de anexos</span></div>
+    <div class="stat"><span class="sv">Uso</span><span class="sl">confira cota e renovação na conta</span></div>
+    <div class="stat"><span class="sv">Fontes</span><span class="sl">confira atualidade e aplicabilidade na origem oficial</span></div>
   </div>
 
   <h3 class="sec"><span class="n">4.3</span>Janela de contexto e o "esquecimento"</h3>
-  <p style="font-size:9.4pt">Cada resposta relê a conversa inteira — suas mensagens, as do Claude, os
-  anexos. Essa memória de trabalho é a <strong>janela de contexto</strong>, e o tamanho dela depende do
-  <strong>modelo</strong>, não do plano: no chat, com Opus 5 ou Sonnet 5 são <strong>1 milhão de tokens</strong>
-  em todos os planos pagos; com Opus 4.8, 4.7, 4.6 e Sonnet 4.6, 500 mil; com os demais, 200 mil — na API, todos
-  esses chegam a 1 milhão (as páginas oficiais divergem sobre os números do chat — ressalva no Cap. 9). Duas
+  <p style="font-size:9.4pt">A <strong>janela de contexto</strong> limita o conteúdo disponível para uma resposta; anexos e conversas longas podem ser selecionados, resumidos ou recuperados pelo produto. Confira o modelo, a superfície e os limites da conta na <a href="https://platform.claude.com/docs/en/models/overview">documentação</a>, sem transportar números da API para o chat. Duas
   consequências práticas. Primeira: em conversas muito longas, a atenção se dilui e instruções dadas lá
   no começo perdem força — reapresente o que for crítico perto do fim. Segunda: chegando ao limite, a
   saída não é "lembrar o Claude", é abrir conversa nova. Regra de bolso: <strong>um assunto, uma
@@ -1443,19 +1411,12 @@ Documento: <b>[cole aqui]</b></pre></div>
   <p style="font-size:9.4pt">Antes de responder, o Claude raciocina: hipóteses, contrapontos, checagens —
   um passo a passo interno que não aparece na resposta final. A novidade é que ele calibra sozinho
   <em>quanto</em> pensar, conforme a dificuldade da pergunta: é o <strong>raciocínio adaptativo</strong>
-  (<em>adaptive thinking</em>, no nome oficial), e no Opus 5 ele vem ligado por padrão. Na API e no Claude
-  Code você controla esse esforço explicitamente — é o <em>effort</em>, em cinco níveis:
-  <em>low</em>, <em>medium</em>, <em>high</em>, <em>xhigh</em> e <em>max</em>. No chat, o que muda uma
+  (<em>adaptive thinking</em>, no nome oficial). Os controles de esforço disponíveis dependem do modelo e da superfície; consulte a documentação e, no Code, <span class="mono-s">/model</span>. No chat, o que muda uma
   análise em camadas — sopesar teses concorrentes, testar uma cláusula contra três riscos — é a qualidade
   da pergunta, não a caça a um botão.</p>
 
   <h3 class="sec"><span class="n">4.5</span>Limites de uso, sem pânico</h3>
-  <p style="font-size:9.4pt">Todo plano tem limites que zeram em uma <strong>janela móvel de 5 horas</strong>,
-  contada da primeira mensagem; os planos pagos somam um teto semanal. Chat e Claude Code bebem do
-  <strong>mesmo reservatório</strong>, e não existe "número de mensagens": gastam mais conversas longas,
-  anexos grandes e modelos pesados. Estourou? Três saídas: esperar o reset, subir de plano ou, nos
-  planos pagos, ativar créditos de uso. Na prática, quem roda o dia a dia no Sonnet 5 e escala de
-  modelo só nas peças decisivas raramente encosta no teto.</p>
+  <p style="font-size:9.4pt">Confira a cota e a renovação em Settings → Usage. Conversas longas, anexos e tarefas agênticas podem elevar o consumo. Chat e Code podem compartilhar franquia conforme autenticação e contrato; API e créditos têm condições próprias. Ao atingir o limite, aguarde ou reduza a tarefa; só habilite cobrança adicional depois de conferir preço e teto de gastos em <a href="https://claude.com/pricing">planos e preços</a>.</p>
 
   <div class="quote"><span class="qa">Modelo mental:</span> o Claude é um estagiário brilhante que
   raramente admite dúvida. Rápido, culto, disponível a qualquer hora — e capaz de errar com a mesma
@@ -1649,7 +1610,7 @@ fatos; liste o que preciso levantar antes de decidir.</pre></div>
 
         <div style="display:flex;flex-direction:column;gap:2mm;padding:2.6mm 3mm;border-right:1px solid #e0d3b4">
           <div class="shot-bar">
-            <span class="shot-model">Sonnet 5</span>
+            <span class="shot-model">Sonnet 5.5 · se disponível</span>
             <span class="shot-tools">Conversa</span>
           </div>
           <div class="shot-you"><span class="who">Você</span>
@@ -2054,25 +2015,15 @@ oficial" — nunca complete com um julgado provável.</pre></div>
   conversa</strong>. Este capítulo mostra o que cabe de verdade, por que ainda vale dividir mesmo quando tudo cabe,
   e as quatro leituras que mais valem o seu tempo.</p>
 
-  <h3 class="sec"><span class="n">9.1</span>Quanto cabe: depende do modelo, não do plano</h3>
+  <h3 class="sec"><span class="n">9.1</span>Quanto cabe: confira modelo e produto</h3>
   <table class="t">
-    <tr><th>Modelo que você seleciona</th><th>Janela de contexto</th><th>O que cabe na prática (estimativa central)</th></tr>
-    <tr><td><b>Opus 5</b> · <b>Sonnet 5</b></td><td><b>1 milhão de tokens</b></td><td>Da ordem de <b>mil páginas</b> de peças em texto: os autos inteiros de um caso volumoso, de uma vez</td></tr>
-    <tr><td><b>Fable 5</b></td><td><b>1 milhão</b> na API e no Claude Code; <b>no chat, não confirmado</b></td><td>O artigo oficial de contexto do claude.ai não lista o Fable 5 — no chat, planeje pelos 200 mil até testar</td></tr>
-    <tr><td>Opus 4.8, 4.7 e 4.6 · Sonnet 4.6</td><td><b>500 mil tokens</b></td><td>Perto de <b>500 páginas</b>: um processo comum completo, com anexos e contratos comparados</td></tr>
-    <tr><td>Haiku 4.5 e modelos anteriores</td><td><b>200 mil tokens</b></td><td>Perto de <b>200 páginas</b>: peças longas, um contrato com anexos, um bloco dos autos por vez</td></tr>
+    <tr><th>Modelo no catálogo em 12/11/2026</th><th>Antes de usar</th><th>Aplicação a testar</th></tr>
+    <tr><td><b>Opus 5.5</b></td><td>Confira acesso e contexto no produto contratado</td><td>Análise complexa, com fontes e revisão humana</td></tr>
+    <tr><td><b>Sonnet 5.5</b></td><td>Confira limites de anexos e consumo na conta</td><td>Resumos e minutas do cotidiano</td></tr>
+    <tr><td><b>Haiku 5.5</b></td><td>Confira disponibilidade, custo e cobertura</td><td>Extração e classificação com amostragem revisada</td></tr>
+    <tr><td><b>Fable 5.2</b></td><td>Confira elegibilidade, créditos extras e termos</td><td>Somente após teste e aprovação de custo e privacidade</td></tr>
   </table>
-  <p class="small">O que muda a janela é o <b>modelo selecionado</b>, não a assinatura: esses valores valem
-  igualmente em todos os planos pagos. A régua de páginas é uma <b>estimativa central</b>, não um piso: a mesma janela
-  pode render de <b>~700 a ~1.200 páginas</b> conforme a densidade do texto e a qualidade do PDF — a Anthropic informa
-  que 1 milhão de tokens equivale a cerca de <b>555 mil palavras</b>, o português jurídico gasta mais token por palavra
-  que o inglês, e PDF escaneado consome bem mais que PDF de texto. Duas cautelas: a própria Anthropic estima "cerca de
-  500 páginas ou mais" para 200 mil tokens, bem acima da nossa linha; e os modelos não contam token do mesmo jeito —
-  nos mais antigos (Opus 4.6, Sonnet 4.6, Haiku 4.5) cabe cerca de 35% mais texto pelo mesmo número de tokens.
-  <b>Ressalva honesta:</b> esses números por modelo vêm da Central de Ajuda oficial da Anthropic, mas a página
-  comercial <i>claude.com/pricing</i> ainda exibe "200k" na linha de contexto — duas fontes oficiais da mesma casa
-  que se contradizem. Antes de planejar um caso que dependa de contexto extremo, confira no app qual modelo está
-  ativo e teste com uma parte dos autos.</p>
+  <p class="small"><a href="https://platform.claude.com/docs/en/models/overview">Catálogo oficial</a> e <a href="https://code.claude.com/docs/en/model-config">configuração do Code</a>: catálogo da API não garante acesso no chat, nem janela idêntica. No Code, confira <span class="mono-s">/model</span>; aliases dependem do provedor. Não há conversão segura de tokens em páginas: teste PDFs fictícios com índice conhecido e confira se cada arquivo e trecho relevante foi considerado. Se faltar cobertura, divida por atos e registre as lacunas.</p>
 
   <h3 class="sec"><span class="n">9.2</span>PDF digital x PDF escaneado</h3>
   <div class="grid2">
@@ -2140,13 +2091,12 @@ Faltou dado para calcular (ex.: data da intimação)? Escreva
 Termine dizendo o que o cliente precisa fazer, se algo.</pre></div>
 
   <h3 class="sec"><span class="n">9.4</span>Por que ainda vale dividir por atos</h3>
-  <p style="font-size:9.4pt">Com 1 milhão de tokens, "cabe?" deixou de ser o gargalo na esmagadora maioria dos
-  processos. Só que caber não é o mesmo que ser bem lido. Duas razões mantêm a divisão de pé: <strong>a atenção do
+  <p style="font-size:9.4pt">Mesmo quando os arquivos cabem no limite contratado, caber não é o mesmo que ser bem lido. Duas razões mantêm a divisão de pé: <strong>a atenção do
   modelo se dilui em contexto muito longo</strong> — o que está no meio de novecentas páginas recebe menos foco do
   que num bloco de oitenta — e <strong>tudo que entra consome o seu limite de uso</strong> (Cap. 2). Anexar os autos
   inteiros deixou de ser proeza e virou escolha; faça a escolha pela pergunta.</p>
   <ul class="tight">
-    <li><strong>Pergunta transversal? Anexe tudo:</strong> cronologia e mapa de provas exigem enxergar o processo inteiro de uma vez.</li>
+    <li><strong>Pergunta transversal?</strong> Use índice dos autos e referências aos arquivos; consolide blocos revisados se não houver cobertura integral.</li>
     <li><strong>Leitura profunda? Divida por atos:</strong> uma conversa por bloco — fase de conhecimento, instrução, recursal.</li>
     <li><strong>Resuma e reanexe:</strong> peça o resumo estruturado de cada bloco e junte os resumos na conversa-síntese.</li>
     <li><strong>Mantenha um índice:</strong> nomeie as conversas pelo bloco ("Autos — Instrução") dentro do Project do caso.</li>
@@ -2359,7 +2309,7 @@ processo.</pre></div>
 
         <div style="display:flex;flex-direction:column;gap:2mm;padding:2.6mm 3mm;border-right:1px solid #e0d3b4">
           <div class="shot-bar">
-            <span class="shot-model">Sonnet 5</span>
+            <span class="shot-model">Sonnet 5.5 · se disponível</span>
             <span class="shot-tools">Project</span>
           </div>
           <div style="border:1px solid #e0d3b4;border-radius:2.2mm;background:#fff;padding:2mm 2.4mm;
@@ -2439,22 +2389,22 @@ processo.</pre></div>
   <h3 class="sec"><span class="n">12.4</span>Economia de uso sem medo</h3>
   <table class="t">
     <tr><th>Tarefa</th><th>Modelo sugerido</th></tr>
-    <tr><td>Rotina do dia a dia — e-mails, resumos, minutas comuns</td><td>Sonnet 5 (padrão do Free e do Pro)</td></tr>
-    <tr><td>Peça decisiva — recurso em causa alta, parecer complexo</td><td>Opus 5 (Fable 5 só com a ressalva de sigilo abaixo)</td></tr>
-    <tr><td>Volume — triagem de documentos, classificação em lote</td><td>Haiku 4.5</td></tr>
+    <tr><td>Rotina do dia a dia — e-mails, resumos, minutas comuns</td><td>Teste Sonnet 5.5, se disponível</td></tr>
+    <tr><td>Peça decisiva — recurso em causa alta, parecer complexo</td><td>Teste Opus 5.5, com fontes e revisão; modelo não garante resultado</td></tr>
+    <tr><td>Volume — triagem de documentos, classificação em lote</td><td>Teste Haiku 5.5, com amostragem revisada</td></tr>
   </table>
-  <p class="small">O Opus 5 entrega desempenho de fronteira pela metade do custo do Fable 5. O Fable 5 é o mais capaz, mas pesa no consumo — no Pro roda via usage credits e no Max consome até 50% dos limites semanais.</p>
+  <p class="small">Compare qualidade e consumo na sua tarefa. Fable 5.2 pode exigir créditos extras; confira <a href="https://code.claude.com/docs/en/model-config">condições do modelo</a> e <a href="https://claude.com/pricing">cobrança</a> antes de escolher. Não presuma acesso pelo nome da assinatura.</p>
 
   <div class="callout co-err"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
-    <div><strong>A escada de risco tem um degrau invertido.</strong> Escalar de modelo é escalar capacidade, não sigilo: o Fable 5 é <i>Covered Model</i>, com <b>retenção obrigatória de 30 dias e sem ZDR</b> (Cap. 1). Para a peça mais sigilosa, o topo seguro é o <b>Opus 5</b>.</div></div>
+    <div><strong>Modelo mais capaz não significa mais sigilo.</strong> Confira os termos específicos do modelo, retenção e eventual elegibilidade à retenção zero no <a href="https://privacy.claude.com/">Privacy Center</a>. Nenhum nome de modelo autoriza, sozinho, dados de cliente.</div></div>
 
   <p><b>Sua semana eficiente:</b></p>
   <ul class="check">
     <li>Um assunto por conversa — contexto misto confunde o Claude e gasta mais.</li>
     <li>Conversa ficou longa? Peça um resumo do essencial e reanexe numa conversa nova.</li>
     <li>Acompanhe o consumo em Settings &gt; Usage.</li>
-    <li>Lembre do relógio: o limite reseta em janela de 5 horas; planos pagos têm também teto semanal.</li>
-    <li>Chat e Claude Code bebem do mesmo pool — programe o Code para horas de folga do chat.</li>
+    <li>Confira o horário de renovação e os tetos em Usage; não presuma uma janela universal.</li>
+    <li>Confira se chat e Claude Code compartilham franquia; API e créditos podem ter cobrança separada.</li>
     <li>Cowork e recursos pesados consomem mais uso: reserve-os para tarefas que realmente precisam de agente.</li>
   </ul>
 
@@ -3214,8 +3164,7 @@ Leia a peça a seguir como se fosse <b>decidir contra</b> ela. Aponte:
 
   <h3 class="sec"><span class="n">19.1</span>O que são Skills</h3>
   <p style="font-size:9.4pt">Skill é um <strong>pacote de instruções</strong> que o Claude carrega quando o assunto é
-  relevante. Você escreve uma vez — o checklist da banca, o tom, o formato de saída, os limites — e, sempre que a
-  tarefa aparecer numa conversa, o Claude lê aquelas instruções e trabalha do seu jeito. Pense na diferença entre
+  relevante. Você escreve o checklist da banca, o tom, o formato de saída e os limites; teste se a Skill é acionada nas tarefas adequadas e se não dispara em tarefas alheias. Ela pode falhar ou não ser carregada. Pense na diferença entre
   ditar o mesmo memorando toda semana e entregar ao estagiário um manual que ele consulta sozinho.</p>
 
   <div class="ba">
@@ -3230,8 +3179,7 @@ Leia a peça a seguir como se fosse <b>decidir contra</b> ela. Aponte:
   <h3 class="sec"><span class="n">19.2</span>Onde as Skills funcionam</h3>
   <div class="grid3">
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-chat"/></svg></span>
-      <h4>Claude.ai</h4><p class="small">No chat, para você e para a equipe. Em planos Team e Enterprise, o escritório
-      pode distribuir Skills para toda a organização.</p></div>
+      <h4>Claude.ai</h4><p class="small">A fonte oficial lista Free, Pro, Max, Ultra, Team e Enterprise com execução de código habilitada. Confira <a href="https://support.claude.com/en/articles/12512176-what-are-skills">condições atuais</a> e Customize → Skills; distribuição organizacional depende de permissões.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-cmd"/></svg></span>
       <h4>Claude Code</h4><p class="small">Na ferramenta técnica, Skills viram comandos reutilizáveis para quem opera
       o computador com o Claude.</p></div>
@@ -3326,21 +3274,15 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
   <h3 class="sec"><span class="n">20.1</span>Cowork: o Claude que executa tarefas completas</h3>
   <p style="font-size:9.4pt">Cowork é o agente do Claude para trabalho de escritório: você descreve o resultado
   ("organize esta pasta", "monte o relatório da carteira") e ele executa em <strong>múltiplas etapas</strong> —
-  criando documentos, planilhas e arquivos organizados. Está nos planos pagos (Pro em diante), chegou à web e ao
-  mobile também em versão beta, roda nos servidores da Anthropic mesmo com o seu laptop fechado — e
-  <strong>consome mais uso</strong> que o chat comum. Tudo passa por três modos de permissão:</p>
+  criando documentos, planilhas e arquivos organizados. A <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork">fonte consultada em 12/11/2026</a> lista planos pagos elegíveis (Pro/Max/Ultra/Team/Enterprise), desktop macOS/Windows/Linux beta e acesso web/mobile sujeito a condições organizacionais. Não presuma paridade Linux nem seletor Chat/Cowork durante o rollout da interface unificada. Sessões na nuvem podem continuar sem laptop; recursos locais exigem app aberto e conectado, e conteúdo local pode ser processado na nuvem. Confira consumo na conta e modos de permissão:</p>
 
   <div class="grid3">
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-user"/></svg></span>
-      <h4>Aprovação manual</h4><p class="small">Cada ação passa por você antes de acontecer. <strong>Comece
-      aqui</strong> — é como o escritório aprende a confiar na ferramenta.</p></div>
+      <h4>Aprovação manual</h4><p class="small">Escolha Manual para tarefas com consequência. Confira o alcance dos pedidos de permissão: esse modo não substitui autorização profissional explícita antes de enviar, apagar, assinar ou protocolar.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-shield"/></svg></span>
-      <h4>Aprovação automática</h4><p class="small">O próprio Claude revisa cada ação por segurança. Mesmo assim,
-      ações sensíveis — abrir pastas novas, apagar arquivos, criar tarefas agendadas — continuam exigindo você.
-      Consome ainda mais uso.</p></div>
+      <h4>Aprovação automática</h4><p class="small">Auto usa verificações do produto, mas não equivale à aprovação do advogado. Não confie nesse modo para autorizar efeitos jurídicos, financeiros ou externos.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-warn"/></svg></span>
-      <h4>Sem aprovações</h4><p class="small">Autonomia total. Reserve para pastas de teste e dados não sensíveis —
-      nunca para a pasta de um caso real.</p></div>
+      <h4>Sem aprovações</h4><p class="small">Skip reduz pedidos de confirmação; não elimina restrições nem autoriza atos profissionais. Não use em casos reais; testes devem ficar isolados, sem contas ou dados sensíveis.</p></div>
   </div>
 
   <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-clock"/></svg></span>
@@ -3370,7 +3312,7 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
       </div>
       <div class="shot-main">
         <div class="shot-bar">
-          <span class="shot-model">Opus 5</span>
+          <span class="shot-model">Opus 5.5 · se disponível</span>
           <span class="shot-tools">Sessão do Cowork</span>
         </div>
         <div style="display:flex;align-items:center;gap:1mm;font-size:6.9pt;color:#8b7c5f;margin-top:-.8mm">
@@ -3437,10 +3379,10 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
   </div>
 
   <div class="ui-legend">
-    <div><b>1</b><span><strong>Modo de permissão.</strong> <i>Manual</i> pede aprovação a cada ação; <i>Auto</i> segue sozinho com verificação de segurança; <i>Skip</i> não pergunta nada. Comece no Manual (§20.1).</span></div>
+    <div><b>1</b><span><strong>Modo de permissão.</strong> <i>Manual</i> solicita aprovações conforme ferramenta e configuração; <i>Auto</i> avalia ações automaticamente; <i>Skip</i> dispensa aprovações usuais, sem superar bloqueios administrativos. Comece no Manual e confira também permissões do conector (§20.1).</span></div>
     <div><b>2</b><span><strong>O plano, passo a passo.</strong> O Cowork quebra a tarefa em etapas e mostra o que faz em cada uma. É aqui que você flagra um mal-entendido — antes de ele terminar o trabalho.</span></div>
-    <div><b>3</b><span><strong>A porta de aprovação.</strong> Ler é barato; mover e apagar, não. No modo Manual, toda ação de escrita para e espera o seu aval.</span></div>
-    <div><b>4</b><span><strong>As pastas anexadas.</strong> O Cowork só enxerga as pastas que você anexou ao projeto. Aponte sempre uma <strong>cópia</strong> (§20.2) — nunca a pasta original do caso.</span></div>
+    <div><b>3</b><span><strong>A porta de aprovação.</strong> Antes de mover, apagar ou enviar, exija prévia e aprovação específica. Não presuma que toda escrita gerará uma nova pergunta: permissões já concedidas e políticas também influenciam o comportamento.</span></div>
+    <div><b>4</b><span><strong>As pastas anexadas.</strong> Confira também conectores e demais permissões; anexar uma pasta não comprova isolamento de todos os recursos. Aponte para uma <strong>cópia</strong> (§20.2), nunca para a pasta original do caso.</span></div>
   </div>
 
   <div class="callout co-warn" style="margin-bottom:0"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
@@ -3496,8 +3438,7 @@ a Skill <b>nunca</b> deve fazer. Só depois gere o arquivo completo.</pre></div>
 <!-- ================= CAP 20 · PÁGINA 3 ================= -->
 <section class="sheet pad" id="pagina-74">
   <h3 class="sec" style="margin-top:0"><span class="n">20.4</span>Tarefas programadas: o resumo que se faz sozinho</h3>
-  <p style="font-size:9.4pt">Com <span class="mono-s">/schedule</span>, qualquer tarefa do Cowork vira rotina —
-  roda remota, mesmo com o computador desligado. O exemplo clássico da advocacia:</p>
+  <p style="font-size:9.4pt">Quando o agendamento estiver disponível, configure uma rotina de teste e confira execução, destino e permissões. Sessões na nuvem podem continuar sem laptop; recursos locais exigem app aberto e conectado. Consulte as <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork">condições do Cowork</a>. Exemplo para planilha fictícia, sem cálculo de prazo real:</p>
 
   <div class="prompt"><div class="p-head"><span class="p-tag"><svg class="ic"><use href="#i-cmd"/></svg>Tarefa · Resumo semanal</span><span>copie e adapte [colchetes]</span></div>
   <pre>Toda segunda às 8h: a partir da planilha [carteira de casos],
@@ -3511,14 +3452,11 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
       <p class="small">O Claude Code é feito para programadores — terminal, VS Code, web —, mas o que ele faz é ler,
       escrever e organizar arquivos, e para isso você <strong>não precisa de equipe técnica</strong>: as páginas
       seguintes mostram seis trabalhos montados por um advogado sozinho. Ele vira <strong>fábrica de ferramentas
-      internas</strong>: uma calculadora de prazos, um organizador de documentos. Depois de pronta, a ferramenta
-      roda no seu computador sem falar com o modelo; <em>enquanto</em> ele a constrói, porém, o trecho que ele lê
+      internas</strong>: uma calculadora de prazos, um organizador de documentos. Uma ferramenta só roda inteiramente local se seu código e dependências forem projetados e conferidos para isso. <em>Enquanto</em> o Code a constrói, o trecho que ele lê
       viaja até o Claude, como em qualquer conversa — a régua do Cap. 3 vale igual no terminal.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-shield"/></svg></span>
       <h4>Git: o cinto de segurança</h4>
-      <p class="small">Antes de qualquer automação tocar em arquivos, faça um checkpoint: com o Git instalado,
-      <span class="mono-s">git init</span> + <span class="mono-s">git commit</span> na pasta. Se algo der errado,
-      tudo volta ao ponto anterior. Nenhuma automação roda aqui sem isso.</p></div>
+      <p class="small">Antes de automatizar, trabalhe numa cópia e mantenha backup. Se usar Git, registre e confira os arquivos do checkpoint; iniciar o repositório sozinho não os salva. Git recupera versões registradas, não desfaz envios, protocolos, exclusões externas ou pagamentos.</p></div>
   </div>
 
   <h3 class="sec"><span class="n">20.6</span>Extensões: o Claude onde você já trabalha</h3>
@@ -3599,7 +3537,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
       </div>
       <div class="shot-main">
         <div class="shot-bar">
-          <span class="shot-model">Opus 5</span>
+          <span class="shot-model">Opus 5.5 · se disponível</span>
           <span class="shot-tools">Project · base de conhecimento</span>
         </div>
         <div style="display:flex;align-items:center;gap:1mm;font-size:6.9pt;color:#8b7c5f;margin-top:-.8mm">
@@ -3679,14 +3617,10 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
 
   <div class="grid3">
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-cmd"/></svg></span>
-      <h4>1 · Instalar</h4><p class="small">Uma linha, publicada na documentação oficial — para onde
-      <b>claude.com/download</b> leva (Apêndice E): no PowerShell do Windows,
-      <span class="mono-s">irm https://claude.ai/install.ps1 | iex</span>. Mac e Linux têm a sua, na mesma
-      página.</p></div>
+      <h4>1 · Instalar</h4><p class="small">Siga a <a href="https://code.claude.com/docs/en/overview">documentação oficial do Claude Code</a> para seu sistema. A instalação nativa é recomendada; npm é uma alternativa legada, não requisito universal. Confira a origem antes de executar instaladores e depois verifique <span class="mono-s">claude --version</span>. Também há opções em IDE, desktop e web, com condições próprias.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-doc"/></svg></span>
       <h4>2 · Entrar na pasta</h4><p class="small">O comando <span class="mono-s">cd</span> seguido do caminho leva
-      o terminal até a <strong>cópia</strong> da pasta de trabalho. É essa pasta — e só ela — que ele vai enxergar
-      sem pedir licença.</p></div>
+      o terminal até a <strong>cópia</strong> da pasta de trabalho. Ela é o ponto de partida, não uma barreira de isolamento. Confira permissões, ferramentas e recursos conectados antes de iniciar.</p></div>
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-chat"/></svg></span>
       <h4>3 · Chamar</h4><p class="small">Digite <span class="mono-s">claude</span> e dê Enter. Na primeira vez ele
       pede login no navegador. Depois disso, é conversa — em português, sobre os arquivos que estão ali.</p></div>
@@ -3695,8 +3629,7 @@ casos sem movimentação há 60+ dias. Salve o relatório em [pasta].</pre></div
   <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-shield"/></svg></span>
     <div><strong>O que fica na sua máquina e o que não fica.</strong> Os arquivos continuam onde estão, mas o
     trecho que ele <em>lê</em> para responder viaja até o modelo, como em qualquer conversa: a régua do Cap. 3 vale
-    igual no terminal. Aponte sempre para uma <strong>cópia</strong> — fora dela, ele pede permissão até para
-    olhar.</div></div>
+    igual no terminal. Aponte sempre para uma <strong>cópia</strong>, confira os limites efetivos e não presuma que mudar de pasta impeça acesso a outros recursos.</div></div>
 
   <h3 class="sec"><span class="n">4</span>Sessenta e oito contratos numa pasta e uma pergunta só</h3>
   <p style="font-size:9.2pt;margin-bottom:1.8mm"><span class="tag">Terminal</span>
@@ -4488,7 +4421,7 @@ CALCULE:
   <h3 class="sec"><span class="n">27.1</span>Cowork: o Claude fora da caixa de conversa</h3>
   <p style="font-size:9.4pt">O <strong>Cowork</strong> executa tarefas de várias etapas em vez de responder mensagens:
   abre seus arquivos, monta a planilha, redige o documento e usa o navegador — sem terminal, sem código. Está disponível
-  <strong>apenas nos planos pagos</strong>, maduro no aplicativo de desktop e ainda em beta na web e no celular.</p>
+  conforme <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork">condições oficiais</a>: planos pagos elegíveis; desktop macOS/Windows e Linux beta, sem presumir paridade. Web/mobile dependem de condições organizacionais e rollout; confira a sua conta.</p>
 
   <div class="callout co-warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span>
     <div><strong>Custo de uso:</strong> tarefa do Cowork consome <strong>mais cota que conversar</strong> — são muitos
@@ -4499,9 +4432,7 @@ CALCULE:
   <p style="font-size:9.4pt">Dentro do Cowork existe a área <strong>Scheduled</strong> (tarefas programadas), na barra
   lateral. Você descreve o que quer, escolhe a frequência — de hora em hora, diária, semanal, só em dias úteis, ou
   disparada por você — e pronto. O ponto que muda a operação: <strong>essas tarefas rodam remotamente</strong>, na
-  infraestrutura da Anthropic, mesmo com o seu computador dormindo ou o aplicativo fechado. A exceção é uma só, e é
-  lógica: <strong>tarefa que precisa de arquivo ou programa da sua máquina só roda localmente</strong> — ou seja, com o
-  computador ligado.</p>
+  infraestrutura da Anthropic, conforme disponibilidade. Se a tarefa precisar de arquivos ou programas locais, mantenha o app aberto e conectado e confira suporte ao sistema. <strong>Acesso a arquivo local não significa processamento só local.</strong> Teste uma execução fictícia e confira o resultado antes de confiar na rotina.</p>
 
   <div class="grid2">
     <div class="card"><span class="ico"><svg class="ic"><use href="#i-clock"/></svg></span>
@@ -4742,15 +4673,15 @@ PLANO:
     <tr><th style="width:24%">Termo</th><th>O que significa, em uma linha</th></tr>
     <tr><td><b>LLM</b></td><td>Modelo de linguagem treinado para gerar texto; é o "motor" por trás do Claude.</td></tr>
     <tr><td><b>Token</b></td><td>Unidade de texto que o modelo lê (≈¾ de palavra); base de medida de contexto e custo.</td></tr>
-    <tr><td><b>Janela de contexto</b></td><td>Tudo que o modelo enxerga de uma vez; varia por modelo, não por plano. No chat: 1M (Opus 5, Sonnet 5), 500k (Opus 4.8/4.7/4.6, Sonnet 4.6), 200k nos demais. Na API, todos chegam a 1M.</td></tr>
+    <tr><td><b>Janela de contexto</b></td><td>Conteúdo disponível para uma resposta; confira limites por modelo, produto e conta no catálogo oficial. Tokens não garantem quantidade de páginas ou leitura integral.</td></tr>
     <tr><td><b>Alucinação</b></td><td>Resposta inventada com cara de verdade; a maior ameaça em citações jurídicas.</td></tr>
-    <tr><td><b>Cutoff</b></td><td>Data-limite do conhecimento de treino: mai/2026 no Opus 5; jan/2026 no Sonnet 5 e no Fable 5.</td></tr>
+    <tr><td><b>Cutoff</b></td><td>Data-limite de treino, variável por versão; confira no catálogo. Não substitui verificação de atualidade em fonte oficial.</td></tr>
     <tr><td><b>Prompt</b></td><td>A instrução que você dá ao modelo; contexto, papel e formato definem a qualidade.</td></tr>
     <tr><td><b>Artifact</b></td><td>Painel lateral do claude.ai onde documentos ganham versão própria, editável e iterável.</td></tr>
     <tr><td><b>Project</b></td><td>Espaço persistente por caso ou cliente, com instruções e documentos fixos.</td></tr>
     <tr><td><b>Skill</b></td><td>Pacote de instruções reutilizável que ensina ao Claude um procedimento do escritório.</td></tr>
     <tr><td><b>Cowork</b></td><td>Agente que executa tarefas multi-etapa (documentos, planilhas, pesquisa) nos planos pagos.</td></tr>
-    <tr><td><b>Claude Code</b></td><td>O Claude no terminal, no editor e na web, voltado a automação técnica; incluído nos planos pagos.</td></tr>
+    <tr><td><b>Claude Code</b></td><td>Ferramenta técnica em terminal, IDE, desktop e web; confira autenticação, elegibilidade e cobrança separada de API/créditos.</td></tr>
     <tr><td><b>MCP / conector</b></td><td>Padrão de conexão que liga o Claude a ferramentas externas (Drive, Slack, e-mail).</td></tr>
     <tr><td><b>Research</b></td><td>Modo de pesquisa profunda que varre a web e entrega relatório com fontes (Pro+).</td></tr>
     <tr><td><b>Memória</b></td><td>Capacidade de o Claude lembrar preferências e contexto entre conversas.</td></tr>
@@ -4969,13 +4900,13 @@ PLANO:
     <tr><td><a href="https://www.anthropic.com/news">anthropic.com/news</a></td><td><b>O canal permanente de novidades</b> — modelos, recursos e planos, no dia.</td></tr>
     <tr><td><a href="https://claude.com/pricing">claude.com/pricing</a></td><td>Planos, preços, limites de uso, usage credits e preços de API.</td></tr>
     <tr><td><a href="https://platform.claude.com/docs/en/about-claude/models/overview">platform.claude.com — Models overview</a></td><td>Modelos ativos e legados, contexto, cutoffs e preços por token.</td></tr>
-    <tr><td><a href="https://platform.claude.com/docs/en/manage-claude/api-and-data-retention">platform.claude.com — Retenção de dados</a></td><td>O que o ZDR cobre e o que não cobre; os <i>Covered Models</i> (Fable 5 e Mythos 5), de retenção obrigatória.</td></tr>
-    <tr><td><a href="https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans">support.claude.com — Janela de contexto</a></td><td>Os patamares de 1M, 500k e 200k por modelo nos planos pagos (Caps. 4 e 9).</td></tr>
+    <tr><td><a href="https://platform.claude.com/docs/en/manage-claude/api-and-data-retention">platform.claude.com — Retenção de dados</a></td><td>Confira retenção específica, exceções e elegibilidade a retenção zero no modelo e contrato usados.</td></tr>
+    <tr><td><a href="https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans">support.claude.com — Janela de contexto</a></td><td>Confira limites atuais por produto e modelo; confirme também na conta antes de planejar autos extensos.</td></tr>
     <tr><td><a href="https://privacy.claude.com/en/articles/8956058-i-have-a-zero-data-retention-agreement-with-anthropic-what-products-does-it-apply-to">privacy.claude.com — ZDR</a></td><td>A quais produtos o acordo de retenção zero se aplica.</td></tr>
     <tr><td><a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training">privacy.claude.com — Treino</a> · <a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training">versão comercial</a></td><td>Quando seus dados vão para treino: o botão de avaliação e a revisão de segurança (Cap. 3).</td></tr>
     <tr><td><a href="https://code.claude.com/docs/en/overview">code.claude.com — Claude Code overview</a></td><td>Superfícies do Claude Code, Skills, hooks, MCP e rotinas.</td></tr>
     <tr><td><a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork">support.claude.com — Cowork</a></td><td>Artigo "Get started with Claude Cowork": modos de permissão e consumo.</td></tr>
-    <tr><td><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5">anthropic.com/news — Fable 5</a> · <a href="https://www.anthropic.com/news/redeploying-fable-5">retorno</a></td><td>Anúncio do modelo mais capaz ao público (09/06/2026) e sua volta após controles de exportação (30/06/2026).</td></tr>
+    <tr><td><a href="https://platform.claude.com/docs/en/models/overview">Catálogo atual de modelos</a></td><td>Referência para versões, características e condições; não prova inclusão no chat ou no plano.</td></tr>
     <tr><td><a href="https://www.anthropic.com/news/claude-design-anthropic-labs">anthropic.com/news — Claude Design</a> · <a href="https://www.anthropic.com/news/claude-science-ai-workbench">Claude Science</a></td><td>Anúncios do Claude Design (17/04/2026) e do workbench científico (30/06/2026).</td></tr>
   </table>
 
@@ -5212,5 +5143,6 @@ PLANO:
   </div>
   <div></div>
 </section>
+<section id="primeira-vitoria" class="sheet pad"><h2 class="h-chapter">Primeira vitória: resumo verificável</h2><p>Dados inteiramente fictícios: <b>01-contrato.pdf</b>: vigência de 12 meses; <b>02-aditivo.pdf</b>: prorroga por 6 meses, sem informar a nova data final; <b>03-email.txt</b>: cliente pede confirmação da data até sexta.</p><p>Peça ao Claude: “Resuma cada documento em uma linha, aponte a pendência sem inferir data e cite o nome do arquivo que sustenta cada afirmação.”</p><p><b>Esperado:</b> três linhas atribuídas às fontes e pendência “confirmar data final”. <b>Confira:</b> compare cada afirmação com os três documentos fictícios. <b>Recomece:</b> descarte a conversa e copie novamente a mesma entrada. Não use dados reais nem trate a saída como parecer.</p><p><b>Fontes oficiais consultadas em 12/11/2026:</b> <a href="https://platform.claude.com/docs/en/models/overview">catálogo de modelos</a> · <a href="https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork">Cowork</a> · <a href="https://support.claude.com/en/articles/12512176-what-are-skills">Skills</a> · <a href="https://code.claude.com/docs/en/overview">Claude Code</a>.</p><p>Este HTML é a edição atualizada; os PDFs disponíveis para download são edições históricas e podem divergir. Não foram atualizados.</p></section>
 </body>
 </html>
